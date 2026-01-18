@@ -1,0 +1,40 @@
+[
+  {
+    "ContainingType": "Master.Controller.Domain.Auth.CtrlAuthenticate",
+    "Method": "Authenticate",
+    "RelativePath": "api/authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Master.Entity.Dto.Domain.Auth.DtoLoginInformation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Master.Entity.Dto.Domain.Auth.DtoToken",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Master.Entity.Dto.Infra.DtoServiceError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "_oauth2"
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "BuffonConfig": {
+    "database": "User ID=postgres;Password=gustavo@2012;Host=localhost;Port=5432;Database=Intranet",
+  }
+}

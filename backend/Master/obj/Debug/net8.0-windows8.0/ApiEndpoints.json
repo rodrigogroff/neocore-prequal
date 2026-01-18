@@ -1,0 +1,114 @@
+[
+  {
+    "ContainingType": "Master.Controller.Domain.Auth.CtrlAuthenticate",
+    "Method": "Authenticate",
+    "RelativePath": "api/authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Master.Entity.Dto.Domain.Auth.DtoLoginInformation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.BackOffice.Company.CtrlUserGet",
+    "Method": "Get",
+    "RelativePath": "api/company",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.BackOffice.Company.CtrlCompanyUpdate",
+    "Method": "CreateOrUpdate",
+    "RelativePath": "api/company",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Master.Entity.Dto.Domain.BackOffice.Company.DtoCompanyUpdate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.BackOffice.Company.CtrlCompanyListing",
+    "Method": "Get",
+    "RelativePath": "api/companyListing",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.BackOffice.User.CtrlUserGet",
+    "Method": "Get",
+    "RelativePath": "api/user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.BackOffice.User.CtrlUserUpdate",
+    "Method": "CreateOrUpdate",
+    "RelativePath": "api/user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Master.Entity.Dto.Domain.BackOffice.User.DtoUserUpdate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.BackOffice.User.CtrlUserListing",
+    "Method": "Get",
+    "RelativePath": "api/userListing",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
