@@ -1,6 +1,6 @@
-﻿namespace Master.Entity.Dto.Domain.BackOffice.User
+﻿namespace Master.Entity.Dto.Request.Domain.BackOffice.User
 {
-    public class DtoUserUpdate
+    public class DtoRequestUserUpdate
     {
         public int id { get; set; }
         public string stEmail { get; set; }

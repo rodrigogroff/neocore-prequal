@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Master.Entity.Dto.Domain.BackOffice.Company
+namespace Master.Entity.Dto.Response.Domain.BackOffice.Company
 {
-    public class DtoCompanyListing
+    public class DtoResponseCompanyListing
     {
         public List<DtoCompanyListingItem> results { get; set; }
     }

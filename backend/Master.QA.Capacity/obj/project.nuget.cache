@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HIGbacFK2vs=",
+  "dgSpecHash": "Uk6yeUsgdO8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\frela\\backend\\Master.QA.Capacity\\Master.QA.Capacity.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master.QA.Capacity\\Master.QA.Capacity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.applicationinsights\\2.23.0\\microsoft.applicationinsights.2.23.0.nupkg.sha512",

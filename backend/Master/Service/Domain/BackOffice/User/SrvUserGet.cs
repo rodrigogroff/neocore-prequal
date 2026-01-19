@@ -1,4 +1,4 @@
-﻿using Master.Entity.Dto.Domain.BackOffice.User;
+﻿using Master.Entity.Dto.Response.Domain.BackOffice.User;
 using Master.Service.Base;
 using System;
 
@@ -6,7 +6,7 @@ namespace Master.Service.Domain.BackOffice.User
 {
     public class SrvUserGet : SrvBase
     {
-        public DtoUserGet OutDto = null;
+        public DtoResponseUserGet OutDto = null;
         
         public bool Exec(int fkCompany, int id)
         {
@@ -25,7 +25,7 @@ namespace Master.Service.Domain.BackOffice.User
                     return false;
                 }
 
-                OutDto = new DtoUserGet
+                OutDto = new DtoResponseUserGet
                 {
                     id = userDb.id,
                     stName = userDb.stName,

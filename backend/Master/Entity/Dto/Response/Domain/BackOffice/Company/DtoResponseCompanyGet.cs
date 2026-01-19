@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Master.Entity.Dto.Domain.BackOffice.Company
+namespace Master.Entity.Dto.Response.Domain.BackOffice.Company
 {
-    public class DtoCompanyGet
+    public class DtoResponseCompanyGet
     {
         public int id { get; set; }
         public string stName { get; set; }

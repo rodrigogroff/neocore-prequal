@@ -1,6 +1,6 @@
-﻿namespace Master.Entity.Dto.Domain.Auth
+﻿namespace Master.Entity.Dto.Request.Domain.Auth
 {
-    public class DtoLoginInformation
+    public class DtoRequestLoginInformation
     {
         public string email { get; set; }
         public string password { get; set; }

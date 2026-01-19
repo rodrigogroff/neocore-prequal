@@ -1,5 +1,5 @@
-﻿using Master.Entity.Dto.Domain.BackOffice.Company;
-using Master.Entity.Dto.Infra;
+﻿using Master.Entity.Dto.Infra;
+using Master.Entity.Dto.Response.Domain.BackOffice.Company;
 using Master.Service.Base;
 using System;
 
@@ -7,7 +7,7 @@ namespace Master.Service.Domain.BackOffice.Company
 {
     public class SrvCompanyGet : SrvCompanyAdminBase
     {
-        public DtoCompanyGet OutDto = null;
+        public DtoResponseCompanyGet OutDto = null;
         
         public bool Exec(DtoAuthenticatedUser user, int id)
         {
@@ -34,7 +34,7 @@ namespace Master.Service.Domain.BackOffice.Company
                     return false;
                 }                    
 
-                OutDto = new DtoCompanyGet
+                OutDto = new DtoResponseCompanyGet
                 {
                     id = companyDb.id,
                     stName = companyDb.stName,

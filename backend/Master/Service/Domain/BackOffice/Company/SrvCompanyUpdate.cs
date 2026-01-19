@@ -1,14 +1,14 @@
 ﻿using System;
 using Master.Entity.Database.Domain.Company;
-using Master.Entity.Dto.Domain.BackOffice.Company;
 using Master.Entity.Dto.Infra;
+using Master.Entity.Dto.Request.Domain.BackOffice.Company;
 using Master.Service.Base;
 
 namespace Master.Service.Domain.BackOffice.Company
 {
     public class SrvCompanyUpdate : SrvCompanyAdminBase
     {
-        public bool Exec(DtoAuthenticatedUser user, DtoCompanyUpdate dto)
+        public bool Exec(DtoAuthenticatedUser user, DtoRequestCompanyUpdate dto)
         {
             if (!CheckCredential(user))
             {

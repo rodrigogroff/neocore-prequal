@@ -1,7 +1,8 @@
 ﻿using Master.Controller.Infra;
 using Master.Entity;
-using Master.Entity.Dto.Domain.Auth;
 using Master.Entity.Dto.Infra;
+using Master.Entity.Dto.Request.Domain.Auth;
+using Master.Entity.Dto.Response.Domain.Auth;
 using Master.Service.Domain.Auth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,17 +12,17 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Auth
 {
-    [Tags("_oauth2")]
-    public class CtrlAuthenticate : MasterController
+    [Tags("token")]
+    public class CtrlToken : MasterController
     {
-        public CtrlAuthenticate(IOptions<LocalNetwork> network) : base(network) { }
+        public CtrlToken(IOptions<LocalNetwork> network) : base(network) { }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("api/authenticate")]
-        [ProducesResponseType(typeof(DtoToken), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DtoResponseToken), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Authenticate([FromBody] DtoLoginInformation dto)
+        public async Task<ActionResult> Authenticate([FromBody] DtoRequestLoginInformation dto)
         {
             var srv = RegisterService<SrvAuthenticate>();
 
@@ -32,10 +33,10 @@ namespace Master.Controller.Domain.Auth
                     mensagem = srv.errorMessage
                 });
 
-            return Ok(new DtoToken
+            return Ok(new DtoResponseToken
             {
                 token = this.JwtComposer.ComposeTokenForSession(srv.OutDto),
-                user = new DtoAuthenticatedUserInfo
+                user = new DtoResponseAuthenticatedUserInfo
                 {
                     stEmail = srv.OutDto.stEmail,
                     stName = srv.OutDto.stName,

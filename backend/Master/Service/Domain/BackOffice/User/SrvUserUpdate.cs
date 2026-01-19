@@ -1,15 +1,14 @@
 ﻿using System;
 using Master.Entity.Database.Domain.User;
-using Master.Entity.Dto.Domain.BackOffice.Company;
-using Master.Entity.Dto.Domain.BackOffice.User;
 using Master.Entity.Dto.Infra;
+using Master.Entity.Dto.Request.Domain.BackOffice.User;
 using Master.Service.Base;
 
 namespace Master.Service.Domain.BackOffice.User
 {
     public class SrvUserUpdate : SrvBase
     {
-        public bool Exec(DtoAuthenticatedUser user, DtoUserUpdate dto)
+        public bool Exec(DtoAuthenticatedUser user, DtoRequestUserUpdate dto)
         {
             try
             {

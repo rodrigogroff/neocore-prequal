@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Master.Entity.Dto.Domain.Auth.DtoLoginInformation",
+        "Type": "Master.Entity.Dto.Request.Domain.Auth.DtoRequestLoginInformation",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Master.Entity.Dto.Domain.Auth.DtoToken",
+        "Type": "Master.Entity.Dto.Response.Domain.Auth.DtoResponseToken",
         "MediaTypes": [
           "text/plain",
           "application/json",

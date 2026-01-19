@@ -1,7 +1,7 @@
 ﻿using Master.Controller.Infra;
 using Master.Entity;
-using Master.Entity.Dto.Domain.BackOffice.Company;
 using Master.Entity.Dto.Infra;
+using Master.Entity.Dto.Request.Domain.BackOffice.Company;
 using Master.Service.Domain.BackOffice.Company;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -56,7 +56,7 @@ namespace Master.Controller.Domain.BackOffice
 
         [HttpPost]
         [Route("api/company")]
-        public async Task<ActionResult> CreateOrUpdate([FromBody] DtoCompanyUpdate dto)
+        public async Task<ActionResult> CreateOrUpdate([FromBody] DtoRequestCompanyUpdate dto)
         {
             var currentUser = GetAuthenticatedUser();
 

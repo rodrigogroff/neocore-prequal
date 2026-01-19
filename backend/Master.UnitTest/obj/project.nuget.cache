@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Lg+P3bZCx8=",
+  "dgSpecHash": "aDS0zrvk1kM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\frela\\backend\\Master.UnitTest\\Master.UnitTest.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master.UnitTest\\Master.UnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",

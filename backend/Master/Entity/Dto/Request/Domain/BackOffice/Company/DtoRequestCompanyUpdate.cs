@@ -1,6 +1,6 @@
-﻿namespace Master.Entity.Dto.Domain.BackOffice.Company
+﻿namespace Master.Entity.Dto.Request.Domain.BackOffice.Company
 {
-    public class DtoCompanyUpdate
+    public class DtoRequestCompanyUpdate
     {
         public long id { get; set; }
         public string stName { get; set; }

@@ -1,5 +1,5 @@
 ﻿using ApiTestFramework;
-using Master.Entity.Dto.Domain.Auth;
+using Master.Entity.Dto.Response.Domain.Auth;
 using Master.QA.Infra;
 using System.Collections.Concurrent;
 using System.Diagnostics;
@@ -30,7 +30,7 @@ namespace Master.QA.Capacity.UseCase
         public async Task OK()
         {
             var loginData = this.LoginDataOk;
-            var response = await _client.PostAsync<DtoToken>("/api/authenticate", loginData);
+            var response = await _client.PostAsync<DtoResponseToken>("/api/authenticate", loginData);
             Assert.IsTrue(response.IsSuccess);
         }
 
@@ -69,7 +69,7 @@ namespace Master.QA.Capacity.UseCase
 
                         try
                         {
-                            var response = await client.PostAsync<DtoToken>("/api/authenticate", loginData);
+                            var response = await client.PostAsync<DtoResponseToken>("/api/authenticate", loginData);
                             requestStopwatch.Stop();
 
                             results.Add(new LoadTestResult

@@ -1,6 +1,13 @@
-﻿namespace Master.Entity.Dto.Domain.BackOffice.User
+﻿using System.Collections.Generic;
+
+namespace Master.Entity.Dto.Response.Domain.BackOffice.User
 {
-    public class DtoUserGet
+    public class DtoResponseUserListing
+    {
+        public List<DtoUserListingItem> results { get; set; }
+    }
+
+    public class DtoUserListingItem
     {
         public int id { get; set; }
         public string stEmail { get; set; }

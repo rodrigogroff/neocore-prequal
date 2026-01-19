@@ -1,4 +1,4 @@
-﻿using Master.Entity.Dto.Domain.BackOffice.User;
+﻿using Master.Entity.Dto.Response.Domain.BackOffice.User;
 using Master.Service.Base;
 using System;
 
@@ -6,7 +6,7 @@ namespace Master.Service.Domain.BackOffice.User
 {
     public class SrvUserListing : SrvBase
     {
-        public DtoUserListing OutDto = null;
+        public DtoResponseUserListing OutDto = null;
 
         public bool Exec(int fkCompany, string search)
         {
@@ -18,7 +18,7 @@ namespace Master.Service.Domain.BackOffice.User
 
                 var lst = _rpUser.GetUsers(fkCompany);
 
-                OutDto = new DtoUserListing
+                OutDto = new DtoResponseUserListing
                 {
                     results = []
                 };
