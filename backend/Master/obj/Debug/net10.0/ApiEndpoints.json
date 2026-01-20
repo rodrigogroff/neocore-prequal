@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Master.Controller.Domain.Auth.CtrlAuthenticate",
+    "ContainingType": "Master.Controller.Domain.Auth.CtrlToken",
     "Method": "Authenticate",
     "RelativePath": "api/authenticate",
     "HttpMethod": "POST",
@@ -34,7 +34,45 @@
       }
     ],
     "Tags": [
-      "_oauth2"
+      "_token"
+    ]
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.Prequal.CtrlPrequal",
+    "Method": "Filter",
+    "RelativePath": "api/propostas-cpts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Master.Entity.Dto.Request.Domain.Prequal.DtoRequestPrequalSolicitacoes",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Master.Entity.Dto.Response.Domain.Prequal.DtoResponsePrequalSolicitacoes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Master.Entity.Dto.Infra.DtoServiceError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Pr\u00E9-qualifica\u00E7\u00E3o"
     ]
   }
 ]

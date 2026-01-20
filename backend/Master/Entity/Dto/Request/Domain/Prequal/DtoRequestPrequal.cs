@@ -4,19 +4,19 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Master.Entity.Dto.Request.Domain.Prequal
 {
-    public class DtoPrequalRequest
+    public class DtoRequestPrequalSolicitacoes
     {
-        public List<PropostaDataPrev> propostas {  get; set; }
+        public List<PropostaDataPrevRequest> propostas {  get; set; }
 
     }
 
     [ExcludeFromCodeCoverage]
-    public class PropostaDataPrev
+    public class PropostaDataPrevRequest
     {
         public int? IdSolicitacao { get; set; }
         public long? Cpf { get; set; }
         public string? Matricula { get; set; }
-        public PD_IC? InscricaoEmpregador { get; set; }
+        public IERequest? InscricaoEmpregador { get; set; }
         public long? NumeroInscricaoEmpregador { get; set; }
         public double? ValorLiberado { get; set; }
         public int? NroParcelas { get; set; }
@@ -27,36 +27,36 @@ namespace Master.Entity.Dto.Request.Domain.Prequal
         public bool? ElegivelEmprestimo { get; set; }
         public string? DataAdmissao { get; set; }
 
-        public PD_PEP? PessoaExpostaPoliticamente { get; set; }
+        public PEPRequest? PessoaExpostaPoliticamente { get; set; }
 
-        public List<PD_Alerta>? Alertas { get; set; }
+        public List<AlertaRequest>? Alertas { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
-    public class PD_PEP
+    public class PEPRequest
     {
         public int? Codigo { get; set; }
         public string? Descricao { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
-    public class PD_IC
+    public class IERequest
     {
         public int? Codigo { get; set; }
         public string? Descricao { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
-    public class STP_TipoAlerta
+    public class TipoAlertaRequest
     {
         public int? Codigo { get; set; }
         public string? Descricao { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
-    public class PD_Alerta
+    public class AlertaRequest
     {
-        public STP_TipoAlerta? TipoAlerta { get; set; }
+        public TipoAlertaRequest? TipoAlerta { get; set; }
         public string? DataReferencia { get; set; }
         public int? IdEvento { get; set; }
         public int? CodigoMotivoAfastamento { get; set; }

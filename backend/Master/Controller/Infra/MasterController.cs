@@ -46,14 +46,24 @@ namespace Master.Controller.Infra
         }
 
         [NonAction]
+        public string GetBearerToken()
+        {
+            const 
+                string
+                    Authorization = "Authorization",
+                    Bearer = "Bearer ";
+                        
+            return Request.Headers[Authorization].ToString().Replace(Bearer, string.Empty);
+        }
+
+        [NonAction]
         public DtoAuthenticatedUser GetAuthenticatedUser()
         {
-            const string Authorization = "Authorization",
-                         Bearer = "Bearer ",
-                         user = "user";
+            const string user = "user";
 
             var handler = new JwtSecurityTokenHandler();
-            var authHeader = Request.Headers[Authorization].ToString().Replace(Bearer, string.Empty);
+            var authHeader = GetBearerToken();
+
             if (string.IsNullOrEmpty(authHeader))
             {
                 return null;

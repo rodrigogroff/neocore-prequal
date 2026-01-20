@@ -56,13 +56,13 @@ namespace Master.Controller.Domain.BackOffice
 
         [HttpPost]
         [Route("api/company")]
-        public async Task<ActionResult> CreateOrUpdate([FromBody] DtoRequestCompanyUpdate dto)
+        public async Task<ActionResult> CreateOrUpdate([FromBody] DtoRequestCompanyUpdate request)
         {
             var currentUser = GetAuthenticatedUser();
 
             var srv = RegisterService<SrvCompanyUpdate>();
 
-            if (!srv.Exec(currentUser, dto))
+            if (!srv.Exec(currentUser, request))
             {
                 return BadRequest(new DtoServiceError
                 {

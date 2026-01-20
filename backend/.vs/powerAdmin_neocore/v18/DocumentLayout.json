@@ -1,7 +1,28 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\frela\\backend\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|c:\\users\\usuario\\source\\repos\\neocore-prequal\\backend\\master\\service\\domain\\prequal\\srvprequalsolicitacaomaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|solutionrelative:master\\service\\domain\\prequal\\srvprequalsolicitacaomaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|c:\\users\\usuario\\source\\repos\\neocore-prequal\\backend\\master\\controller\\domain\\prequal\\ctrlprequal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|solutionrelative:master\\controller\\domain\\prequal\\ctrlprequal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|c:\\users\\usuario\\source\\repos\\neocore-prequal\\backend\\master\\service\\infra\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|solutionrelative:master\\service\\infra\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|c:\\users\\usuario\\source\\repos\\neocore-prequal\\backend\\master\\service\\domain\\prequal\\srvprequalsolicitacaonode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|solutionrelative:master\\service\\domain\\prequal\\srvprequalsolicitacaonode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|c:\\users\\usuario\\source\\repos\\neocore-prequal\\backend\\master\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DD63F4DE-5733-4825-9257-DDD1449AA4CB}|Master\\Master.csproj|solutionrelative:master\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,8 +30,60 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Service\\Infra\\ApiClient.cs",
+              "RelativeDocumentMoniker": "Master\\Service\\Infra\\ApiClient.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Service\\Infra\\ApiClient.cs",
+              "RelativeToolTip": "Master\\Service\\Infra\\ApiClient.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAIAxwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T00:00:21.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\appsettings.json",
+              "RelativeDocumentMoniker": "Master\\appsettings.json",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\appsettings.json",
+              "RelativeToolTip": "Master\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-19T23:48:22.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SrvPrequalSolicitacaoNode.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoNode.cs",
+              "RelativeDocumentMoniker": "Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoNode.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoNode.cs",
+              "RelativeToolTip": "Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T23:45:33.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SrvPrequalSolicitacaoMaster.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoMaster.cs",
+              "RelativeDocumentMoniker": "Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoMaster.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoMaster.cs",
+              "RelativeToolTip": "Master\\Service\\Domain\\Prequal\\SrvPrequalSolicitacaoMaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T23:44:47.311Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -30,6 +103,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CtrlPrequal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Controller\\Domain\\Prequal\\CtrlPrequal.cs",
+              "RelativeDocumentMoniker": "Master\\Controller\\Domain\\Prequal\\CtrlPrequal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Controller\\Domain\\Prequal\\CtrlPrequal.cs",
+              "RelativeToolTip": "Master\\Controller\\Domain\\Prequal\\CtrlPrequal.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwCMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T23:43:39.721Z",
+              "EditorCaption": ""
             }
           ]
         }

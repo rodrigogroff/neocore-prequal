@@ -1,0 +1,13 @@
+
+----------------------------------------------------------------------------------------------------------
+
+   ws.neocore.com.br	=>  Web Service (portal)
+  api.neocore.com.br	=>  Api Cluster 
+								- api1.neocore.com.br:59040, api1.neocore.com.br:59041 ...
+								- api2.neocore.com.br:59040, api2.neocore.com.br:59041
+
+   db.neocore.com.br	=>  PostgreSQL 
+cache.neocore.com.br	=>  Api Singleton cache (mesma maquina que db.neocore.com.br)
+
+----------------------------------------------------------------------------------------------------------
+

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Auth
 {
-    [Tags("token")]
+    [Tags("_token")]
     public class CtrlToken : MasterController
     {
         public CtrlToken(IOptions<LocalNetwork> network) : base(network) { }
@@ -22,11 +22,11 @@ namespace Master.Controller.Domain.Auth
         [Route("api/authenticate")]
         [ProducesResponseType(typeof(DtoResponseToken), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Authenticate([FromBody] DtoRequestLoginInformation dto)
+        public async Task<ActionResult> Authenticate([FromBody] DtoRequestLoginInformation request)
         {
             var srv = RegisterService<SrvAuthenticate>();
 
-            if (!srv.Exec(dto.email, dto.password))
+            if (!srv.Exec(request.email, request.password))
                 return BadRequest(new DtoServiceError
                 {
                     codigo = srv.errorCode,

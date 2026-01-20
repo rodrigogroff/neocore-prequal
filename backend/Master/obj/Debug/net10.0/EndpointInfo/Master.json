@@ -9,7 +9,7 @@
     "/api/authenticate": {
       "post": {
         "tags": [
-          "_oauth2"
+          "_token"
         ],
         "requestBody": {
           "content": {
@@ -73,10 +73,182 @@
           }
         }
       }
+    },
+    "/api/propostas-cpts": {
+      "post": {
+        "tags": [
+          "Pré-qualificação"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalSolicitacoes"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalSolicitacoes"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalSolicitacoes"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AlertaRequest": {
+        "type": "object",
+        "properties": {
+          "tipoAlerta": {
+            "$ref": "#/components/schemas/TipoAlertaRequest"
+          },
+          "dataReferencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "idEvento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoMotivoAfastamento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataAfastamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataTerminoAfastamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoMotivoDesligamento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataDesligamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataTerminoDesligamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataAvisoPrevio": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataFimAvisoPrevio": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlertaResponse": {
+        "type": "object",
+        "properties": {
+          "tipoAlerta": {
+            "$ref": "#/components/schemas/TipoAlertaResponse"
+          },
+          "dataReferencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "idEvento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoMotivoAfastamento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataAfastamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataTerminoAfastamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoMotivoDesligamento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataDesligamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataTerminoDesligamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataAvisoPrevio": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataFimAvisoPrevio": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DtoRequestLoginInformation": {
         "type": "object",
         "properties": {
@@ -91,6 +263,19 @@
         },
         "additionalProperties": false
       },
+      "DtoRequestPrequalSolicitacoes": {
+        "type": "object",
+        "properties": {
+          "propostas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PropostaDataPrevRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DtoResponseAuthenticatedUserInfo": {
         "type": "object",
         "properties": {
@@ -100,6 +285,26 @@
           },
           "stEmail": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DtoResponsePrequalSolicitacoes": {
+        "type": "object",
+        "properties": {
+          "qualificadas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PropostaDataPrevResponse"
+            },
+            "nullable": true
+          },
+          "rejeitadas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PropostaDataPrevResponse"
+            },
             "nullable": true
           }
         },
@@ -131,6 +336,244 @@
           }
         },
         "additionalProperties": false
+      },
+      "IERequest": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IEResponse": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PEPRequest": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PEPResponse": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PropostaDataPrevRequest": {
+        "type": "object",
+        "properties": {
+          "idSolicitacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "matricula": {
+            "type": "string",
+            "nullable": true
+          },
+          "inscricaoEmpregador": {
+            "$ref": "#/components/schemas/IERequest"
+          },
+          "numeroInscricaoEmpregador": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "valorLiberado": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "nroParcelas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataHoraValidadeSolicitacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "nomeTrabalhador": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "nullable": true
+          },
+          "margemDisponivel": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "elegivelEmprestimo": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "dataAdmissao": {
+            "type": "string",
+            "nullable": true
+          },
+          "pessoaExpostaPoliticamente": {
+            "$ref": "#/components/schemas/PEPRequest"
+          },
+          "alertas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlertaRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PropostaDataPrevResponse": {
+        "type": "object",
+        "properties": {
+          "idSolicitacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "matricula": {
+            "type": "string",
+            "nullable": true
+          },
+          "inscricaoEmpregador": {
+            "$ref": "#/components/schemas/IEResponse"
+          },
+          "numeroInscricaoEmpregador": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "valorLiberado": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "nroParcelas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataHoraValidadeSolicitacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "nomeTrabalhador": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "nullable": true
+          },
+          "margemDisponivel": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "elegivelEmprestimo": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "dataAdmissao": {
+            "type": "string",
+            "nullable": true
+          },
+          "pessoaExpostaPoliticamente": {
+            "$ref": "#/components/schemas/PEPResponse"
+          },
+          "alertas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlertaResponse"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoAlertaRequest": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoAlertaResponse": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -144,7 +587,10 @@
   },
   "tags": [
     {
-      "name": "_oauth2"
+      "name": "_token"
+    },
+    {
+      "name": "Pré-qualificação"
     }
   ]
 }
