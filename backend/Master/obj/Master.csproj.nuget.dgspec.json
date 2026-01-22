@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Master.csproj": {}
+    "C:\\Users\\Usuario\\source\\repos\\neocore-bureau\\backend\\Master\\Master.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Master.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\neocore-bureau\\backend\\Master\\Master.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Master.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\neocore-bureau\\backend\\Master\\Master.csproj",
         "projectName": "Master",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\Master.csproj",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\neocore-bureau\\backend\\Master\\Master.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\neocore-prequal\\backend\\Master\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\neocore-bureau\\backend\\Master\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -68,7 +68,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[10.1.0, )"
+              "version": "[6.5.0, )"
             },
             "System.Diagnostics.PerformanceCounter": {
               "target": "Package",

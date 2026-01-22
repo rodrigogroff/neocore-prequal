@@ -224,3 +224,7 @@ C:\Users\Usuario\source\repos\petrosolution\petrosolution\backend\Master\obj\Rel
 C:\Users\Usuario\source\repos\petrosolution\petrosolution\backend\Master\obj\Release\net8.0-windows8.0\linux-x64\Master.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\petrosolution\petrosolution\backend\Master\obj\Release\net8.0-windows8.0\linux-x64\ref\Master.dll
 C:\Users\Usuario\source\repos\petrosolution\petrosolution\backend\Master\bin\Release\net8.0-windows8.0\linux-x64\resposta.json
+C:\Users\Usuario\source\repos\neocore-bureau\backend\Master\obj\Release\net8.0-windows8.0\linux-x64\Master.dll
+C:\Users\Usuario\source\repos\neocore-bureau\backend\Master\obj\Release\net8.0-windows8.0\linux-x64\refint\Master.dll
+C:\Users\Usuario\source\repos\neocore-bureau\backend\Master\obj\Release\net8.0-windows8.0\linux-x64\Master.xml
+C:\Users\Usuario\source\repos\neocore-bureau\backend\Master\obj\Release\net8.0-windows8.0\linux-x64\Master.pdb

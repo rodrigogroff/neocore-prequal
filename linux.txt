@@ -1,0 +1,184 @@
+
+# Atualizar lista de pacotes
+sudo apt update
+
+# Atualizar pacotes instalados
+sudo apt upgrade -y
+
+# Atualizar distribuição (se houver nova versão)
+sudo apt dist-upgrade -y
+
+# Remover pacotes não utilizados
+sudo apt autoremove -y
+
+# Limpar cache
+sudo apt autoclean
+
+# --------------------------------------------------------------
+# habilitar portas 179.124.195.80 / root / B0kW9dCg3xej
+# --------------------------------------------------------------
+
+sudo ufw allow 59539/tcp
+sudo ufw allow 59540/tcp
+sudo ufw allow 59541/tcp
+sudo ufw allow 5432/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+sudo apt update
+sudo apt install -y nodejs
+sudo apt install npm -y
+sudo npm install -g n
+sudo n stable
+sudo apt-get install -y dotnet10
+sudo apt install certbot -y
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && \
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc > /dev/null && \
+sudo apt update && \
+sudo apt install -y PostgreSQL
+
+# --------------------------------------------------------------
+# banco de dados
+# --------------------------------------------------------------
+
+sudo systemctl status postgresql
+sudo -u postgres psql
+\password postgres                                              Kp9#mXv2$nQ7@wL4&hR6^jT8*bN3!zF5
+\q
+
+sudo nano /etc/postgresql/18/main/postgresql.conf
+# editar primeira linha abaixo
+listen_address   "*"
+
+sudo nano /etc/postgresql/18/main/pg_hba.conf
+# acrescentar linhas abaixo
+host    all             all              0.0.0.0/0                       md5
+host    all             all              ::/0                            md5
+
+sudo systemctl restart postgresql
+# testar usando o pgadmin4 no windows no IP
+# criar e popular bancos no pgadmin
+
+# --------------------------------------------------------------
+# diretórios
+# --------------------------------------------------------------
+
+mkdir data
+cd data
+mkdir captura
+mkdir frontend
+mkdir backend
+mkdir certificados
+
+# --------------------------------------------------------------
+# certificados front / back
+# --------------------------------------------------------------
+
+# mapear DNS para IP 216.238.122.49 do registro BR
+# ping comprafacilbb.com.br
+
+cd ~/data/certificados
+
+sudo certbot certonly --standalone -d comprafacilbb.com.br
+
+sudo chmod 644 /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem
+sudo chmod 644 /etc/letsencrypt/live/comprafacilbb.com.br/privkey.pem
+
+sudo openssl pkcs12 -export \
+-out certificate.pfx \
+-inkey /etc/letsencrypt/live/comprafacilbb.com.br/privkey.pem \
+-in /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem
+
+openssl dhparam -out dhparam.pem 4096
+
+
+
+sudo certbot certonly --standalone -d fuelbot.comprafacilbb.com.br
+
+sudo chmod 644 /etc/letsencrypt/live/fuelbot.comprafacilbb.com.br/fullchain.pem
+sudo chmod 644 /etc/letsencrypt/live/fuelbot.comprafacilbb.com.br/privkey.pem
+
+
+cp /etc/letsencrypt/live/fuelbot.comprafacilbb.com.br/privkey.pem privkey-fuelbot.pem
+cp /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem fullchain-fuelbot.pem
+
+
+
+
+# --------------------------------------------------------------
+# setup front
+# --------------------------------------------------------------
+
+cd ~/data/frontend
+
+npm install spdy
+npm install compression
+npm install express
+npm install http-proxy-middleware
+
+cp /etc/letsencrypt/live/comprafacilbb.com.br/privkey.pem privkey.pem
+cp /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem fullchain.pem
+cp ~/data/certificados/dhparam.pem .
+
+# --------------------------------------------------------------
+# baixar front
+# --------------------------------------------------------------
+
+cd ~/data/frontend
+
+curl -L -o dist.zip https://www.dropbox.com/scl/fi/brnvwwr85525y38shrm5x/dist.zip?rlkey=iev15ekdnpj87qdhnsswehx7e&dl=1
+unzip -o dist.zip
+killall -9 node
+nohup sudo node server_prod.js & disown
+
+# --------------------------------------------------------------
+# baixar back
+# --------------------------------------------------------------
+
+cd ~/data/backend
+cp ~/data/certificados/certificate.pfx .
+
+
+curl -L -o publish.zip https://www.dropbox.com/scl/fi/msoy1nace6nru7nj1lfxw/publish.zip?rlkey=va2fhe4tvg8md3bm9m65xkl7t&dl=1
+killall -9 Master
+unzip -o publish.zip
+chmod +x Master
+nohup ./Master 59539 & disown
+nohup ./Master 59540 & disown
+
+# --------------------------------------------------------------
+# atualizar certificados
+# --------------------------------------------------------------
+
+cd ~/data/certificados
+sudo certbot renew
+
+sudo chmod 644 /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem
+sudo chmod 644 /etc/letsencrypt/live/comprafacilbb.com.br/privkey.pem
+
+sudo openssl pkcs12 -export \
+-out certificate.pfx \
+-inkey /etc/letsencrypt/live/comprafacilbb.com.br/privkey.pem \
+-in /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem
+
+openssl dhparam -out dhparam.pem 4096
+
+cd ~/data/frontend
+cp /etc/letsencrypt/live/comprafacilbb.com.br/privkey.pem privkey.pem
+cp /etc/letsencrypt/live/comprafacilbb.com.br/fullchain.pem fullchain.pem
+cp ~/data/certificados/dhparam.pem .
+
+cd ~/data/backend
+cp ~/data/certificados/certificate.pfx .
+
+# --------------------------------------------------------------
+# comandos de interface
+# --------------------------------------------------------------
+
+[ADM_SETUP_DB]
+[ADM_SETUP_DBS]
+[ADM_SCRAPE_SEED]
+[ADM_CLEAN_BUFFON]
+
+
+curl -v http://localhost:59540/checkEmail?email=admin@testecf.com.br

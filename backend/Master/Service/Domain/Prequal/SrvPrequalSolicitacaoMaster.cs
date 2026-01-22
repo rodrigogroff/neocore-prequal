@@ -41,7 +41,7 @@ namespace Master.Service.Domain.Prequal
                 {
                     propostas = batch
                 };
-                tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoes>("/api/propostas-cpts-node", batchData));
+                tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoes>("/api/propostas-leilao-cpts-node", batchData));
             }
 
             var responses = await Task.WhenAll(tasks);

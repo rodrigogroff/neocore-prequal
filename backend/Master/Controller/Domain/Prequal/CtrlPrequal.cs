@@ -4,6 +4,7 @@ using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.Prequal;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Service.Domain.Prequal;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,12 +13,13 @@ using System.Threading.Tasks;
 namespace Master.Controller.Domain.Prequal
 {
     [Tags("Pré-qualificação")]
+    [Authorize]
     public class CtrlPrequal : MasterController
     {
         public CtrlPrequal(IOptions<LocalNetwork> network) : base(network) { }
 
         [HttpPost]
-        [Route("api/propostas-cpts")]
+        [Route("api/propostas-leilao-cpts")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoes), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Filter([FromBody] DtoRequestPrequalSolicitacoes request)
@@ -29,7 +31,7 @@ namespace Master.Controller.Domain.Prequal
             // --b) coletar respostas dos nodos
             // --c) montar resposta final com tudo
 
-            if (!await srv.Exec( GetBearerToken(), GetAuthenticatedUser(), Network.apiRouter, Network.maxCores, request))
+            if (!await srv.Exec(GetBearerToken(), GetAuthenticatedUser(), Network.apiRouter, Network.maxCores, request))
             {
                 return BadRequest(new DtoServiceError
                 {
@@ -43,7 +45,7 @@ namespace Master.Controller.Domain.Prequal
 
         [HttpPost]
         [ApiExplorerSettings(IgnoreApi = true)]
-        [Route("api/propostas-cpts-node")]
+        [Route("api/propostas-leilao-cpts-node")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoes), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> NodeFilter([FromBody] DtoRequestPrequalSolicitacoes request)

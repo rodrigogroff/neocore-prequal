@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Master.Entity.Dto.Request.Domain.Prequal;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
@@ -12,8 +13,9 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
     }
 
     [ExcludeFromCodeCoverage]
-    public class PropostaDataPrevResponse
+    public class PropostaDataPrevResponse : PropostaDataPrevRequest
     {
+        /*
         public int? IdSolicitacao { get; set; }
         public long? Cpf { get; set; }
         public string? Matricula { get; set; }
@@ -31,8 +33,10 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
         public PEPResponse? PessoaExpostaPoliticamente { get; set; }
 
         public List<AlertaResponse>? Alertas { get; set; }
+        */
     }
 
+    /*
     [ExcludeFromCodeCoverage]
     public class PEPResponse
     {
@@ -69,4 +73,5 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
         public string? DataAvisoPrevio { get; set; }
         public string? DataFimAvisoPrevio { get; set; }
     }
+    */
 }

@@ -1,8 +1,8 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.1",
   "info": {
-    "title": "NeoCore API -- Bureau de pré-qualificação",
-    "description": "Endpoints para pré-qualificação de propostas de crédito",
+    "title": "NeoCore API -- Bureau Bancário",
+    "description": "Endpoints para serviços bancários de crédito",
     "version": "v1"
   },
   "paths": {
@@ -32,7 +32,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -74,7 +74,7 @@
         }
       }
     },
-    "/api/propostas-cpts": {
+    "/api/propostas-leilao-cpts": {
       "post": {
         "tags": [
           "Pré-qualificação"
@@ -100,7 +100,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -150,58 +150,6 @@
         "properties": {
           "tipoAlerta": {
             "$ref": "#/components/schemas/TipoAlertaRequest"
-          },
-          "dataReferencia": {
-            "type": "string",
-            "nullable": true
-          },
-          "idEvento": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "codigoMotivoAfastamento": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "dataAfastamento": {
-            "type": "string",
-            "nullable": true
-          },
-          "dataTerminoAfastamento": {
-            "type": "string",
-            "nullable": true
-          },
-          "codigoMotivoDesligamento": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "dataDesligamento": {
-            "type": "string",
-            "nullable": true
-          },
-          "dataTerminoDesligamento": {
-            "type": "string",
-            "nullable": true
-          },
-          "dataAvisoPrevio": {
-            "type": "string",
-            "nullable": true
-          },
-          "dataFimAvisoPrevio": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "AlertaResponse": {
-        "type": "object",
-        "properties": {
-          "tipoAlerta": {
-            "$ref": "#/components/schemas/TipoAlertaResponse"
           },
           "dataReferencia": {
             "type": "string",
@@ -352,37 +300,7 @@
         },
         "additionalProperties": false
       },
-      "IEResponse": {
-        "type": "object",
-        "properties": {
-          "codigo": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "descricao": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "PEPRequest": {
-        "type": "object",
-        "properties": {
-          "codigo": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "descricao": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PEPResponse": {
         "type": "object",
         "properties": {
           "codigo": {
@@ -489,7 +407,7 @@
             "nullable": true
           },
           "inscricaoEmpregador": {
-            "$ref": "#/components/schemas/IEResponse"
+            "$ref": "#/components/schemas/IERequest"
           },
           "numeroInscricaoEmpregador": {
             "type": "integer",
@@ -533,12 +451,12 @@
             "nullable": true
           },
           "pessoaExpostaPoliticamente": {
-            "$ref": "#/components/schemas/PEPResponse"
+            "$ref": "#/components/schemas/PEPRequest"
           },
           "alertas": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AlertaResponse"
+              "$ref": "#/components/schemas/AlertaRequest"
             },
             "nullable": true
           }
@@ -559,38 +477,20 @@
           }
         },
         "additionalProperties": false
-      },
-      "TipoAlertaResponse": {
-        "type": "object",
-        "properties": {
-          "codigo": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "descricao": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       }
     },
     "securitySchemes": {
       "Bearer": {
         "type": "apiKey",
-        "description": "JWT Authorization header usando o esquema Bearer. Exemplo: \"Bearer {token}\"",
+        "description": "JWT Authorization header usando o esquema Bearer. Exemplo: \"Authorization: Bearer {token}\"",
         "name": "Authorization",
         "in": "header"
       }
     }
   },
-  "tags": [
+  "security": [
     {
-      "name": "_token"
-    },
-    {
-      "name": "Pré-qualificação"
+      "Bearer": [ ]
     }
   ]
 }

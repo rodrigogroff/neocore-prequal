@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Master.Entity.Dto.Request.Domain.Auth.DtoRequestLoginInformation",
         "IsRequired": true
       }
@@ -40,13 +40,13 @@
   {
     "ContainingType": "Master.Controller.Domain.Prequal.CtrlPrequal",
     "Method": "Filter",
-    "RelativePath": "api/propostas-cpts",
+    "RelativePath": "api/propostas-leilao-cpts",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Master.Entity.Dto.Request.Domain.Prequal.DtoRequestPrequalSolicitacoes",
         "IsRequired": true
       }

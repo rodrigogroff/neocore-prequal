@@ -16,10 +16,8 @@ namespace Master.Controller.Helper
         public string ComposeTokenForSession(DtoAuthenticatedUser user)
         {
             const string sUser = "user";
-
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(LocalNetwork.Secret);
-
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
@@ -27,13 +25,13 @@ namespace Master.Controller.Helper
                     new Claim(sUser, JsonSerializer.Serialize(user)),
                 }),
                 Expires = DateTime.UtcNow.AddHours(24),
+                Issuer = LocalNetwork.Issuer,
+                Audience = LocalNetwork.Audience,
                 SigningCredentials = new SigningCredentials(
                                         new SymmetricSecurityKey(key),
                                         SecurityAlgorithms.HmacSha256Signature),
             };
-
             var token = tokenHandler.CreateToken(tokenDescriptor);
-
             return tokenHandler.WriteToken(token);
         }
     }

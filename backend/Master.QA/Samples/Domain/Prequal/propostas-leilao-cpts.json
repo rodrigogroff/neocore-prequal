@@ -1,0 +1,48 @@
+{
+  "propostas": [
+    {
+      "idSolicitacao": 2026,
+      "cpf": 69559564005,
+      "matricula": "mat-56",
+      "inscricaoEmpregador": {
+        "codigo": 1,
+        "descricao": "CNPJ"
+      },
+      "numeroInscricaoEmpregador": 84676472000159,
+      "valorLiberado": 10000,
+      "nroParcelas": 10,
+      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
+      "nomeTrabalhador": "Reginaldo Leme",
+      "dataNascimento": "17041976",
+      "margemDisponivel": 500,
+      "elegivelEmprestimo": true,
+      "dataAdmissao": "01122024",
+      "pessoaExpostaPoliticamente": {
+        "codigo": 0,
+        "descricao": "Sem cargo politico"
+      }
+    },
+    {
+      "idSolicitacao": 2027,
+      "cpf": 70949121029,
+      "matricula": "mat-59",
+      "inscricaoEmpregador": {
+        "codigo": 1,
+        "descricao": "CNPJ"
+      },
+      "numeroInscricaoEmpregador": 67853339000101,
+      "valorLiberado": 20000,
+      "nroParcelas": 20,
+      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
+      "nomeTrabalhador": "Reginaldo Leme",
+      "dataNascimento": "17041976",
+      "margemDisponivel": 150,
+      "elegivelEmprestimo": false,
+      "dataAdmissao": "01122024",
+      "pessoaExpostaPoliticamente": {
+        "codigo": 1,
+        "descricao": "Cargo politico"
+      }
+    }
+  ]
+}

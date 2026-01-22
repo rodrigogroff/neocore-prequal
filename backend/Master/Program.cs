@@ -35,12 +35,7 @@ namespace Master
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-            /*
-            var serviceProvider = host.Services;
-            var startupArgs = serviceProvider.GetRequiredService<StartupArgs>();
-            startupArgs.port = GetPort(args).ToString();
-            startupArgs.location = GetLocation(args).ToString();
-            */
+            
             host.Run();
         }
 
@@ -51,12 +46,10 @@ namespace Master
                 webBuilder.UseStartup<Startup>();
                 webBuilder.UseKestrel((hostingContext, options) =>
                 {
-#if DEBUG
+
                     options.Listen(IPAddress.Parse(GetLocation(args)), GetPort(args), listenOptions => { });
-#endif
 
-#if RELEASE
-
+                    /*
                     try
                     {
                         options.Listen(IPAddress.Parse(GetLocation(args)), GetPort(args), listenOptions =>
@@ -68,7 +61,8 @@ namespace Master
                     {
                         Console.WriteLine (ex.ToString());
                     }
-#endif
+                    */
+
                 });
 
 #if RELEASE                

@@ -20,15 +20,26 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="M:Master.Repository.BusinessCustomerRepository.SetParamsTypeCustomerInteraction(Npgsql.NpgsqlCommand,Database.TypeCustomerInteraction)">
-            -----------------------------------
-            TypeCustomerInteraction
-            -----------------------------------
+        <member name="M:Master.Service.Domain.Prequal.SrvPrequalSolicitacaoMaster.DivideBatches(System.Collections.Generic.List{Master.Entity.Dto.Request.Domain.Prequal.PropostaDataPrevRequest},System.Int32)">
+            <summary>
+            100 items / 4 cores = [25, 25, 25, 25]
+            102 items / 4 cores = [26, 26, 25, 25]
+            </summary>
         </member>
-        <member name="M:Master.Repository.BusinessCustomerRepository.SetParamsCustomerInteraction(Npgsql.NpgsqlCommand,Database.CustomerInteraction)">
-            -----------------------------------
-            CustomerInteraction
-            -----------------------------------
+        <member name="M:Master.Service.Infra.ApiClient.SetBearerToken(System.String)">
+            <summary>
+            Set Bearer token for authorization
+            </summary>
+        </member>
+        <member name="M:Master.Service.Infra.ApiClient.PostAsync``1(System.String,System.Object)">
+            <summary>
+            POST request with body
+            </summary>
+        </member>
+        <member name="T:Master.Service.Infra.ApiResponse`1">
+            <summary>
+            API response wrapper
+            </summary>
         </member>
     </members>
 </doc>

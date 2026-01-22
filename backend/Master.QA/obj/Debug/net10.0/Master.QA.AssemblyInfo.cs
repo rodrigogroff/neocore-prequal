@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Master.QA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c103c79c1af84eb29d758d43657663986af97aae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f8628604ca3607f57265e65545f982a32102102")]
 [assembly: System.Reflection.AssemblyProductAttribute("Master.QA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Master.QA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

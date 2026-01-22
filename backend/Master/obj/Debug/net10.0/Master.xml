@@ -20,7 +20,7 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="M:Master.Service.Domain.Prequal.SrvPrequalSolicitacaoMaster.DivideBatches``1(System.Collections.Generic.List{``0},System.Int32)">
+        <member name="M:Master.Service.Domain.Prequal.SrvPrequalSolicitacaoMaster.DivideBatches(System.Collections.Generic.List{Master.Entity.Dto.Request.Domain.Prequal.PropostaDataPrevRequest},System.Int32)">
             <summary>
             100 items / 4 cores = [25, 25, 25, 25]
             102 items / 4 cores = [26, 26, 25, 25]

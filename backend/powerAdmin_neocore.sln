@@ -15,24 +15,33 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Service|Any CPU = Service|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DD63F4DE-5733-4825-9257-DDD1449AA4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD63F4DE-5733-4825-9257-DDD1449AA4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD63F4DE-5733-4825-9257-DDD1449AA4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD63F4DE-5733-4825-9257-DDD1449AA4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD63F4DE-5733-4825-9257-DDD1449AA4CB}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{DD63F4DE-5733-4825-9257-DDD1449AA4CB}.Service|Any CPU.Build.0 = Service|Any CPU
 		{F3CFA8BE-D8F3-42BD-B588-DA65A0EF4BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3CFA8BE-D8F3-42BD-B588-DA65A0EF4BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3CFA8BE-D8F3-42BD-B588-DA65A0EF4BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3CFA8BE-D8F3-42BD-B588-DA65A0EF4BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3CFA8BE-D8F3-42BD-B588-DA65A0EF4BC9}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{F3CFA8BE-D8F3-42BD-B588-DA65A0EF4BC9}.Service|Any CPU.Build.0 = Service|Any CPU
 		{420DF7BA-BA03-4326-8BD3-EB9AEBD93A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{420DF7BA-BA03-4326-8BD3-EB9AEBD93A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{420DF7BA-BA03-4326-8BD3-EB9AEBD93A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{420DF7BA-BA03-4326-8BD3-EB9AEBD93A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420DF7BA-BA03-4326-8BD3-EB9AEBD93A12}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{420DF7BA-BA03-4326-8BD3-EB9AEBD93A12}.Service|Any CPU.Build.0 = Service|Any CPU
 		{D8D39618-4FC1-4D63-93AB-AFD617AB3C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8D39618-4FC1-4D63-93AB-AFD617AB3C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8D39618-4FC1-4D63-93AB-AFD617AB3C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8D39618-4FC1-4D63-93AB-AFD617AB3C04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8D39618-4FC1-4D63-93AB-AFD617AB3C04}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{D8D39618-4FC1-4D63-93AB-AFD617AB3C04}.Service|Any CPU.Build.0 = Service|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
