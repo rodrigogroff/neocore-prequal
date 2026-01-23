@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 namespace Master.Entity.Dto.Request.Domain.Prequal
 {
     public class DtoRequestPrequalSolicitacoes
     {
         public List<PropostaDataPrevRequest> propostas {  get; set; }
-
     }
 
     [ExcludeFromCodeCoverage]
@@ -16,7 +16,10 @@ namespace Master.Entity.Dto.Request.Domain.Prequal
         public int? IdSolicitacao { get; set; }
         public long? Cpf { get; set; }
         public string? Matricula { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public IERequest? InscricaoEmpregador { get; set; }
+
         public long? NumeroInscricaoEmpregador { get; set; }
         public double? ValorLiberado { get; set; }
         public int? NroParcelas { get; set; }
@@ -27,8 +30,10 @@ namespace Master.Entity.Dto.Request.Domain.Prequal
         public bool? ElegivelEmprestimo { get; set; }
         public string? DataAdmissao { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PEPRequest? PessoaExpostaPoliticamente { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AlertaRequest>? Alertas { get; set; }
     }
 
@@ -59,13 +64,29 @@ namespace Master.Entity.Dto.Request.Domain.Prequal
         public TipoAlertaRequest? TipoAlerta { get; set; }
         public string? DataReferencia { get; set; }
         public int? IdEvento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? CodigoMotivoAfastamento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DataAfastamento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DataTerminoAfastamento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? CodigoMotivoDesligamento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DataDesligamento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DataTerminoDesligamento { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DataAvisoPrevio { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DataFimAvisoPrevio { get; set; }
     }
 }

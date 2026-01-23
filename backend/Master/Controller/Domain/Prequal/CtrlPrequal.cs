@@ -31,7 +31,7 @@ namespace Master.Controller.Domain.Prequal
             // --b) coletar respostas dos nodos
             // --c) montar resposta final com tudo
 
-            if (!await srv.Exec(GetBearerToken(), GetAuthenticatedUser(), Network.apiRouter, Network.maxCores, request))
+            if (!await srv.Exec(GetBearerToken(), GetAuthenticatedUser(), Network.localGateway, Network.maxCores, request))
             {
                 return BadRequest(new DtoServiceError
                 {
@@ -44,7 +44,7 @@ namespace Master.Controller.Domain.Prequal
         }
 
         [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
+       // [ApiExplorerSettings(IgnoreApi = true)]
         [Route("api/propostas-leilao-cpts-node")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoes), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]

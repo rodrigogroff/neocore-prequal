@@ -30,7 +30,7 @@ namespace Master
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "NeoCore API -- Bureau Bancário",
+                    Title = "NeoCore API -- Bureau Bancário -- 01.01.03",
                     Version = "v1",
                     Description = "Endpoints para serviços bancários de crédito"
                 });

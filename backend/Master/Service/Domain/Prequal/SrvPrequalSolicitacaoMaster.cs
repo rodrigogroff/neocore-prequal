@@ -5,6 +5,7 @@ using Master.Service.Base;
 using Master.Service.Infra;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Master.Service.Domain.Prequal
@@ -20,6 +21,8 @@ namespace Master.Service.Domain.Prequal
             int maxCores,
             DtoRequestPrequalSolicitacoes request)
         {
+            Stopwatch sw = Stopwatch.StartNew();
+            
             OutDto = new DtoResponsePrequalSolicitacoes
             {
                 qualificadas = [],
@@ -59,6 +62,10 @@ namespace Master.Service.Domain.Prequal
                 if (_rData.rejeitadas?.Count > 0)
                     OutDto.rejeitadas.AddRange(_rData.rejeitadas);
             }
+
+            sw.Stop();
+
+            OutDto.milis = sw.ElapsedMilliseconds;
 
             return true;
         }

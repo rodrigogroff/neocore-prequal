@@ -74,5 +74,43 @@
     "Tags": [
       "Pr\u00E9-qualifica\u00E7\u00E3o"
     ]
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.Prequal.CtrlPrequal",
+    "Method": "NodeFilter",
+    "RelativePath": "api/propostas-leilao-cpts-node",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Master.Entity.Dto.Request.Domain.Prequal.DtoRequestPrequalSolicitacoes",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Master.Entity.Dto.Response.Domain.Prequal.DtoResponsePrequalSolicitacoes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Master.Entity.Dto.Infra.DtoServiceError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Pr\u00E9-qualifica\u00E7\u00E3o"
+    ]
   }
 ]

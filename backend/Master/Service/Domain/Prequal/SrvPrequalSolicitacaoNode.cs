@@ -1,6 +1,7 @@
 ﻿using Master.Entity.Dto.Request.Domain.Prequal;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Service.Base;
+using Master.Service.Mappers;
 using System.Threading.Tasks;
 
 namespace Master.Service.Domain.Prequal
@@ -33,13 +34,15 @@ namespace Master.Service.Domain.Prequal
                     reject = true;
                 }
 
+                var cpy = PropostaDataPrevResponseMapper.Copy(_prop);
+
                 if (reject)
                 {
-                    OutDto.rejeitadas.Add(_prop as PropostaDataPrevResponse);
+                    OutDto.rejeitadas.Add(cpy);
                 }
                 else
                 {
-                    OutDto.qualificadas.Add(_prop as PropostaDataPrevResponse);
+                    OutDto.qualificadas.Add(cpy);
                 }
             }
 

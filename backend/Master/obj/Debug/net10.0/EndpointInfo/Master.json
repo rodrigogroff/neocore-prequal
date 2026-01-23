@@ -141,6 +141,74 @@
           }
         }
       }
+    },
+    "/api/propostas-leilao-cpts-node": {
+      "post": {
+        "tags": [
+          "Pré-qualificação"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalSolicitacoes"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalSolicitacoes"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalSolicitacoes"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -254,6 +322,10 @@
               "$ref": "#/components/schemas/PropostaDataPrevResponse"
             },
             "nullable": true
+          },
+          "milis": {
+            "type": "integer",
+            "format": "int64"
           }
         },
         "additionalProperties": false
