@@ -90,17 +90,17 @@ namespace Master
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        Console.WriteLine($"Token validation failed: {context.Exception.Message}");
+                        
                         return System.Threading.Tasks.Task.CompletedTask;
                     },
                     OnTokenValidated = context =>
                     {
-                        Console.WriteLine("Token validated successfully");
+                        
                         return System.Threading.Tasks.Task.CompletedTask;
                     },
                     OnMessageReceived = context =>
                     {
-                        Console.WriteLine($"Token received: {context.Token?.Substring(0, Math.Min(20, context.Token?.Length ?? 0))}...");
+                        
                         return System.Threading.Tasks.Task.CompletedTask;
                     }
                 };

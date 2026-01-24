@@ -9,8 +9,12 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
     public class DtoResponsePrequalSolicitacoes : DtoResponsePrequalSolicitacoesNode
     {
         public long milis { get; set; }
-        public long itens { get; set; }
+        public long totalProcessamentos { get; set; }
         public double msPerItem { get; set; }
+        public long totalQualificadas { get; set; }
+        public long totalRejeitadas { get; set; }
+        public double pctPreQualificacao { get; set; }
+
     }
 
     [ExcludeFromCodeCoverage]

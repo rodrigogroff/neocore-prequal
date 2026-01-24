@@ -69,8 +69,13 @@ namespace Master.Service.Domain.Prequal
             sw.Stop();
 
             OutDto.milis = sw.ElapsedMilliseconds;
-            OutDto.itens = OutDto.qualificadas.Count + OutDto.rejeitadas.Count;
-            OutDto.msPerItem = (double) OutDto.milis / OutDto.itens;
+            OutDto.totalQualificadas = OutDto.qualificadas.Count;
+            OutDto.totalRejeitadas = OutDto.rejeitadas.Count;
+            OutDto.totalProcessamentos = OutDto.totalQualificadas + OutDto.totalRejeitadas;
+            OutDto.msPerItem = Math.Round((double)OutDto.milis / OutDto.totalProcessamentos, 2);
+            OutDto.pctPreQualificacao = OutDto.totalProcessamentos > 0
+                ? Math.Round((double)OutDto.totalRejeitadas / OutDto.totalProcessamentos * 100, 2)
+                : 0;
 
             return true;
         }
