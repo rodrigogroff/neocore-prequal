@@ -1,6 +1,7 @@
 ﻿using Master.Controller.Infra;
 using Master.Entity;
 using Master.Entity.Dto.Infra;
+using Master.Entity.Dto.Request.Domain.BackOffice.Company;
 using Master.Entity.Dto.Response.Domain.BackOffice.Company;
 using Master.Service.Domain.BackOffice.Company;
 using Microsoft.AspNetCore.Authorization;
@@ -38,11 +39,23 @@ namespace Master.Controller.Domain.Prequal
 
         [HttpGet]
         [Route("api/fatura-servicos")]
-        //[ProducesResponseType(typeof(DtoResponsePrequalConfigLeilao), StatusCodes.Status200OK)]
-        public async Task<ActionResult> GetFaturaServicos()
+        [ProducesResponseType(typeof(DtoResponseCompanyFinanceiroFaturaGet), StatusCodes.Status200OK)]
+        public async Task<ActionResult> GetFaturaServicos([FromQuery] DtoRequestCompanyFinanceiroFatura request)
         {
-            return Ok();
+            var srv = RegisterService<SrvCompanyFinanceiroFaturaGet>();
+
+            if (!await srv.Exec(GetAuthenticatedUser(), request))
+            {
+                return BadRequest(new DtoServiceError
+                {
+                    codigo = srv.errorCode,
+                    mensagem = srv.errorMessage
+                });
+            }
+
+            return Ok(srv.OutDto);
         }
+
         [HttpGet]
         [Route("api/fatura-servicos-detalhada")]
         //[ProducesResponseType(typeof(DtoResponsePrequalConfigLeilao), StatusCodes.Status200OK)]

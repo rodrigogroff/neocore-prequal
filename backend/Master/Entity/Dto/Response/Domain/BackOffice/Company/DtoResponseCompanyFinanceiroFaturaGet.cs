@@ -1,0 +1,16 @@
+﻿namespace Master.Entity.Dto.Response.Domain.BackOffice.Company
+{
+    public class DtoResponseCompanyFinanceiroFaturaGet
+    {
+        public string ano { get; set; }
+        public string mes { get; set; }
+        public double valorAssinaturaL1 { get; set; }
+        public double valorPrecoTransacaoL1 { get; set; }
+        public double valorPrecoTransacaoItemL1 { get; set; }
+        public int qtdTransacaoL1 { get; set; }
+        public int qtdTransacaoItemL1 { get; set; }
+        public double valorCalcTransacaoL1 { get; set; }
+        public double valorCalcTransacaoItemL1 { get; set; }
+        public double valorTotal { get; set; }
+    }
+}

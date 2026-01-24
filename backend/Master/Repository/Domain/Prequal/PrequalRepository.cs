@@ -1,7 +1,10 @@
 ﻿using Dapper;
+using Master.Entity.Database.Domain.Company;
 using Master.Entity.Database.Domain.Prequal;
 using Npgsql;
 using NpgsqlTypes;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Master.Repository.Domain.Prequal
 {
@@ -12,6 +15,7 @@ namespace Master.Repository.Domain.Prequal
         void UpdatePrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl);
 
         long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl, bool retId = false);
+        List<Tb_LogProcPrequalLeilao> GetLogs(int fkCompany, int year, int month);
     }
 
     public class PrequalRepository : BaseRepository, IPrequalRepository
@@ -164,6 +168,13 @@ namespace Master.Repository.Domain.Prequal
             if (retId) return (long)cmd.ExecuteScalar();
             cmd.ExecuteNonQuery();
             return 0;
+        }
+
+        public List<Tb_LogProcPrequalLeilao> GetLogs(int fkCompany, int year, int month)
+        {
+            const string query = "select * from \"LogProcPrequalLeilao\" where \"fkCompany\"=@fkCompany and \"nuYear\"=@year and \"nuMonth\"=@month";
+
+            return db.Query<Tb_LogProcPrequalLeilao>(query, new { fkCompany, year, month } ).ToList();
         }
     }
 }
