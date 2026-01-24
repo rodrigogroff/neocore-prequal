@@ -21,8 +21,8 @@ namespace Master.Repository.Domain.Prequal
             return db.QueryFirstOrDefault<Tb_PrequalLeilaoConfig>(query, new { fkCompany });
         }
 
-        public void SetParamsUser(NpgsqlCommand cmd, Tb_PrequalLeilaoConfig mdl)
-        {            
+        public void SetParamsPrequalLeilaoConfig(NpgsqlCommand cmd, Tb_PrequalLeilaoConfig mdl)
+        {
             const
                string
                    id = "id",
@@ -30,6 +30,8 @@ namespace Master.Repository.Domain.Prequal
                    bEmpregadorCnpj = "bEmpregadorCnpj",
                    bEmpregadorCpf = "bEmpregadorCpf",
                    bPep = "bPep",
+                   bAlertaSaude = "bAlertaSaude",
+                   bAlertaAvisoPrevio = "bAlertaAvisoPrevio",
                    vrLibMin = "vrLibMin",
                    vrLibMax = "vrLibMax",
                    nuParcMin = "nuParcMin",
@@ -48,6 +50,8 @@ namespace Master.Repository.Domain.Prequal
                 new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bEmpregadorCnpj, Value = GetNull(mdl.bEmpregadorCnpj) },
                 new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bEmpregadorCpf, Value = GetNull(mdl.bEmpregadorCpf) },
                 new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bPep, Value = GetNull(mdl.bPep) },
+                new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bAlertaSaude, Value = GetNull(mdl.bAlertaSaude) },
+                new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bAlertaAvisoPrevio, Value = GetNull(mdl.bAlertaAvisoPrevio) },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = vrLibMin, Value = mdl.vrLibMin },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = vrLibMax, Value = mdl.vrLibMax },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuParcMin, Value = mdl.nuParcMin },
@@ -64,16 +68,16 @@ namespace Master.Repository.Domain.Prequal
         public long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl, bool retId = false)
         {
             const string query =
-                "INSERT INTO \"PrequalLeilaoConfig\" (\"fkCompany\",\"bEmpregadorCnpj\",\"bEmpregadorCpf\",\"bPep\",\"vrLibMin\"," +
+                "INSERT INTO \"PrequalLeilaoConfig\" (\"fkCompany\",\"bEmpregadorCnpj\",\"bEmpregadorCpf\",\"bPep\",\"bAlertaSaude\",\"bAlertaAvisoPrevio\",\"vrLibMin\"," +
                 "\"vrLibMax\",\"nuParcMin\",\"nuParcMax\",\"nuIdadeMin\",\"nuIdadeMax\",\"vrMargemMin\",\"vrMargemMax\",\"nuMesesAdmissaoMin\",\"nuMesesAdmissaoMax\"" +
                 ") VALUES " +
-                "(@fkCompany,@bEmpregadorCnpj,@bEmpregadorCpf,@bPep,@vrLibMin,@vrLibMax,@nuParcMin,@nuParcMax,@nuIdadeMin,@nuIdadeMax,@vrMargemMin,@vrMargemMax," +
+                "(@fkCompany,@bEmpregadorCnpj,@bEmpregadorCpf,@bPep,@bAlertaSaude,@bAlertaAvisoPrevio,@vrLibMin,@vrLibMax,@nuParcMin,@nuParcMax,@nuIdadeMin,@nuIdadeMax,@vrMargemMin,@vrMargemMax," +
                 "@nuMesesAdmissaoMin,@nuMesesAdmissaoMax);";
 
             const string currval = "select currval('public.\"PrequalLeilaoConfig_id_seq\"');";
 
             using var cmd = new NpgsqlCommand(retId ? query + currval : query, db);
-            SetParamsUser(cmd, mdl);
+            SetParamsPrequalLeilaoConfig(cmd, mdl);
             if (retId) return (long)cmd.ExecuteScalar();
             cmd.ExecuteNonQuery();
             return 0;
@@ -85,6 +89,8 @@ namespace Master.Repository.Domain.Prequal
                 "\"bEmpregadorCnpj\"=@bEmpregadorCnpj," +
                 "\"bEmpregadorCpf\"=@bEmpregadorCpf," +
                 "\"bPep\"=@bPep," +
+                "\"bAlertaSaude\"=@bAlertaSaude," +
+                "\"bAlertaAvisoPrevio\"=@bAlertaAvisoPrevio," +
                 "\"vrLibMin\"=@vrLibMin," +
                 "\"vrLibMax\"=@vrLibMax," +
                 "\"nuParcMin\"=@nuParcMin," +
@@ -98,7 +104,7 @@ namespace Master.Repository.Domain.Prequal
                 " where id=@id";
 
             using var cmd = new NpgsqlCommand(query, db);
-            SetParamsUser(cmd, mdl);
+            SetParamsPrequalLeilaoConfig(cmd, mdl);
             cmd.ExecuteNonQuery();
         }
     }

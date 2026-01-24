@@ -18,6 +18,7 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
     {
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? _motivoRejeitado { get; set; }
+        public string? _detalheRejeitado { get; set; }
     }
 
     [ExcludeFromCodeCoverage]

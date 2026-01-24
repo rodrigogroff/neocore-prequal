@@ -22,6 +22,8 @@ ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "fkCompany" in
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bEmpregadorCnpj" boolean;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bEmpregadorCpf" boolean;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bPep" boolean;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bAlertaSaude" boolean;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bAlertaAvisoPrevio" boolean;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrLibMin" int;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrLibMax" int;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuParcMin" int;

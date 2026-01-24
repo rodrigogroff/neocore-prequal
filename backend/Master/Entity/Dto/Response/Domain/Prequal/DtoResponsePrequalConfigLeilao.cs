@@ -5,9 +5,11 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
     [ExcludeFromCodeCoverage]
     public class DtoResponsePrequalConfigLeilao
     {
-        public bool? ManterEmpregadorCnpj { get; set; }
-        public bool? ManterEmpregadorCpf { get; set; }
-        public bool? ManterPep { get; set; }
+        public bool? DescarteEmpregadorCnpj { get; set; }
+        public bool? DescarteEmpregadorCpf { get; set; }
+        public bool? DescartePep { get; set; }
+        public bool? DescarteAvisoPrevio { get; set; }
+        public bool? DescarteAvisoSaude { get; set; }
         public int? RangeValorLiberadoMin { get; set; }
         public int? RangeValorLiberadoMax { get; set; }
         public int? RangeParcelasMin { get; set; }

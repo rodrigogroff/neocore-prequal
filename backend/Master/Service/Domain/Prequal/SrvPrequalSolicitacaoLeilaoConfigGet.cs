@@ -26,6 +26,8 @@ namespace Master.Service.Domain.Prequal
                     bEmpregadorCnpj = true,
                     bEmpregadorCpf = true,
                     bPep = false,
+                    bAlertaAvisoPrevio = true,
+                    bAlertaSaude = true,
                     nuIdadeMax = 99,
                     nuIdadeMin = 21,
                     nuMesesAdmissaoMax = 200,
@@ -43,9 +45,11 @@ namespace Master.Service.Domain.Prequal
 
             OutDto = new DtoResponsePrequalConfigLeilao
             {
-                ManterEmpregadorCnpj = itemDb.bEmpregadorCnpj,
-                ManterEmpregadorCpf = itemDb.bEmpregadorCpf,
-                ManterPep = itemDb.bPep,
+                DescarteEmpregadorCnpj = itemDb.bEmpregadorCnpj,
+                DescarteEmpregadorCpf = itemDb.bEmpregadorCpf,
+                DescartePep = itemDb.bPep,
+                DescarteAvisoPrevio = itemDb.bAlertaAvisoPrevio,
+                DescarteAvisoSaude = itemDb.bAlertaSaude,
                 RangeIdadeMax = itemDb.nuIdadeMax,
                 RangeIdadeMin = itemDb.nuIdadeMin,
                 RangeMesesAdmissaoMax = itemDb.nuMesesAdmissaoMax,
