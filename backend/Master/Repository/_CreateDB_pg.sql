@@ -35,3 +35,18 @@ ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrMargemMax" 
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAdmissaoMin" int;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAdmissaoMax" int;
 
+CREATE TABLE IF NOT EXISTS public."LogProcPrequalLeilao" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "fkCompany" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "dtLog" timestamp without time zone;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuYear" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuMonth" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuDay" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuHour" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuMinute" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotMS" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotProcs" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotQualificadas" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotRejeitadas" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN IF NOT EXISTS "nuPctFilter" numeric(10,2);
+
+

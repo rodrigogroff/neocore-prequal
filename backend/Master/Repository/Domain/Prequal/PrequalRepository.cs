@@ -10,6 +10,8 @@ namespace Master.Repository.Domain.Prequal
         Tb_PrequalLeilaoConfig? GetPrequalLeilaoConfig(int fkCompany);                
         long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl, bool retId = false);
         void UpdatePrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl);
+
+        long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl, bool retId = false);
     }
 
     public class PrequalRepository : BaseRepository, IPrequalRepository
@@ -106,6 +108,62 @@ namespace Master.Repository.Domain.Prequal
             using var cmd = new NpgsqlCommand(query, db);
             SetParamsPrequalLeilaoConfig(cmd, mdl);
             cmd.ExecuteNonQuery();
+        }
+
+       
+
+        public void SetParamsLogProcPrequalLeilao(NpgsqlCommand cmd, Tb_LogProcPrequalLeilao mdl)
+        {
+            const
+               string
+                    id = "id",
+                    fkCompany = "fkCompany",
+                    dtLog = "dtLog",
+                    nuYear = "nuYear",
+                    nuMonth = "nuMonth",
+                    nuDay = "nuDay",
+                    nuMinute = "nuMinute",
+                    nuHour = "nuHour",
+                    nuTotMS = "nuTotMS",
+                    nuTotProcs = "nuTotProcs",
+                    nuTotQualificadas = "nuTotQualificadas",
+                    nuTotRejeitadas = "nuTotRejeitadas",
+                    nuPctFilter = "nuPctFilter";
+
+            cmd.Parameters.AddRange(new NpgsqlParameter[]
+            {
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = id, Value = mdl.id },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = fkCompany, Value = GetNull(mdl.fkCompany) },
+                new() { NpgsqlDbType = NpgsqlDbType.Date, ParameterName = dtLog, Value = GetNull(mdl.dtLog) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuYear, Value = GetNull(mdl.nuYear) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMonth, Value = GetNull(mdl.nuMonth) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuDay, Value = GetNull(mdl.nuDay) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMinute, Value = GetNull(mdl.nuMinute) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuHour, Value = GetNull(mdl.nuHour) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuTotMS, Value = GetNull(mdl.nuTotMS) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuTotProcs, Value = GetNull(mdl.nuTotProcs) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuTotQualificadas, Value = GetNull(mdl.nuTotQualificadas) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuTotRejeitadas, Value = GetNull(mdl.nuTotRejeitadas) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = nuPctFilter, Value = GetNull(mdl.nuPctFilter) },
+
+            });
+        }
+
+        public long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl, bool retId = false)
+        {
+            const string query =
+                "INSERT INTO \"LogProcPrequalLeilao\" (\"fkCompany\",\"dtLog\",\"nuYear\",\"nuMonth\",\"nuDay\",\"nuHour\",\"nuMinute\"," +
+                "\"nuTotMS\",\"nuTotProcs\",\"nuTotQualificadas\",\"nuTotRejeitadas\",\"nuPctFilter\"" +
+                ") VALUES " +
+                "(@fkCompany,@dtLog,@nuYear,@nuMonth,@nuDay,@nuHour,@nuMinute,@nuTotMS,@nuTotProcs,@nuTotQualificadas,@nuTotRejeitadas,@nuPctFilter);";
+
+            const string currval = "select currval('public.\"LogProcPrequalLeilao_id_seq\"');";
+
+            using var cmd = new NpgsqlCommand(retId ? query + currval : query, db);
+            SetParamsLogProcPrequalLeilao(cmd, mdl);
+            if (retId) return (long)cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
+            return 0;
         }
     }
 }

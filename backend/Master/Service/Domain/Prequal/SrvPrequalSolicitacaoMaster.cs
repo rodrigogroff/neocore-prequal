@@ -1,4 +1,5 @@
-﻿using Master.Entity.Dto.Infra;
+﻿using Master.Entity.Database.Domain.Prequal;
+using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.Prequal;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Service.Base;
@@ -66,9 +67,12 @@ namespace Master.Service.Domain.Prequal
                     OutDto.rejeitadas.AddRange(_rData.rejeitadas);
             }
 
-            sw.Stop();
+            StartDatabase(Network);
 
-            OutDto.milis = sw.ElapsedMilliseconds;
+            var repo = RepoPrequal();
+
+            var dtNow = DateTime.Now;
+
             OutDto.totalQualificadas = OutDto.qualificadas.Count;
             OutDto.totalRejeitadas = OutDto.rejeitadas.Count;
             OutDto.totalProcessamentos = OutDto.totalQualificadas + OutDto.totalRejeitadas;
@@ -76,6 +80,26 @@ namespace Master.Service.Domain.Prequal
             OutDto.pctPreQualificacao = OutDto.totalProcessamentos > 0
                 ? Math.Round((double)OutDto.totalRejeitadas / OutDto.totalProcessamentos * 100, 2)
                 : 0;
+
+            sw.Stop();
+
+            OutDto.milis = (int)sw.Elapsed.TotalMilliseconds;
+
+            repo.InsertLogProcPrequalLeilao(new Tb_LogProcPrequalLeilao
+            {
+                dtLog = dtNow,
+                fkCompany = fkCompany,
+                nuYear = dtNow.Year,
+                nuMonth = dtNow.Month,
+                nuDay = dtNow.Day,
+                nuHour = dtNow.Hour,
+                nuMinute = dtNow.Minute,
+                nuTotMS = OutDto.milis,
+                nuTotProcs = OutDto.totalProcessamentos,
+                nuTotQualificadas  = OutDto.totalQualificadas,
+                nuTotRejeitadas = OutDto.totalRejeitadas,
+                nuPctFilter = OutDto.pctPreQualificacao,
+            });
 
             return true;
         }

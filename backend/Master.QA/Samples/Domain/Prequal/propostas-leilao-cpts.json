@@ -1,686 +1,4794 @@
 {
   "propostas": [
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 1,
+      "Cpf": 10000000001,
+      "Matricula": "MAT001",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 10000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 1",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 2,
+      "Cpf": 10000000002,
+      "Matricula": "MAT002",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 2",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 3,
+      "Cpf": 10000000003,
+      "Matricula": "MAT003",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 3",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 4,
+      "Cpf": 10000000004,
+      "Matricula": "MAT004",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 4",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 5,
+      "Cpf": 10000000005,
+      "Matricula": "MAT005",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 5",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 6,
+      "Cpf": 10000000006,
+      "Matricula": "MAT006",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 6",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 7,
+      "Cpf": 10000000007,
+      "Matricula": "MAT007",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 7",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 8,
+      "Cpf": 10000000008,
+      "Matricula": "MAT008",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 8",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 9,
+      "Cpf": 10000000009,
+      "Matricula": "MAT009",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 9",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 10,
+      "Cpf": 10000000010,
+      "Matricula": "MAT010",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 10",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 11,
+      "Cpf": 10000000011,
+      "Matricula": "MAT011",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 11",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 12,
+      "Cpf": 10000000012,
+      "Matricula": "MAT012",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 12",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 13,
+      "Cpf": 10000000013,
+      "Matricula": "MAT013",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 13",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 14,
+      "Cpf": 10000000014,
+      "Matricula": "MAT014",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 14",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 15,
+      "Cpf": 10000000015,
+      "Matricula": "MAT015",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 15",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 16,
+      "Cpf": 10000000016,
+      "Matricula": "MAT016",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 16",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 17,
+      "Cpf": 10000000017,
+      "Matricula": "MAT017",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 17",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 18,
+      "Cpf": 10000000018,
+      "Matricula": "MAT018",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 18",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 19,
+      "Cpf": 10000000019,
+      "Matricula": "MAT019",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 19",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 20,
+      "Cpf": 10000000020,
+      "Matricula": "MAT020",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 20",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 21,
+      "Cpf": 10000000021,
+      "Matricula": "MAT021",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000110,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 21",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 22,
+      "Cpf": 10000000022,
+      "Matricula": "MAT022",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000111,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 22",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 23,
+      "Cpf": 10000000023,
+      "Matricula": "MAT023",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000112,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 23",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 24,
+      "Cpf": 10000000024,
+      "Matricula": "MAT024",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000113,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 24",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 25,
+      "Cpf": 10000000025,
+      "Matricula": "MAT025",
+      "InscricaoEmpregador": {
+        "Codigo": 1,
+        "Descricao": "CNPJ"
+      },
+      "NumeroInscricaoEmpregador": 20000000000114,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 25",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 26,
+      "Cpf": 10000000026,
+      "Matricula": "MAT026",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000000,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 26",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 27,
+      "Cpf": 10000000027,
+      "Matricula": "MAT027",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000001,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 27",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 28,
+      "Cpf": 10000000028,
+      "Matricula": "MAT028",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000002,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 28",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 29,
+      "Cpf": 10000000029,
+      "Matricula": "MAT029",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000003,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 29",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 30,
+      "Cpf": 10000000030,
+      "Matricula": "MAT030",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000004,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 30",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 31,
+      "Cpf": 10000000031,
+      "Matricula": "MAT031",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000005,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 31",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 32,
+      "Cpf": 10000000032,
+      "Matricula": "MAT032",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000006,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 32",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 33,
+      "Cpf": 10000000033,
+      "Matricula": "MAT033",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000007,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 33",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 34,
+      "Cpf": 10000000034,
+      "Matricula": "MAT034",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000008,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 34",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 35,
+      "Cpf": 10000000035,
+      "Matricula": "MAT035",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000009,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 35",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 36,
+      "Cpf": 10000000036,
+      "Matricula": "MAT036",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000010,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 36",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 37,
+      "Cpf": 10000000037,
+      "Matricula": "MAT037",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000011,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 37",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 38,
+      "Cpf": 10000000038,
+      "Matricula": "MAT038",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000012,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 38",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 39,
+      "Cpf": 10000000039,
+      "Matricula": "MAT039",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000013,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 39",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 40,
+      "Cpf": 10000000040,
+      "Matricula": "MAT040",
+      "InscricaoEmpregador": {
+        "Codigo": 2,
+        "Descricao": "CPF"
+      },
+      "NumeroInscricaoEmpregador": 30000000014,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 40",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 41,
+      "Cpf": 10000000041,
+      "Matricula": "MAT041",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 40000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 41",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 42,
+      "Cpf": 10000000042,
+      "Matricula": "MAT042",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 42",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 43,
+      "Cpf": 10000000043,
+      "Matricula": "MAT043",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 43",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 44,
+      "Cpf": 10000000044,
+      "Matricula": "MAT044",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 44",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 45,
+      "Cpf": 10000000045,
+      "Matricula": "MAT045",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 45",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 46,
+      "Cpf": 10000000046,
+      "Matricula": "MAT046",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 46",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 47,
+      "Cpf": 10000000047,
+      "Matricula": "MAT047",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 47",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 48,
+      "Cpf": 10000000048,
+      "Matricula": "MAT048",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 48",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 49,
+      "Cpf": 10000000049,
+      "Matricula": "MAT049",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 49",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 50,
+      "Cpf": 10000000050,
+      "Matricula": "MAT050",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
+      "NumeroInscricaoEmpregador": 40000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 50",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "PessoaExpostaPoliticamente": {
+        "Codigo": 1,
+        "Descricao": "PEP"
       }
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 51,
+      "Cpf": 10000000051,
+      "Matricula": "MAT051",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 51",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 52,
+      "Cpf": 10000000052,
+      "Matricula": "MAT052",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 52",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 53,
+      "Cpf": 10000000053,
+      "Matricula": "MAT053",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 53",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 54,
+      "Cpf": 10000000054,
+      "Matricula": "MAT054",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 54",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 55,
+      "Cpf": 10000000055,
+      "Matricula": "MAT055",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 55",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 56,
+      "Cpf": 10000000056,
+      "Matricula": "MAT056",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 56",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 57,
+      "Cpf": 10000000057,
+      "Matricula": "MAT057",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 57",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 58,
+      "Cpf": 10000000058,
+      "Matricula": "MAT058",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 58",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 59,
+      "Cpf": 10000000059,
+      "Matricula": "MAT059",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 59",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 60,
+      "Cpf": 10000000060,
+      "Matricula": "MAT060",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 50000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 60",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 1,
+            "Descricao": "Aviso Prévio"
+          },
+          "DataReferencia": "15012026",
+          "IdEvento": 101,
+          "DataAvisoPrevio": "01012026",
+          "DataFimAvisoPrevio": "31012026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 61,
+      "Cpf": 10000000061,
+      "Matricula": "MAT061",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 61",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 62,
+      "Cpf": 10000000062,
+      "Matricula": "MAT062",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 62",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 63,
+      "Cpf": 10000000063,
+      "Matricula": "MAT063",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 63",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 64,
+      "Cpf": 10000000064,
+      "Matricula": "MAT064",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 64",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 65,
+      "Cpf": 10000000065,
+      "Matricula": "MAT065",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 65",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 66,
+      "Cpf": 10000000066,
+      "Matricula": "MAT066",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 66",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 67,
+      "Cpf": 10000000067,
+      "Matricula": "MAT067",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 67",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 68,
+      "Cpf": 10000000068,
+      "Matricula": "MAT068",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 68",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 69,
+      "Cpf": 10000000069,
+      "Matricula": "MAT069",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 69",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2026,
-      "cpf": 69559564005,
-      "matricula": "mat-56",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 70,
+      "Cpf": 10000000070,
+      "Matricula": "MAT070",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 84676472000159,
-      "valorLiberado": 10000,
-      "nroParcelas": 10,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 500,
-      "elegivelEmprestimo": true,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 0,
-        "descricao": "Sem cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 60000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 70",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021",
+      "Alertas": [
+        {
+          "TipoAlerta": {
+            "Codigo": 2,
+            "Descricao": "Saúde"
+          },
+          "DataReferencia": "10012026",
+          "IdEvento": 202,
+          "CodigoMotivoAfastamento": 15,
+          "DataAfastamento": "05012026",
+          "DataTerminoAfastamento": "05022026"
+        }
+      ]
     },
     {
-      "idSolicitacao": 2027,
-      "cpf": 70949121029,
-      "matricula": "mat-59",
-      "inscricaoEmpregador": {
-        "codigo": 1,
-        "descricao": "CNPJ"
+      "IdSolicitacao": 71,
+      "Cpf": 10000000071,
+      "Matricula": "MAT071",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
       },
-      "numeroInscricaoEmpregador": 67853339000101,
-      "valorLiberado": 20000,
-      "nroParcelas": 20,
-      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
-      "nomeTrabalhador": "Reginaldo Leme",
-      "dataNascimento": "17041976",
-      "margemDisponivel": 150,
-      "elegivelEmprestimo": false,
-      "dataAdmissao": "01122024",
-      "pessoaExpostaPoliticamente": {
-        "codigo": 1,
-        "descricao": "Cargo politico"
-      }
+      "NumeroInscricaoEmpregador": 70000000000100,
+      "ValorLiberado": 1000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 71",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 72,
+      "Cpf": 10000000072,
+      "Matricula": "MAT072",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000101,
+      "ValorLiberado": 1200.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 72",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 73,
+      "Cpf": 10000000073,
+      "Matricula": "MAT073",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000102,
+      "ValorLiberado": 1400.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 73",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 74,
+      "Cpf": 10000000074,
+      "Matricula": "MAT074",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000103,
+      "ValorLiberado": 1600.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 74",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 75,
+      "Cpf": 10000000075,
+      "Matricula": "MAT075",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000104,
+      "ValorLiberado": 1800.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 75",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 76,
+      "Cpf": 10000000076,
+      "Matricula": "MAT076",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000105,
+      "ValorLiberado": 2000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 76",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 77,
+      "Cpf": 10000000077,
+      "Matricula": "MAT077",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000106,
+      "ValorLiberado": 2200.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 77",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 78,
+      "Cpf": 10000000078,
+      "Matricula": "MAT078",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000107,
+      "ValorLiberado": 2400.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 78",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 79,
+      "Cpf": 10000000079,
+      "Matricula": "MAT079",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000108,
+      "ValorLiberado": 2600.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 79",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 80,
+      "Cpf": 10000000080,
+      "Matricula": "MAT080",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000109,
+      "ValorLiberado": 2800.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 80",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 81,
+      "Cpf": 10000000081,
+      "Matricula": "MAT081",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000110,
+      "ValorLiberado": 3000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 81",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 82,
+      "Cpf": 10000000082,
+      "Matricula": "MAT082",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000111,
+      "ValorLiberado": 3200.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 82",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 83,
+      "Cpf": 10000000083,
+      "Matricula": "MAT083",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000112,
+      "ValorLiberado": 3400.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 83",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 84,
+      "Cpf": 10000000084,
+      "Matricula": "MAT084",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000113,
+      "ValorLiberado": 3600.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 84",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 85,
+      "Cpf": 10000000085,
+      "Matricula": "MAT085",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 70000000000114,
+      "ValorLiberado": 3800.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 85",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 86,
+      "Cpf": 10000000086,
+      "Matricula": "MAT086",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000100,
+      "ValorLiberado": 21000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 86",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 87,
+      "Cpf": 10000000087,
+      "Matricula": "MAT087",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000101,
+      "ValorLiberado": 26000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 87",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 88,
+      "Cpf": 10000000088,
+      "Matricula": "MAT088",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000102,
+      "ValorLiberado": 31000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 88",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 89,
+      "Cpf": 10000000089,
+      "Matricula": "MAT089",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000103,
+      "ValorLiberado": 36000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 89",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 90,
+      "Cpf": 10000000090,
+      "Matricula": "MAT090",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000104,
+      "ValorLiberado": 41000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 90",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 91,
+      "Cpf": 10000000091,
+      "Matricula": "MAT091",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000105,
+      "ValorLiberado": 46000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 91",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 92,
+      "Cpf": 10000000092,
+      "Matricula": "MAT092",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000106,
+      "ValorLiberado": 51000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 92",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 93,
+      "Cpf": 10000000093,
+      "Matricula": "MAT093",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000107,
+      "ValorLiberado": 56000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 93",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 94,
+      "Cpf": 10000000094,
+      "Matricula": "MAT094",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000108,
+      "ValorLiberado": 61000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 94",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 95,
+      "Cpf": 10000000095,
+      "Matricula": "MAT095",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000109,
+      "ValorLiberado": 66000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 95",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 96,
+      "Cpf": 10000000096,
+      "Matricula": "MAT096",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000110,
+      "ValorLiberado": 71000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 96",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 97,
+      "Cpf": 10000000097,
+      "Matricula": "MAT097",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000111,
+      "ValorLiberado": 76000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 97",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 98,
+      "Cpf": 10000000098,
+      "Matricula": "MAT098",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000112,
+      "ValorLiberado": 81000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 98",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 99,
+      "Cpf": 10000000099,
+      "Matricula": "MAT099",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000113,
+      "ValorLiberado": 86000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 99",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 100,
+      "Cpf": 10000000100,
+      "Matricula": "MAT100",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 80000000000114,
+      "ValorLiberado": 91000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 100",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 101,
+      "Cpf": 10000000101,
+      "Matricula": "MAT101",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 101",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 50.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 102,
+      "Cpf": 10000000102,
+      "Matricula": "MAT102",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 102",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 60.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 103,
+      "Cpf": 10000000103,
+      "Matricula": "MAT103",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 103",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 70.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 104,
+      "Cpf": 10000000104,
+      "Matricula": "MAT104",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 104",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 80.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 105,
+      "Cpf": 10000000105,
+      "Matricula": "MAT105",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 105",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 90.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 106,
+      "Cpf": 10000000106,
+      "Matricula": "MAT106",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 106",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 100.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 107,
+      "Cpf": 10000000107,
+      "Matricula": "MAT107",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 107",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 110.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 108,
+      "Cpf": 10000000108,
+      "Matricula": "MAT108",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 108",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 120.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 109,
+      "Cpf": 10000000109,
+      "Matricula": "MAT109",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 109",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 130.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 110,
+      "Cpf": 10000000110,
+      "Matricula": "MAT110",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 90000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 110",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 140.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 111,
+      "Cpf": 10000000111,
+      "Matricula": "MAT111",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 111",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 21000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 112,
+      "Cpf": 10000000112,
+      "Matricula": "MAT112",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 112",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 22000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 113,
+      "Cpf": 10000000113,
+      "Matricula": "MAT113",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 113",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 23000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 114,
+      "Cpf": 10000000114,
+      "Matricula": "MAT114",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 114",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 24000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 115,
+      "Cpf": 10000000115,
+      "Matricula": "MAT115",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 115",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 25000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 116,
+      "Cpf": 10000000116,
+      "Matricula": "MAT116",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 116",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 26000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 117,
+      "Cpf": 10000000117,
+      "Matricula": "MAT117",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 117",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 27000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 118,
+      "Cpf": 10000000118,
+      "Matricula": "MAT118",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 118",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 28000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 119,
+      "Cpf": 10000000119,
+      "Matricula": "MAT119",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 119",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 29000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 120,
+      "Cpf": 10000000120,
+      "Matricula": "MAT120",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 11000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 120",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 30000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 121,
+      "Cpf": 10000000121,
+      "Matricula": "MAT121",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 1,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 121",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 122,
+      "Cpf": 10000000122,
+      "Matricula": "MAT122",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 2,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 122",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 123,
+      "Cpf": 10000000123,
+      "Matricula": "MAT123",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 3,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 123",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 124,
+      "Cpf": 10000000124,
+      "Matricula": "MAT124",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 4,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 124",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 125,
+      "Cpf": 10000000125,
+      "Matricula": "MAT125",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 1,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 125",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 126,
+      "Cpf": 10000000126,
+      "Matricula": "MAT126",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 2,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 126",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 127,
+      "Cpf": 10000000127,
+      "Matricula": "MAT127",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 3,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 127",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 128,
+      "Cpf": 10000000128,
+      "Matricula": "MAT128",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 4,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 128",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 129,
+      "Cpf": 10000000129,
+      "Matricula": "MAT129",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 5,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 129",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 130,
+      "Cpf": 10000000130,
+      "Matricula": "MAT130",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 12000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 5,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 130",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 131,
+      "Cpf": 10000000131,
+      "Matricula": "MAT131",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 51,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 131",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 132,
+      "Cpf": 10000000132,
+      "Matricula": "MAT132",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 52,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 132",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 133,
+      "Cpf": 10000000133,
+      "Matricula": "MAT133",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 53,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 133",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 134,
+      "Cpf": 10000000134,
+      "Matricula": "MAT134",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 54,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 134",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 135,
+      "Cpf": 10000000135,
+      "Matricula": "MAT135",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 55,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 135",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 136,
+      "Cpf": 10000000136,
+      "Matricula": "MAT136",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 56,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 136",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 137,
+      "Cpf": 10000000137,
+      "Matricula": "MAT137",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 57,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 137",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 138,
+      "Cpf": 10000000138,
+      "Matricula": "MAT138",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 58,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 138",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 139,
+      "Cpf": 10000000139,
+      "Matricula": "MAT139",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 59,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 139",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 140,
+      "Cpf": 10000000140,
+      "Matricula": "MAT140",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 13000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 60,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 140",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 141,
+      "Cpf": 10000000141,
+      "Matricula": "MAT141",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 141",
+      "DataNascimento": "24012008",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 142,
+      "Cpf": 10000000142,
+      "Matricula": "MAT142",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 142",
+      "DataNascimento": "24012007",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 143,
+      "Cpf": 10000000143,
+      "Matricula": "MAT143",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 143",
+      "DataNascimento": "24012008",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 144,
+      "Cpf": 10000000144,
+      "Matricula": "MAT144",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 144",
+      "DataNascimento": "24012007",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 145,
+      "Cpf": 10000000145,
+      "Matricula": "MAT145",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 145",
+      "DataNascimento": "24012008",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 146,
+      "Cpf": 10000000146,
+      "Matricula": "MAT146",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 146",
+      "DataNascimento": "24012007",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 147,
+      "Cpf": 10000000147,
+      "Matricula": "MAT147",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 147",
+      "DataNascimento": "24012008",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 148,
+      "Cpf": 10000000148,
+      "Matricula": "MAT148",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 148",
+      "DataNascimento": "24012007",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 149,
+      "Cpf": 10000000149,
+      "Matricula": "MAT149",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 149",
+      "DataNascimento": "24012008",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 150,
+      "Cpf": 10000000150,
+      "Matricula": "MAT150",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 14000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 150",
+      "DataNascimento": "24012007",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 151,
+      "Cpf": 10000000151,
+      "Matricula": "MAT151",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 151",
+      "DataNascimento": "24011916",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071976"
+    },
+    {
+      "IdSolicitacao": 152,
+      "Cpf": 10000000152,
+      "Matricula": "MAT152",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 152",
+      "DataNascimento": "24011915",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071975"
+    },
+    {
+      "IdSolicitacao": 153,
+      "Cpf": 10000000153,
+      "Matricula": "MAT153",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 153",
+      "DataNascimento": "24011914",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071974"
+    },
+    {
+      "IdSolicitacao": 154,
+      "Cpf": 10000000154,
+      "Matricula": "MAT154",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 154",
+      "DataNascimento": "24011913",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071973"
+    },
+    {
+      "IdSolicitacao": 155,
+      "Cpf": 10000000155,
+      "Matricula": "MAT155",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 155",
+      "DataNascimento": "24011912",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071972"
+    },
+    {
+      "IdSolicitacao": 156,
+      "Cpf": 10000000156,
+      "Matricula": "MAT156",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 156",
+      "DataNascimento": "24011911",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071971"
+    },
+    {
+      "IdSolicitacao": 157,
+      "Cpf": 10000000157,
+      "Matricula": "MAT157",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 157",
+      "DataNascimento": "24011910",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071970"
+    },
+    {
+      "IdSolicitacao": 158,
+      "Cpf": 10000000158,
+      "Matricula": "MAT158",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 158",
+      "DataNascimento": "24011909",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071969"
+    },
+    {
+      "IdSolicitacao": 159,
+      "Cpf": 10000000159,
+      "Matricula": "MAT159",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 159",
+      "DataNascimento": "24011908",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071968"
+    },
+    {
+      "IdSolicitacao": 160,
+      "Cpf": 10000000160,
+      "Matricula": "MAT160",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 15000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 160",
+      "DataNascimento": "24011907",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24071967"
+    },
+    {
+      "IdSolicitacao": 161,
+      "Cpf": 10000000161,
+      "Matricula": "MAT161",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 161",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24122025"
+    },
+    {
+      "IdSolicitacao": 162,
+      "Cpf": 10000000162,
+      "Matricula": "MAT162",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 162",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112025"
+    },
+    {
+      "IdSolicitacao": 163,
+      "Cpf": 10000000163,
+      "Matricula": "MAT163",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 163",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24102025"
+    },
+    {
+      "IdSolicitacao": 164,
+      "Cpf": 10000000164,
+      "Matricula": "MAT164",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 164",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092025"
+    },
+    {
+      "IdSolicitacao": 165,
+      "Cpf": 10000000165,
+      "Matricula": "MAT165",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 165",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24082025"
+    },
+    {
+      "IdSolicitacao": 166,
+      "Cpf": 10000000166,
+      "Matricula": "MAT166",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 166",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072025"
+    },
+    {
+      "IdSolicitacao": 167,
+      "Cpf": 10000000167,
+      "Matricula": "MAT167",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 167",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24062025"
+    },
+    {
+      "IdSolicitacao": 168,
+      "Cpf": 10000000168,
+      "Matricula": "MAT168",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 168",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052025"
+    },
+    {
+      "IdSolicitacao": 169,
+      "Cpf": 10000000169,
+      "Matricula": "MAT169",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 169",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24042025"
+    },
+    {
+      "IdSolicitacao": 170,
+      "Cpf": 10000000170,
+      "Matricula": "MAT170",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 16000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 170",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032025"
+    },
+    {
+      "IdSolicitacao": 171,
+      "Cpf": 10000000171,
+      "Matricula": "MAT171",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 171",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012009"
+    },
+    {
+      "IdSolicitacao": 172,
+      "Cpf": 10000000172,
+      "Matricula": "MAT172",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000101,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 172",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24082008"
+    },
+    {
+      "IdSolicitacao": 173,
+      "Cpf": 10000000173,
+      "Matricula": "MAT173",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000102,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 173",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032008"
+    },
+    {
+      "IdSolicitacao": 174,
+      "Cpf": 10000000174,
+      "Matricula": "MAT174",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000103,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 174",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24102007"
+    },
+    {
+      "IdSolicitacao": 175,
+      "Cpf": 10000000175,
+      "Matricula": "MAT175",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000104,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 175",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052007"
+    },
+    {
+      "IdSolicitacao": 176,
+      "Cpf": 10000000176,
+      "Matricula": "MAT176",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000105,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 176",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24122006"
+    },
+    {
+      "IdSolicitacao": 177,
+      "Cpf": 10000000177,
+      "Matricula": "MAT177",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000106,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 177",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072006"
+    },
+    {
+      "IdSolicitacao": 178,
+      "Cpf": 10000000178,
+      "Matricula": "MAT178",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000107,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 178",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24022006"
+    },
+    {
+      "IdSolicitacao": 179,
+      "Cpf": 10000000179,
+      "Matricula": "MAT179",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000108,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 179",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092005"
+    },
+    {
+      "IdSolicitacao": 180,
+      "Cpf": 10000000180,
+      "Matricula": "MAT180",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 17000000000109,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 180",
+      "DataNascimento": "24011981",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24042005"
+    },
+    {
+      "IdSolicitacao": 181,
+      "Cpf": 10000000181,
+      "Matricula": "MAT181",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000100,
+      "ValorLiberado": 5000.00,
+      "NroParcelas": 6,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 181",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 200.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 182,
+      "Cpf": 10000000182,
+      "Matricula": "MAT182",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000101,
+      "ValorLiberado": 5150.00,
+      "NroParcelas": 7,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 182",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 250.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032024"
+    },
+    {
+      "IdSolicitacao": 183,
+      "Cpf": 10000000183,
+      "Matricula": "MAT183",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000102,
+      "ValorLiberado": 5300.00,
+      "NroParcelas": 8,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 183",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 300.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052024"
+    },
+    {
+      "IdSolicitacao": 184,
+      "Cpf": 10000000184,
+      "Matricula": "MAT184",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000103,
+      "ValorLiberado": 5450.00,
+      "NroParcelas": 9,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 184",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 350.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072024"
+    },
+    {
+      "IdSolicitacao": 185,
+      "Cpf": 10000000185,
+      "Matricula": "MAT185",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000104,
+      "ValorLiberado": 5600.00,
+      "NroParcelas": 10,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 185",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 400.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092024"
+    },
+    {
+      "IdSolicitacao": 186,
+      "Cpf": 10000000186,
+      "Matricula": "MAT186",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000105,
+      "ValorLiberado": 5750.00,
+      "NroParcelas": 11,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 186",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 450.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112024"
+    },
+    {
+      "IdSolicitacao": 187,
+      "Cpf": 10000000187,
+      "Matricula": "MAT187",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000106,
+      "ValorLiberado": 5900.00,
+      "NroParcelas": 12,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 187",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012024"
+    },
+    {
+      "IdSolicitacao": 188,
+      "Cpf": 10000000188,
+      "Matricula": "MAT188",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000107,
+      "ValorLiberado": 6050.00,
+      "NroParcelas": 13,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 188",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 550.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032024"
+    },
+    {
+      "IdSolicitacao": 189,
+      "Cpf": 10000000189,
+      "Matricula": "MAT189",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000108,
+      "ValorLiberado": 6200.00,
+      "NroParcelas": 14,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 189",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 600.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052024"
+    },
+    {
+      "IdSolicitacao": 190,
+      "Cpf": 10000000190,
+      "Matricula": "MAT190",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000109,
+      "ValorLiberado": 6350.00,
+      "NroParcelas": 15,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 190",
+      "DataNascimento": "24012000",
+      "MargemDisponivel": 650.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072024"
+    },
+    {
+      "IdSolicitacao": 191,
+      "Cpf": 10000000191,
+      "Matricula": "MAT191",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000110,
+      "ValorLiberado": 6500.00,
+      "NroParcelas": 16,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 191",
+      "DataNascimento": "24012001",
+      "MargemDisponivel": 700.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092024"
+    },
+    {
+      "IdSolicitacao": 192,
+      "Cpf": 10000000192,
+      "Matricula": "MAT192",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000111,
+      "ValorLiberado": 6650.00,
+      "NroParcelas": 17,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 192",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 750.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112023"
+    },
+    {
+      "IdSolicitacao": 193,
+      "Cpf": 10000000193,
+      "Matricula": "MAT193",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000112,
+      "ValorLiberado": 6800.00,
+      "NroParcelas": 18,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 193",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 800.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012023"
+    },
+    {
+      "IdSolicitacao": 194,
+      "Cpf": 10000000194,
+      "Matricula": "MAT194",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000113,
+      "ValorLiberado": 6950.00,
+      "NroParcelas": 19,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 194",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 850.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032023"
+    },
+    {
+      "IdSolicitacao": 195,
+      "Cpf": 10000000195,
+      "Matricula": "MAT195",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000114,
+      "ValorLiberado": 7100.00,
+      "NroParcelas": 20,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 195",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 900.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052023"
+    },
+    {
+      "IdSolicitacao": 196,
+      "Cpf": 10000000196,
+      "Matricula": "MAT196",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000115,
+      "ValorLiberado": 7250.00,
+      "NroParcelas": 21,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 196",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 950.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072023"
+    },
+    {
+      "IdSolicitacao": 197,
+      "Cpf": 10000000197,
+      "Matricula": "MAT197",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000116,
+      "ValorLiberado": 7400.00,
+      "NroParcelas": 22,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 197",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 1000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092023"
+    },
+    {
+      "IdSolicitacao": 198,
+      "Cpf": 10000000198,
+      "Matricula": "MAT198",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000117,
+      "ValorLiberado": 7550.00,
+      "NroParcelas": 23,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 198",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 1050.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112023"
+    },
+    {
+      "IdSolicitacao": 199,
+      "Cpf": 10000000199,
+      "Matricula": "MAT199",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000118,
+      "ValorLiberado": 7700.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 199",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 1100.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012023"
+    },
+    {
+      "IdSolicitacao": 200,
+      "Cpf": 10000000200,
+      "Matricula": "MAT200",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000119,
+      "ValorLiberado": 7850.00,
+      "NroParcelas": 25,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 200",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 1150.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032023"
+    },
+    {
+      "IdSolicitacao": 201,
+      "Cpf": 10000000201,
+      "Matricula": "MAT201",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000120,
+      "ValorLiberado": 8000.00,
+      "NroParcelas": 26,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 201",
+      "DataNascimento": "24012000",
+      "MargemDisponivel": 1200.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052023"
+    },
+    {
+      "IdSolicitacao": 202,
+      "Cpf": 10000000202,
+      "Matricula": "MAT202",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000121,
+      "ValorLiberado": 8150.00,
+      "NroParcelas": 27,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 202",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 1250.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072023"
+    },
+    {
+      "IdSolicitacao": 203,
+      "Cpf": 10000000203,
+      "Matricula": "MAT203",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000122,
+      "ValorLiberado": 8300.00,
+      "NroParcelas": 28,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 203",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 1300.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092023"
+    },
+    {
+      "IdSolicitacao": 204,
+      "Cpf": 10000000204,
+      "Matricula": "MAT204",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000123,
+      "ValorLiberado": 8450.00,
+      "NroParcelas": 29,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 204",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 1350.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112023"
+    },
+    {
+      "IdSolicitacao": 205,
+      "Cpf": 10000000205,
+      "Matricula": "MAT205",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000124,
+      "ValorLiberado": 8600.00,
+      "NroParcelas": 30,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 205",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 1400.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012023"
+    },
+    {
+      "IdSolicitacao": 206,
+      "Cpf": 10000000206,
+      "Matricula": "MAT206",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000125,
+      "ValorLiberado": 8750.00,
+      "NroParcelas": 31,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 206",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 1450.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032023"
+    },
+    {
+      "IdSolicitacao": 207,
+      "Cpf": 10000000207,
+      "Matricula": "MAT207",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000126,
+      "ValorLiberado": 8900.00,
+      "NroParcelas": 32,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 207",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 1500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052023"
+    },
+    {
+      "IdSolicitacao": 208,
+      "Cpf": 10000000208,
+      "Matricula": "MAT208",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000127,
+      "ValorLiberado": 9050.00,
+      "NroParcelas": 33,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 208",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 1550.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072023"
+    },
+    {
+      "IdSolicitacao": 209,
+      "Cpf": 10000000209,
+      "Matricula": "MAT209",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000128,
+      "ValorLiberado": 9200.00,
+      "NroParcelas": 34,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 209",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 1600.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092023"
+    },
+    {
+      "IdSolicitacao": 210,
+      "Cpf": 10000000210,
+      "Matricula": "MAT210",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000129,
+      "ValorLiberado": 9350.00,
+      "NroParcelas": 35,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 210",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 1650.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112023"
+    },
+    {
+      "IdSolicitacao": 211,
+      "Cpf": 10000000211,
+      "Matricula": "MAT211",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000130,
+      "ValorLiberado": 9500.00,
+      "NroParcelas": 36,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 211",
+      "DataNascimento": "24012000",
+      "MargemDisponivel": 1700.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012022"
+    },
+    {
+      "IdSolicitacao": 212,
+      "Cpf": 10000000212,
+      "Matricula": "MAT212",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000131,
+      "ValorLiberado": 9650.00,
+      "NroParcelas": 37,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 212",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 1750.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032022"
+    },
+    {
+      "IdSolicitacao": 213,
+      "Cpf": 10000000213,
+      "Matricula": "MAT213",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000132,
+      "ValorLiberado": 9800.00,
+      "NroParcelas": 38,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 213",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 1800.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052022"
+    },
+    {
+      "IdSolicitacao": 214,
+      "Cpf": 10000000214,
+      "Matricula": "MAT214",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000133,
+      "ValorLiberado": 9950.00,
+      "NroParcelas": 39,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 214",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 1850.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072022"
+    },
+    {
+      "IdSolicitacao": 215,
+      "Cpf": 10000000215,
+      "Matricula": "MAT215",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000134,
+      "ValorLiberado": 10100.00,
+      "NroParcelas": 40,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 215",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 1900.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092022"
+    },
+    {
+      "IdSolicitacao": 216,
+      "Cpf": 10000000216,
+      "Matricula": "MAT216",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000135,
+      "ValorLiberado": 10250.00,
+      "NroParcelas": 41,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 216",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 1950.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112022"
+    },
+    {
+      "IdSolicitacao": 217,
+      "Cpf": 10000000217,
+      "Matricula": "MAT217",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000136,
+      "ValorLiberado": 10400.00,
+      "NroParcelas": 42,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 217",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 2000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012022"
+    },
+    {
+      "IdSolicitacao": 218,
+      "Cpf": 10000000218,
+      "Matricula": "MAT218",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000137,
+      "ValorLiberado": 10550.00,
+      "NroParcelas": 43,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 218",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 2050.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032022"
+    },
+    {
+      "IdSolicitacao": 219,
+      "Cpf": 10000000219,
+      "Matricula": "MAT219",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000138,
+      "ValorLiberado": 10700.00,
+      "NroParcelas": 44,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 219",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 2100.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052022"
+    },
+    {
+      "IdSolicitacao": 220,
+      "Cpf": 10000000220,
+      "Matricula": "MAT220",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000139,
+      "ValorLiberado": 10850.00,
+      "NroParcelas": 45,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 220",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 2150.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072022"
+    },
+    {
+      "IdSolicitacao": 221,
+      "Cpf": 10000000221,
+      "Matricula": "MAT221",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000140,
+      "ValorLiberado": 11000.00,
+      "NroParcelas": 46,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 221",
+      "DataNascimento": "24012000",
+      "MargemDisponivel": 2200.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092022"
+    },
+    {
+      "IdSolicitacao": 222,
+      "Cpf": 10000000222,
+      "Matricula": "MAT222",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000141,
+      "ValorLiberado": 11150.00,
+      "NroParcelas": 47,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 222",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 2250.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112022"
+    },
+    {
+      "IdSolicitacao": 223,
+      "Cpf": 10000000223,
+      "Matricula": "MAT223",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000142,
+      "ValorLiberado": 11300.00,
+      "NroParcelas": 48,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 223",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 2300.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012022"
+    },
+    {
+      "IdSolicitacao": 224,
+      "Cpf": 10000000224,
+      "Matricula": "MAT224",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000143,
+      "ValorLiberado": 11450.00,
+      "NroParcelas": 49,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 224",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 2350.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032022"
+    },
+    {
+      "IdSolicitacao": 225,
+      "Cpf": 10000000225,
+      "Matricula": "MAT225",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000144,
+      "ValorLiberado": 11600.00,
+      "NroParcelas": 50,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 225",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 2400.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052022"
+    },
+    {
+      "IdSolicitacao": 226,
+      "Cpf": 10000000226,
+      "Matricula": "MAT226",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000145,
+      "ValorLiberado": 11750.00,
+      "NroParcelas": 7,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 226",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 2450.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072022"
+    },
+    {
+      "IdSolicitacao": 227,
+      "Cpf": 10000000227,
+      "Matricula": "MAT227",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000146,
+      "ValorLiberado": 11900.00,
+      "NroParcelas": 8,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 227",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 2500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092022"
+    },
+    {
+      "IdSolicitacao": 228,
+      "Cpf": 10000000228,
+      "Matricula": "MAT228",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000147,
+      "ValorLiberado": 12050.00,
+      "NroParcelas": 9,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 228",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 2550.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112022"
+    },
+    {
+      "IdSolicitacao": 229,
+      "Cpf": 10000000229,
+      "Matricula": "MAT229",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000148,
+      "ValorLiberado": 12200.00,
+      "NroParcelas": 10,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 229",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 2600.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012021"
+    },
+    {
+      "IdSolicitacao": 230,
+      "Cpf": 10000000230,
+      "Matricula": "MAT230",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000149,
+      "ValorLiberado": 12350.00,
+      "NroParcelas": 11,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 230",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 2650.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032021"
+    },
+    {
+      "IdSolicitacao": 231,
+      "Cpf": 10000000231,
+      "Matricula": "MAT231",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000150,
+      "ValorLiberado": 12500.00,
+      "NroParcelas": 12,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 231",
+      "DataNascimento": "24012000",
+      "MargemDisponivel": 2700.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052021"
+    },
+    {
+      "IdSolicitacao": 232,
+      "Cpf": 10000000232,
+      "Matricula": "MAT232",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000151,
+      "ValorLiberado": 12650.00,
+      "NroParcelas": 13,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 232",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 2750.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 233,
+      "Cpf": 10000000233,
+      "Matricula": "MAT233",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000152,
+      "ValorLiberado": 12800.00,
+      "NroParcelas": 14,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 233",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 2800.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092021"
+    },
+    {
+      "IdSolicitacao": 234,
+      "Cpf": 10000000234,
+      "Matricula": "MAT234",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000153,
+      "ValorLiberado": 12950.00,
+      "NroParcelas": 15,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 234",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 2850.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112021"
+    },
+    {
+      "IdSolicitacao": 235,
+      "Cpf": 10000000235,
+      "Matricula": "MAT235",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000154,
+      "ValorLiberado": 13100.00,
+      "NroParcelas": 16,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 235",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 2900.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012021"
+    },
+    {
+      "IdSolicitacao": 236,
+      "Cpf": 10000000236,
+      "Matricula": "MAT236",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000155,
+      "ValorLiberado": 13250.00,
+      "NroParcelas": 17,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 236",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 2950.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032021"
+    },
+    {
+      "IdSolicitacao": 237,
+      "Cpf": 10000000237,
+      "Matricula": "MAT237",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000156,
+      "ValorLiberado": 13400.00,
+      "NroParcelas": 18,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 237",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 3000.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052021"
+    },
+    {
+      "IdSolicitacao": 238,
+      "Cpf": 10000000238,
+      "Matricula": "MAT238",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000157,
+      "ValorLiberado": 13550.00,
+      "NroParcelas": 19,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 238",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 3050.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072021"
+    },
+    {
+      "IdSolicitacao": 239,
+      "Cpf": 10000000239,
+      "Matricula": "MAT239",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000158,
+      "ValorLiberado": 13700.00,
+      "NroParcelas": 20,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 239",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 3100.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092021"
+    },
+    {
+      "IdSolicitacao": 240,
+      "Cpf": 10000000240,
+      "Matricula": "MAT240",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000159,
+      "ValorLiberado": 13850.00,
+      "NroParcelas": 21,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 240",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 3150.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112021"
+    },
+    {
+      "IdSolicitacao": 241,
+      "Cpf": 10000000241,
+      "Matricula": "MAT241",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000160,
+      "ValorLiberado": 14000.00,
+      "NroParcelas": 22,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 241",
+      "DataNascimento": "24012000",
+      "MargemDisponivel": 3200.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012020"
+    },
+    {
+      "IdSolicitacao": 242,
+      "Cpf": 10000000242,
+      "Matricula": "MAT242",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000161,
+      "ValorLiberado": 14150.00,
+      "NroParcelas": 23,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 242",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 3250.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032020"
+    },
+    {
+      "IdSolicitacao": 243,
+      "Cpf": 10000000243,
+      "Matricula": "MAT243",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000162,
+      "ValorLiberado": 14300.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 243",
+      "DataNascimento": "24011992",
+      "MargemDisponivel": 3300.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052020"
+    },
+    {
+      "IdSolicitacao": 244,
+      "Cpf": 10000000244,
+      "Matricula": "MAT244",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000163,
+      "ValorLiberado": 14450.00,
+      "NroParcelas": 25,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 244",
+      "DataNascimento": "24011993",
+      "MargemDisponivel": 3350.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072020"
+    },
+    {
+      "IdSolicitacao": 245,
+      "Cpf": 10000000245,
+      "Matricula": "MAT245",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000164,
+      "ValorLiberado": 14600.00,
+      "NroParcelas": 26,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 245",
+      "DataNascimento": "24011994",
+      "MargemDisponivel": 3400.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24092020"
+    },
+    {
+      "IdSolicitacao": 246,
+      "Cpf": 10000000246,
+      "Matricula": "MAT246",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000165,
+      "ValorLiberado": 14750.00,
+      "NroParcelas": 27,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 246",
+      "DataNascimento": "24011995",
+      "MargemDisponivel": 3450.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24112020"
+    },
+    {
+      "IdSolicitacao": 247,
+      "Cpf": 10000000247,
+      "Matricula": "MAT247",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000166,
+      "ValorLiberado": 14900.00,
+      "NroParcelas": 28,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 247",
+      "DataNascimento": "24011996",
+      "MargemDisponivel": 3500.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24012020"
+    },
+    {
+      "IdSolicitacao": 248,
+      "Cpf": 10000000248,
+      "Matricula": "MAT248",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000167,
+      "ValorLiberado": 15050.00,
+      "NroParcelas": 29,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 248",
+      "DataNascimento": "24011997",
+      "MargemDisponivel": 3550.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24032020"
+    },
+    {
+      "IdSolicitacao": 249,
+      "Cpf": 10000000249,
+      "Matricula": "MAT249",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000168,
+      "ValorLiberado": 15200.00,
+      "NroParcelas": 30,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 249",
+      "DataNascimento": "24011998",
+      "MargemDisponivel": 3600.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24052020"
+    },
+    {
+      "IdSolicitacao": 250,
+      "Cpf": 10000000250,
+      "Matricula": "MAT250",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 18000000000169,
+      "ValorLiberado": 15350.00,
+      "NroParcelas": 31,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 250",
+      "DataNascimento": "24011999",
+      "MargemDisponivel": 3650.00,
+      "ElegivelEmprestimo": true,
+      "DataAdmissao": "24072020"
     }
   ]
 }

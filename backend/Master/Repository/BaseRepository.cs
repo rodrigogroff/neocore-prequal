@@ -21,6 +21,11 @@ namespace Master.Repository
             return fkValue.HasValue ? fkValue.Value : DBNull.Value;
         }
 
+        public object? GetNull(double? fkValue)
+        {
+            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
+        }
+
         public object? GetNull(DateOnly? fkValue)
         {
             return fkValue.HasValue ? fkValue.Value : DBNull.Value;

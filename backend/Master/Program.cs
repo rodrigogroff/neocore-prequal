@@ -46,25 +46,11 @@ namespace Master
                 webBuilder.UseStartup<Startup>();
                 webBuilder.UseKestrel((hostingContext, options) =>
                 {
-
                     options.Listen(IPAddress.Parse(GetLocation(args)), GetPort(args), listenOptions => { });
-
-                    /*
-                    try
-                    {
-                        options.Listen(IPAddress.Parse(GetLocation(args)), GetPort(args), listenOptions =>
-                        {
-                            listenOptions.UseHttps("certificate.pfx", "gustavo123");
-                        });
-                    }
-                    catch (System.Exception ex) 
-                    {
-                        Console.WriteLine (ex.ToString());
-                    }
-                    */
-
                 });
+#if RELEASE
                 webBuilder.ConfigureLogging((context, logging) => { logging.ClearProviders(); });
+#endif
             });
     }
 }
