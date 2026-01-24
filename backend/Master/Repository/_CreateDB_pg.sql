@@ -5,6 +5,12 @@ ALTER TABLE public."Company" ADD COLUMN if not exists "client_id" uuid;
 ALTER TABLE public."Company" ADD COLUMN if not exists "stSecret" character varying(100);
 ALTER TABLE public."Company" ADD COLUMN if not exists "bActive" boolean;
 
+CREATE TABLE IF NOT EXISTS public."CompanyFinanceiro" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "fkCompany" int;
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrSubscriptionL1" numeric(10,2);
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrL1Transaction" numeric(10,2);
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrL1TransactionItem" numeric(10,2);
+
 CREATE TABLE IF NOT EXISTS public."User" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."User" ADD COLUMN if not exists "fkCompany" int;
 ALTER TABLE public."User" ADD COLUMN if not exists "stEmail" character varying(500);

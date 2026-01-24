@@ -90,17 +90,17 @@ namespace Master
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        
+
                         return System.Threading.Tasks.Task.CompletedTask;
                     },
                     OnTokenValidated = context =>
                     {
-                        
+
                         return System.Threading.Tasks.Task.CompletedTask;
                     },
                     OnMessageReceived = context =>
                     {
-                        
+
                         return System.Threading.Tasks.Task.CompletedTask;
                     }
                 };
@@ -118,6 +118,18 @@ namespace Master
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Master API V1");
                 c.RoutePrefix = string.Empty;
                 c.DefaultModelsExpandDepth(-1);
+
+                // Adicionar CSS customizado para espaço no final
+                c.HeadContent = @"
+                    <style>
+                        .swagger-ui .info {
+                            margin: 35px 0 0 0 !important;
+                        }
+                        .swagger-ui .block.col-12.block-desktop.col-12-desktop {
+                            padding-bottom: 100px !important;
+                        }
+                    </style>
+                ";
             });
 
             app.UseRouting();

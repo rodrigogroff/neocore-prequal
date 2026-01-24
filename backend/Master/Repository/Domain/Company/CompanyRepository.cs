@@ -13,6 +13,10 @@ namespace Master.Repository.Domain.Company
         List<Tb_Company> GetCompanies();
         long InsertCompany(Tb_Company mdl, bool retId = false);
         void UpdateCompany(Tb_Company mdl);
+
+        Tb_CompanyFinanceiro GetCompanyFinanceiro(int fkCompany);
+        long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl, bool retId = false);
+        void UpdateCompanyFinanceiro(Tb_CompanyFinanceiro mdl);
     }
         
     public class CompanyRepository : BaseRepository, ICompanyRepository
@@ -77,6 +81,62 @@ namespace Master.Repository.Domain.Company
 
             using var cmd = new NpgsqlCommand(query, db);
             SetParamsCompany(cmd, mdl);
+            cmd.ExecuteNonQuery();
+        }
+
+        public Tb_CompanyFinanceiro GetCompanyFinanceiro(int fkCompany)
+        {
+            const string query = "select * from \"CompanyFinanceiro\" where \"fkCompany\"=@fkCompany";
+
+            return db.QueryFirstOrDefault<Tb_CompanyFinanceiro>(query, new { fkCompany });
+        }
+
+        public void SetParamsCompanyFinanceiro(NpgsqlCommand cmd, Tb_CompanyFinanceiro mdl)
+        {
+            const
+               string
+                   id = "id",
+                   fkCompany = "stName",
+                   vrSubscriptionL1 = "client_id",
+                   vrL1Transaction = "stSecret",
+                   vrL1TransactionItem = "bActive";
+
+            cmd.Parameters.AddRange(new NpgsqlParameter[]
+            {
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = id, Value = mdl.id },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = fkCompany, Value = mdl.fkCompany },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrSubscriptionL1, Value = GetNull(mdl.vrSubscriptionL1) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1Transaction, Value = GetNull(mdl.vrL1Transaction) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionItem, Value = GetNull(mdl.vrL1TransactionItem) },
+            });
+        }
+
+        public long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl, bool retId = false)
+        {
+            const string query =
+                "INSERT INTO \"CompanyFinanceiro\" (\"fkCompany\",\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\") VALUES " +
+                "(@fkCompany,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem);";
+
+            const string currval = "select currval('public.\"CompanyFinanceiro_id_seq\"');";
+
+            using var cmd = new NpgsqlCommand(retId ? query + currval : query, db);
+            SetParamsCompanyFinanceiro(cmd, mdl);
+            if (retId) return (long)cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
+            return 0;
+        }
+
+        public void UpdateCompanyFinanceiro(Tb_CompanyFinanceiro mdl)
+        {
+            const string query = "update \"CompanyFinanceiro\" set " +
+                "\"stName\"=@stName," +
+                "\"client_id\"=@client_id," +
+                "\"stSecret\"=@stSecret," +
+                "\"bActive\"=@bActive " +
+                "where id=@id";
+
+            using var cmd = new NpgsqlCommand(query, db);
+            SetParamsCompanyFinanceiro(cmd, mdl);
             cmd.ExecuteNonQuery();
         }
     }
