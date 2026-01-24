@@ -1,22 +1,29 @@
 ﻿using Master.Entity.Dto.Request.Domain.Prequal;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 namespace Master.Entity.Dto.Response.Domain.Prequal
 {
     [ExcludeFromCodeCoverage]
-    public class DtoResponsePrequalSolicitacoes
+    public class DtoResponsePrequalSolicitacoes : DtoResponsePrequalSolicitacoesNode
     {
-        public List<PropostaDataPrevResponse> qualificadas { get; set; } 
-        public List<PropostaDataPrevResponse> rejeitadas { get; set; } 
-
         public long milis { get; set; }
+        public long itens { get; set; }
+        public double msPerItem { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
     public class PropostaDataPrevResponse : PropostaDataPrevRequest
     {
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? _motivoRejeitado { get; set; }
+    }
 
+    [ExcludeFromCodeCoverage]
+    public class DtoResponsePrequalSolicitacoesNode
+    {
+        public List<PropostaDataPrevResponse> qualificadas { get; set; }
+        public List<PropostaDataPrevResponse> rejeitadas { get; set; }
     }
 }

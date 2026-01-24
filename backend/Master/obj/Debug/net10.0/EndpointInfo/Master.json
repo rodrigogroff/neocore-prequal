@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "NeoCore API -- Bureau Bancário",
+    "title": "NeoCore API -- Bureau Bancário -- 01.01.03",
     "description": "Endpoints para serviços bancários de crédito",
     "version": "v1"
   },
@@ -74,10 +74,105 @@
         }
       }
     },
+    "/api/config-prequal-leilao": {
+      "post": {
+        "tags": [
+          "Pré-qualificação (configuração)"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalUpdateConfigLeilao"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalUpdateConfigLeilao"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DtoRequestPrequalUpdateConfigLeilao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceOk"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceOk"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceOk"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoServiceError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Pré-qualificação (configuração)"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalConfigLeilao"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalConfigLeilao"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DtoResponsePrequalConfigLeilao"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/propostas-leilao-cpts": {
       "post": {
         "tags": [
-          "Pré-qualificação"
+          "Pré-qualificação (descarte para solicitação de propostas)"
         ],
         "requestBody": {
           "content": {
@@ -145,23 +240,23 @@
     "/api/propostas-leilao-cpts-node": {
       "post": {
         "tags": [
-          "Pré-qualificação"
+          "Pré-qualificação (descarte para solicitação de propostas)"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoesNode"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoesNode"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoes"
+                "$ref": "#/components/schemas/DtoRequestPrequalSolicitacoesNode"
               }
             }
           }
@@ -292,6 +387,92 @@
         },
         "additionalProperties": false
       },
+      "DtoRequestPrequalSolicitacoesNode": {
+        "type": "object",
+        "properties": {
+          "fkCompany": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "propostas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PropostaDataPrevRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DtoRequestPrequalUpdateConfigLeilao": {
+        "type": "object",
+        "properties": {
+          "descartarEmpregadorCnpj": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "descartarEmpregadorCpf": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "descartarPep": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "rangeValorLiberadoMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeValorLiberadoMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeParcelasMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeParcelasMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeIdadeMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeIdadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeValorMargemMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeValorMargemMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeMesesAdmissaoMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeMesesAdmissaoMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DtoResponseAuthenticatedUserInfo": {
         "type": "object",
         "properties": {
@@ -301,6 +482,74 @@
           },
           "stEmail": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DtoResponsePrequalConfigLeilao": {
+        "type": "object",
+        "properties": {
+          "manterEmpregadorCnpj": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "manterEmpregadorCpf": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "manterPep": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "rangeValorLiberadoMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeValorLiberadoMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeParcelasMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeParcelasMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeIdadeMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeIdadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeValorMargemMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeValorMargemMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeMesesAdmissaoMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rangeMesesAdmissaoMax": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
@@ -324,6 +573,10 @@
             "nullable": true
           },
           "milis": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "milisPerItem": {
             "type": "integer",
             "format": "int64"
           }
@@ -350,6 +603,16 @@
             "type": "string",
             "nullable": true
           },
+          "mensagem": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DtoServiceOk": {
+        "type": "object",
+        "properties": {
           "mensagem": {
             "type": "string",
             "nullable": true
@@ -530,6 +793,10 @@
             "items": {
               "$ref": "#/components/schemas/AlertaRequest"
             },
+            "nullable": true
+          },
+          "_motivoRejeitado": {
+            "type": "string",
             "nullable": true
           }
         },

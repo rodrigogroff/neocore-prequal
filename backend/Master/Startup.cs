@@ -23,6 +23,8 @@ namespace Master
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMemoryCache();
+
             services.Configure<LocalNetwork>(Configuration.GetSection("localNetwork"));
 
             // Configuração do Swagger

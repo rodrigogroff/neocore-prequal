@@ -1,0 +1,38 @@
+
+
+"idSolicitacao": 2026,
+      "cpf": 69559564005,
+      "matricula": "mat-56",
+      "inscricaoEmpregador": {
+        "codigo": 1,
+        "descricao": "CNPJ"
+      },
+      "numeroInscricaoEmpregador": 84676472000159,
+      "valorLiberado": 10000,
+      "nroParcelas": 10,
+      "dataHoraValidadeSolicitacao": "2036-01-22T19:28:40.850Z",
+      "nomeTrabalhador": "Reginaldo Leme",
+      "dataNascimento": "17041976",
+      "margemDisponivel": 500,
+      "elegivelEmprestimo": true,
+      "dataAdmissao": "01122024",
+      "pessoaExpostaPoliticamente": {
+        "codigo": 0,
+        "descricao": "Sem cargo politico"
+      }
+
+controles (padrao):
+    
+    empregador_cnpj:  true
+    empregador_cpf:  false
+    vlr_lib_minimo:  1000
+    vlr_lib_maximo:  1000
+    nro_parcelas_min: 4
+    nro_parcelas_max: 46
+    idade_minima:  21
+    idade_maxima:  65
+    vlr_margem_minimo:  1000
+    vlr_margem_maximo:  1000
+    meses_admissao_minimo:  21
+    meses_admissao_maximo:  455
+    pep:  false

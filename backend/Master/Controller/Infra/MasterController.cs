@@ -6,6 +6,7 @@ using Master.Service.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -17,16 +18,24 @@ namespace Master.Controller.Infra
     public partial class MasterController : ControllerBase
     {
         public LocalNetwork Network;
+        public IMemoryCache MemoryCache;
         public ServiceManager ServiceManager;
         public SrvBase BaseService;
         public HelperJwtComposer JwtComposerHelper = null;
 
-        public MasterController( IOptions<LocalNetwork> network)
+        public MasterController(IOptions<LocalNetwork> network)
         {
             this.Network = network.Value;
             ServiceManager = new ServiceManager(this);
         }
-        
+
+        public MasterController(IMemoryCache memCache, IOptions<LocalNetwork> network)
+        {
+            this.Network = network.Value;
+            this.MemoryCache = memCache;
+            ServiceManager = new ServiceManager(this);
+        }
+
         [NonAction]
         public void FinishService()
         {

@@ -35,16 +35,19 @@ namespace Master.Service.Domain.Prequal
 
             var effectiveCores = Math.Min(maxCores, totalSolics);
             var batches = DivideBatches(request.propostas, effectiveCores);
-            var tasks = new List<Task<ApiResponse<DtoResponsePrequalSolicitacoes>>>();
+            var tasks = new List<Task<ApiResponse<DtoResponsePrequalSolicitacoesNode>>>();
+
+            var fkCompany = (long)user.fkCompany;
 
             foreach (var batch in batches)
             {
                 var client = new ApiClient(apiRouter, token);
-                var batchData = new DtoRequestPrequalSolicitacoes
+                var batchData = new DtoRequestPrequalSolicitacoesNode
                 {
+                    fkCompany = fkCompany,
                     propostas = batch
                 };
-                tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoes>("/api/propostas-leilao-cpts-node", batchData));
+                tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoesNode>("/api/propostas-leilao-cpts-node", batchData));
             }
 
             var responses = await Task.WhenAll(tasks);
@@ -66,6 +69,8 @@ namespace Master.Service.Domain.Prequal
             sw.Stop();
 
             OutDto.milis = sw.ElapsedMilliseconds;
+            OutDto.itens = OutDto.qualificadas.Count + OutDto.rejeitadas.Count;
+            OutDto.msPerItem = (double) OutDto.milis / OutDto.itens;
 
             return true;
         }

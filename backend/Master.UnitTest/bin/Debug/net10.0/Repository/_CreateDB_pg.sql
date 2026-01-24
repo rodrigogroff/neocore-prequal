@@ -17,3 +17,19 @@ ALTER TABLE public."User" ADD COLUMN if not exists "bAdmin" boolean;
 
 CREATE INDEX IF NOT EXISTS idx_user ON public."User" ("fkCompany");
 
+CREATE TABLE IF NOT EXISTS public."PrequalLeilaoConfig" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "fkCompany" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bEmpregadorCnpj" boolean;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bEmpregadorCpf" boolean;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "bPep" boolean;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrLibMin" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrLibMax" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuParcMin" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuParcMax" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuIdadeMin" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuIdadeMax" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrMargemMin" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrMargemMax" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAdmissaoMin" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAdmissaoMax" int;
+

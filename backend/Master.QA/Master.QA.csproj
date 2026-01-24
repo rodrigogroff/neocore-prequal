@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Samples\Domain\Prequal\" />
+    <Folder Include="UseCase\Domain\Prequal\" />
   </ItemGroup>
 
 </Project>

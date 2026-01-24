@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Master.Repository;
 using Master.Repository.Domain.Company;
 using Master.Repository.Domain.User;
+using Master.Repository.Domain.Prequal;
 
 namespace Master.Service.Base
 {
@@ -14,6 +15,7 @@ namespace Master.Service.Base
     {
         public List<BaseRepository> currentAllocRepos = null;
 
+        public IPrequalRepository iRepoPrequal = null;
         public ICompanyRepository iRepoCompany = null;
         public IUserRepository iRepoUser = null;
 
@@ -27,6 +29,13 @@ namespace Master.Service.Base
             if (enableCache) repo.EnableCache();
             currentAllocRepos.Add(repo);
             return repo;
+        }
+
+        protected IPrequalRepository RepoPrequal(bool bCache = false)
+        {
+            if (iRepoPrequal != null)
+                return iRepoPrequal;
+            return CreateAndTrackRepo<PrequalRepository>(enableCache: bCache);
         }
 
         protected IUserRepository RepoUser(bool bCache = false)
@@ -89,7 +98,10 @@ namespace Master.Service.Base
 
         public void DisposeService()
         {
+            // --------------------------
             // repositories
+            // --------------------------
+
             if (currentAllocRepos?.Count > 0)
             {
                 foreach (var repo in currentAllocRepos)
@@ -98,16 +110,22 @@ namespace Master.Service.Base
                 currentAllocRepos.Clear();
                 currentAllocRepos = null;
             }
-
+            iRepoPrequal = null;
             iRepoCompany = null;
             iRepoUser = null;
 
+            // --------------------------
             // helpers
+            // --------------------------
+
             _helperCheck = null;
             _helperMisc = null;
             _helperFileManager = null;
 
+            // --------------------------
             // envs
+            // --------------------------
+
             if (Environments is not null)
             {
                 foreach (var item in Environments)
@@ -116,7 +134,10 @@ namespace Master.Service.Base
                 Environments = null;
             }
 
+            // --------------------------
             // database
+            // --------------------------
+
             if (MainDb != null)
             {
                 if (MainDb.State == System.Data.ConnectionState.Open)

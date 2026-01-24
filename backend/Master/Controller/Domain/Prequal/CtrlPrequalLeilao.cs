@@ -7,16 +7,17 @@ using Master.Service.Domain.Prequal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("Pré-qualificação")]
+    [Tags("Pré-qualificação L1 (descarte para solicitação de propostas de leilão)")]
     [Authorize]
-    public class CtrlPrequal : MasterController
+    public class CtrlPrequalLeilao : MasterController
     {
-        public CtrlPrequal(IOptions<LocalNetwork> network) : base(network) { }
+        public CtrlPrequalLeilao(IMemoryCache memCache, IOptions<LocalNetwork> network) : base(memCache, network) { }
 
         [HttpPost]
         [Route("api/propostas-leilao-cpts")]
@@ -31,7 +32,12 @@ namespace Master.Controller.Domain.Prequal
             // --b) coletar respostas dos nodos
             // --c) montar resposta final com tudo
 
-            if (!await srv.Exec(GetBearerToken(), GetAuthenticatedUser(), Network.localGateway, Network.maxCores, request))
+            var token = GetBearerToken(); // para imbutir no request autorizado do node
+            var user = GetAuthenticatedUser(); // para descobrir a empresa a processar
+            var localGateway = Network.localGateway; // roteador interno do cluster
+            var maxCores = Network.maxCores; // quantos nodos usar
+
+            if (!await srv.Exec(token, user, localGateway, maxCores, request))
             {
                 return BadRequest(new DtoServiceError
                 {
@@ -44,11 +50,11 @@ namespace Master.Controller.Domain.Prequal
         }
 
         [HttpPost]
-       // [ApiExplorerSettings(IgnoreApi = true)]
+        [ApiExplorerSettings(IgnoreApi = true)]
         [Route("api/propostas-leilao-cpts-node")]
-        [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoes), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoesNode), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> NodeFilter([FromBody] DtoRequestPrequalSolicitacoes request)
+        public async Task<ActionResult> NodeFilter([FromBody] DtoRequestPrequalSolicitacoesNode request)
         {            
             var srv = RegisterService<SrvPrequalSolicitacaoNode>();
 
@@ -58,7 +64,7 @@ namespace Master.Controller.Domain.Prequal
             // --c) filtrar propostas válidas
             // --d) montar resposta final
 
-            if (!await srv.Exec(Network.cacheLocation, request))
+            if (!await srv.Exec(this.MemoryCache, request))
             {
                 return BadRequest(new DtoServiceError
                 {

@@ -64,10 +64,7 @@ namespace Master
                     */
 
                 });
-
-           
-                //webBuilder.ConfigureLogging((context, logging) => { logging.ClearProviders(); });
-
+                webBuilder.ConfigureLogging((context, logging) => { logging.ClearProviders(); });
             });
     }
 }

@@ -38,6 +38,67 @@
     ]
   },
   {
+    "ContainingType": "Master.Controller.Domain.Prequal.CtrlPrequalConfig",
+    "Method": "Update",
+    "RelativePath": "api/config-prequal-leilao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Master.Entity.Dto.Request.Domain.Prequal.DtoRequestPrequalUpdateConfigLeilao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Master.Entity.Dto.Infra.DtoServiceOk",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Master.Entity.Dto.Infra.DtoServiceError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Pr\u00E9-qualifica\u00E7\u00E3o (configura\u00E7\u00E3o)"
+    ]
+  },
+  {
+    "ContainingType": "Master.Controller.Domain.Prequal.CtrlPrequalConfig",
+    "Method": "Get",
+    "RelativePath": "api/config-prequal-leilao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Master.Entity.Dto.Response.Domain.Prequal.DtoResponsePrequalConfigLeilao",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Pr\u00E9-qualifica\u00E7\u00E3o (configura\u00E7\u00E3o)"
+    ]
+  },
+  {
     "ContainingType": "Master.Controller.Domain.Prequal.CtrlPrequal",
     "Method": "Filter",
     "RelativePath": "api/propostas-leilao-cpts",
@@ -72,7 +133,7 @@
       }
     ],
     "Tags": [
-      "Pr\u00E9-qualifica\u00E7\u00E3o"
+      "Pr\u00E9-qualifica\u00E7\u00E3o (descarte para solicita\u00E7\u00E3o de propostas)"
     ]
   },
   {
@@ -85,7 +146,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Master.Entity.Dto.Request.Domain.Prequal.DtoRequestPrequalSolicitacoes",
+        "Type": "Master.Entity.Dto.Request.Domain.Prequal.DtoRequestPrequalSolicitacoesNode",
         "IsRequired": true
       }
     ],
@@ -110,7 +171,7 @@
       }
     ],
     "Tags": [
-      "Pr\u00E9-qualifica\u00E7\u00E3o"
+      "Pr\u00E9-qualifica\u00E7\u00E3o (descarte para solicita\u00E7\u00E3o de propostas)"
     ]
   }
 ]

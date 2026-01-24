@@ -5,6 +5,14 @@ using System.Text.Json.Serialization;
 
 namespace Master.Entity.Dto.Request.Domain.Prequal
 {
+    [ExcludeFromCodeCoverage]
+    public class DtoRequestPrequalSolicitacoesNode
+    {
+        public long? fkCompany { get; set; }
+        public List<PropostaDataPrevRequest> propostas { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
     public class DtoRequestPrequalSolicitacoes
     {
         public List<PropostaDataPrevRequest> propostas {  get; set; }
