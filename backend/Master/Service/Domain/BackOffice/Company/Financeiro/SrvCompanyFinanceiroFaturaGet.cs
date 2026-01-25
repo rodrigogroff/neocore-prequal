@@ -32,6 +32,8 @@ namespace Master.Service.Domain.BackOffice.Company
 
                 var logs = _repoPrequal.GetLogs(fkCompany, (int)request.nuYear, (int)request.nuMonth);
 
+                var sitFatura = "em aberto";
+
                 var qtdTransL1 = logs.Count;
                 var qtdTransItensL1 = (int) logs.Sum ( y=> y.nuTotProcs );
 
@@ -50,6 +52,7 @@ namespace Master.Service.Domain.BackOffice.Company
                     valorCalcTransacaoL1 = vrCalcTrans,
                     valorCalcTransacaoItemL1 = vrCalcTransItem,
                     valorTotal = Math.Round(vrCalcTrans + vrCalcTransItem + itemDbFinanceiro.vrSubscriptionL1, 2),
+                    situacao = sitFatura
                 };
 
                 return true;

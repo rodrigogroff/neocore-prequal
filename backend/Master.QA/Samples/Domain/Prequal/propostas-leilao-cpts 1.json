@@ -1,0 +1,22 @@
+{
+  "propostas": [
+    {
+      "IdSolicitacao": 1,
+      "Cpf": 10000000001,
+      "Matricula": "MAT001",
+      "InscricaoEmpregador": {
+        "Codigo": 3,
+        "Descricao": "Outros"
+      },
+      "NumeroInscricaoEmpregador": 10000000000100,
+      "ValorLiberado": 10000.00,
+      "NroParcelas": 24,
+      "DataHoraValidadeSolicitacao": "2026-01-24T10:00:00",
+      "NomeTrabalhador": "Trabalhador 1",
+      "DataNascimento": "24011991",
+      "MargemDisponivel": 500.00,
+      "ElegivelEmprestimo": false,
+      "DataAdmissao": "24072021"
+    }
+  ]
+}

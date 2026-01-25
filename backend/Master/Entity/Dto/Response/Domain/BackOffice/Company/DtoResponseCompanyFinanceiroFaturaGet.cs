@@ -4,6 +4,7 @@
     {
         public string ano { get; set; }
         public string mes { get; set; }
+        public string situacao { get; set; }
         public double valorAssinaturaL1 { get; set; }
         public double valorPrecoTransacaoL1 { get; set; }
         public double valorPrecoTransacaoItemL1 { get; set; }

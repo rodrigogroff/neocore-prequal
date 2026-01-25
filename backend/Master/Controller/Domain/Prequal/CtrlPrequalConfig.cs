@@ -34,7 +34,7 @@ namespace Master.Controller.Domain.Prequal
         {
             var srv = RegisterService<SrvPrequalSolicitacaoLeilaoConfigGet>();
 
-            if (!await srv.Exec(GetAuthenticatedUser(), Network.cacheLocation))
+            if (!await srv.Exec(GetAuthenticatedUser()))
             {
                 return BadRequest(new DtoServiceError
                 {

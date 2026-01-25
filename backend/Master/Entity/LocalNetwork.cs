@@ -9,6 +9,5 @@
         public string database { get; set; }        
         public int maxCores { get; set; }
         public string localGateway { get; set; }
-        public string cacheLocation { get; set; }
     }
 }

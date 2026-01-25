@@ -54,43 +54,55 @@ namespace Master.Service.Domain.Prequal
 
         public async Task<bool> Exec(IMemoryCache memCache, DtoRequestPrequalSolicitacoesNode request)
         {
-            var propostas = request.propostas;
-            var count = propostas.Count;
+            Console.WriteLine("SrvPrequalSolicitacaoNode");
 
-            OutDto = new DtoResponsePrequalSolicitacoes
+            try
             {
-                qualificadas = new List<PropostaDataPrevResponse>(count),
-                rejeitadas = new List<PropostaDataPrevResponse>(count)
-            };
 
-            if (count == 0)
+                var propostas = request.propostas;
+                var count = propostas.Count;
+
+                OutDto = new DtoResponsePrequalSolicitacoes
+                {
+                    qualificadas = new List<PropostaDataPrevResponse>(count),
+                    rejeitadas = new List<PropostaDataPrevResponse>(count)
+                };
+
+                if (count == 0)
+                {
+                    return true;
+                }
+
+                var fkCompany = (int)request.fkCompany;
+                var configPrequal = await GetPrequalConfig(memCache, fkCompany);
+                var currentDate = DateTime.Now;
+
+                for (int i = 0; i < count; i++)
+                {
+                    var prop = propostas[i];
+
+                    if (TryRejectProposal(prop, configPrequal, currentDate, out var rejectMsg, out var rejectMsgDetalhe))
+                    {
+                        var rejected = PropostaDataPrevResponseMapper.Copy(prop);
+                        rejected._motivoRejeitado = rejectMsg;
+                        rejected._detalheRejeitado = rejectMsgDetalhe;
+                        OutDto.rejeitadas.Add(rejected);
+                    }
+                    else
+                    {
+                        var qualified = PropostaDataPrevResponseMapper.Copy(prop);
+                        qualified._motivoRejeitado = null;
+                        qualified._detalheRejeitado = null;
+                        OutDto.qualificadas.Add(qualified);
+                    }
+                }
+            }
+            catch (Exception ex)
             {
-                return true;
+                Console.WriteLine(ex.ToString());
             }
 
-            var fkCompany = (int)request.fkCompany;
-            var configPrequal = await GetPrequalConfig(memCache, fkCompany);
-            var currentDate = DateTime.Now;
-
-            for (int i = 0; i < count; i++)
-            {
-                var prop = propostas[i];
-
-                if (TryRejectProposal(prop, configPrequal, currentDate, out var rejectMsg, out var rejectMsgDetalhe))
-                {
-                    var rejected = PropostaDataPrevResponseMapper.Copy(prop);
-                    rejected._motivoRejeitado = rejectMsg;
-                    rejected._detalheRejeitado = rejectMsgDetalhe;
-                    OutDto.rejeitadas.Add(rejected);
-                }
-                else
-                {
-                    var qualified = PropostaDataPrevResponseMapper.Copy(prop);
-                    qualified._motivoRejeitado = null;
-                    qualified._detalheRejeitado = null;
-                    OutDto.qualificadas.Add(qualified);
-                }
-            }
+            Console.WriteLine("SrvPrequalSolicitacaoNode OK");
 
             return true;
         }
@@ -103,7 +115,7 @@ namespace Master.Service.Domain.Prequal
             {
                 return cached;
             }
-
+                        
             StartDatabase(Network);
             var repo = RepoPrequal();
             var config = repo.GetPrequalLeilaoConfig(fkCompany);
@@ -112,7 +124,7 @@ namespace Master.Service.Domain.Prequal
             {
                 AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30)
             });
-
+            
             return config;
         }
 

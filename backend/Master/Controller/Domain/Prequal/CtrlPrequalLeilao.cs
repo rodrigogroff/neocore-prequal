@@ -34,8 +34,8 @@ namespace Master.Controller.Domain.Prequal
 
             var token = GetBearerToken(); // para imbutir no request autorizado do node
             var user = GetAuthenticatedUser(); // para descobrir a empresa a processar
-            var localGateway = Network.localGateway; // roteador interno do cluster
-            var maxCores = Network.maxCores; // quantos nodos usar
+            var localGateway = this.Network.localGateway; // roteador interno do cluster
+            var maxCores = this.Network.maxCores; // quantos nodos usar
 
             if (!await srv.Exec(token, user, localGateway, maxCores, request))
             {
@@ -50,7 +50,7 @@ namespace Master.Controller.Domain.Prequal
         }
 
         [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
+        //[ApiExplorerSettings(IgnoreApi = true)]
         [Route("api/propostas-leilao-cpts-node")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoesNode), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]

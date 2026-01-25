@@ -2,6 +2,7 @@
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Service.Base;
+using System;
 using System.Threading.Tasks;
 
 namespace Master.Service.Domain.Prequal
@@ -10,8 +11,10 @@ namespace Master.Service.Domain.Prequal
     {
         public DtoResponsePrequalConfigLeilao OutDto = null;
 
-        public async Task<bool> Exec(DtoAuthenticatedUser user, string cacheServer)
+        public async Task<bool> Exec(DtoAuthenticatedUser user)
         {
+            Console.WriteLine("SrvPrequalSolicitacaoLeilaoConfigGet ");
+
             StartDatabase(Network);
 
             var repo = RepoPrequal();
@@ -61,6 +64,8 @@ namespace Master.Service.Domain.Prequal
                 RangeValorMargemMax = itemDb.vrMargemMax,
                 RangeValorMargemMin = itemDb.vrMargemMin,
             };
+
+            Console.WriteLine("SrvPrequalSolicitacaoLeilaoConfigGet OK");
 
             return true;
         }
