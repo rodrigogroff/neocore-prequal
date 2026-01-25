@@ -1,8 +1,8 @@
-﻿using Master.Entity;
-using Master.Entity.Database.Domain.Prequal;
+﻿using Master.Entity.Database.Domain.Prequal;
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.Prequal;
 using Master.Entity.Dto.Response.Domain.Prequal;
+using Master.Entity.Gateway;
 using Master.Service.Base;
 using Master.Service.Infra;
 using System;
@@ -52,7 +52,11 @@ namespace Master.Service.Domain.Prequal
                         fkCompany = fkCompany,
                         propostas = batch
                     };
-                    tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoesNode>(LocalGateway.endpoint_propostas_leilao_cpts_node, batchData));
+                    tasks.Add(
+                        client.PostAsync<DtoResponsePrequalSolicitacoesNode>(
+                            LocalGateway.endpoint_propostas_leilao_cpts_node, 
+                            batchData
+                            ));
                 }
 
                 var responses = await Task.WhenAll(tasks);
@@ -117,10 +121,6 @@ namespace Master.Service.Domain.Prequal
             return true;
         }
 
-        /// <summary>
-        /// 100 items / 4 cores = [25, 25, 25, 25]
-        /// 102 items / 4 cores = [26, 26, 25, 25]
-        /// </summary>
         private List<List<PropostaDataPrevRequest>> DivideBatches(List<PropostaDataPrevRequest> items, int batchCount)
         {
             var batches = new List<List<PropostaDataPrevRequest>>();

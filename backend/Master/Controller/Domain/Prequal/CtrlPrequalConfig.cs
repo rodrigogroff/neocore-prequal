@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("Pré-qualificação (configuração)")]
+    [Tags("[3] Pré-qualificação (configuração)")]
     [Authorize]
     public class CtrlPrequalConfig : MasterController
     {

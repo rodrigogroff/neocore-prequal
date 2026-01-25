@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("Pré-qualificação L1 (descarte para solicitação de propostas de leilão)")]
+    [Tags("[4] Pré-qualificação L1 (descarte leilão ctps / dataprev)")]
     [Authorize]
     public class CtrlPrequalLeilao : MasterController
     {

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("Financeiro (uso do bureau)")]
+    [Tags("[2] Financeiro (uso do bureau)")]
     [Authorize]
     public class CtrlFinanceiro : MasterController
     {

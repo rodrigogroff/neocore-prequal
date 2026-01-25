@@ -5,13 +5,82 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
 namespace Master
 {
+    // Classe para ordenar os métodos HTTP no Swagger
+    public class OrderByMethodDocumentFilter : IDocumentFilter
+    {
+        private static readonly string[] MethodOrder = new[]
+        {
+            "get",
+            "post",
+            "put",
+            "patch",
+            "delete",
+            "options",
+            "head"
+        };
+
+        public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
+        {
+            // Cria um dicionário para agrupar paths por tag
+            var pathsByTag = new Dictionary<string, List<KeyValuePair<string, OpenApiPathItem>>>();
+
+            foreach (var path in swaggerDoc.Paths)
+            {
+                // Pega a primeira tag de cada operação
+                var tag = path.Value.Operations.Values
+                    .SelectMany(op => op.Tags)
+                    .Select(t => t.Name)
+                    .FirstOrDefault() ?? "default";
+
+                if (!pathsByTag.ContainsKey(tag))
+                {
+                    pathsByTag[tag] = new List<KeyValuePair<string, OpenApiPathItem>>();
+                }
+
+                // Ordena as operações dentro do path por método HTTP
+                var orderedOperations = path.Value.Operations
+                    .OrderBy(o => System.Array.IndexOf(MethodOrder, o.Key.ToString().ToLower()))
+                    .ToDictionary(o => o.Key, o => o.Value);
+
+                var orderedPathItem = new OpenApiPathItem
+                {
+                    Operations = orderedOperations,
+                    Parameters = path.Value.Parameters,
+                    Description = path.Value.Description,
+                    Summary = path.Value.Summary
+                };
+
+                pathsByTag[tag].Add(new KeyValuePair<string, OpenApiPathItem>(path.Key, orderedPathItem));
+            }
+
+            // Reconstrói o Paths ordenando por tag alfabeticamente
+            swaggerDoc.Paths = new OpenApiPaths();
+            foreach (var tag in pathsByTag.OrderBy(x => x.Key))
+            {
+                foreach (var path in tag.Value.OrderBy(p => p.Key))
+                {
+                    swaggerDoc.Paths.Add(path.Key, path.Value);
+                }
+            }
+
+            // Ordena as tags alfabeticamente
+            if (swaggerDoc.Tags != null)
+            {
+                swaggerDoc.Tags = swaggerDoc.Tags.OrderBy(t => t.Name).ToList();
+            }
+        }
+    }
+
     public class Startup
     {
         private const string SwaggerCustomStyles = @"
@@ -182,7 +251,7 @@ namespace Master
         }
         
         .swagger-ui .opblock.opblock-post {
-            background: rgba(73, 204, 144, 0.15) !important;
+            background: rgba(49, 137, 97, 0.15) !important;
         }
         
         .swagger-ui .opblock.opblock-post:hover {
@@ -190,13 +259,23 @@ namespace Master
             border-color: #ff8c00 !important;
         }
         
+        /* Cor do botão POST */
+        .swagger-ui .opblock.opblock-post .opblock-summary-method {
+            background: #318961 !important;
+        }
+        
         .swagger-ui .opblock.opblock-get {
-            background: rgba(97, 175, 254, 0.15) !important;
+            background: rgba(54, 104, 153, 0.15) !important;
         }
         
         .swagger-ui .opblock.opblock-get:hover {
             background: rgba(255, 140, 0, 0.3) !important;
             border-color: #ff8c00 !important;
+        }
+        
+        /* Cor do botão GET */
+        .swagger-ui .opblock.opblock-get .opblock-summary-method {
+            background: #366899 !important;
         }
         
         .swagger-ui .opblock-body,
@@ -301,6 +380,9 @@ namespace Master
                     Version = "v1",
                     Description = "Endpoints para serviços bancários de crédito"
                 });
+
+                // Adiciona o filtro para ordenar tags e métodos HTTP
+                c.DocumentFilter<OrderByMethodDocumentFilter>();
 
                 // Configuração para autenticação JWT no Swagger
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme

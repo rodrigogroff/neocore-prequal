@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Auth
 {
-    [Tags("_token")]
+    [Tags("[1] token")]
     public class CtrlToken : MasterController
     {
         public CtrlToken(IOptions<LocalNetwork> network) : base(network) { }

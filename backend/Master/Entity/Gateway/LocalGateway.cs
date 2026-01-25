@@ -1,4 +1,4 @@
-﻿namespace Master.Entity
+﻿namespace Master.Entity.Gateway
 {
     public class LocalGateway
     {
