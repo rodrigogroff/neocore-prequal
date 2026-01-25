@@ -2,7 +2,6 @@
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Service.Base;
-using System;
 using System.Threading.Tasks;
 
 namespace Master.Service.Domain.Prequal

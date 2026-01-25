@@ -22,8 +22,19 @@ namespace Master.Controller.Domain.Prequal
         [Route("api/config-prequal-leilao")]
         [ProducesResponseType(typeof(DtoServiceOk), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Update([FromBody] DtoRequestPrequalUpdateConfigLeilao request)
+        public async Task<ActionResult> Update([FromBody] DtoRequestPrequalConfigLeilao request)
         {
+            var srv = RegisterService<SrvPrequalSolicitacaoLeilaoConfigSet>();
+
+            if (!await srv.Exec(GetAuthenticatedUser(), request))
+            {
+                return BadRequest(new DtoServiceError
+                {
+                    codigo = srv.errorCode,
+                    mensagem = srv.errorMessage
+                });
+            }
+
             return Ok();
         }
 
