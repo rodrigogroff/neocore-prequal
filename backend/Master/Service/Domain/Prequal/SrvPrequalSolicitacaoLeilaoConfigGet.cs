@@ -13,8 +13,6 @@ namespace Master.Service.Domain.Prequal
 
         public async Task<bool> Exec(DtoAuthenticatedUser user)
         {
-            Console.WriteLine("SrvPrequalSolicitacaoLeilaoConfigGet ");
-
             StartDatabase(Network);
 
             var repo = RepoPrequal();
@@ -64,8 +62,6 @@ namespace Master.Service.Domain.Prequal
                 RangeValorMargemMax = itemDb.vrMargemMax,
                 RangeValorMargemMin = itemDb.vrMargemMin,
             };
-
-            Console.WriteLine("SrvPrequalSolicitacaoLeilaoConfigGet OK");
 
             return true;
         }

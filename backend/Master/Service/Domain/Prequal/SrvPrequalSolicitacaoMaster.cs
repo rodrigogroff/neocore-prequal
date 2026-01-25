@@ -22,9 +22,6 @@ namespace Master.Service.Domain.Prequal
             int maxCores,
             DtoRequestPrequalSolicitacoes request)
         {
-
-            Console.WriteLine("SrvPrequalSolicitacaoMaster");
-
             try
             {
                 Stopwatch sw = Stopwatch.StartNew();
@@ -47,9 +44,6 @@ namespace Master.Service.Domain.Prequal
 
                 foreach (var batch in batches)
                 {
-                    Console.WriteLine("apiRouter " + apiRouter);
-                    Console.WriteLine("token " + token);
-
                     var client = new ApiClient(apiRouter, token);
 
                     var batchData = new DtoRequestPrequalSolicitacoesNode
@@ -113,12 +107,10 @@ namespace Master.Service.Domain.Prequal
                     nuTotRejeitadas = OutDto.totalRejeitadas,
                     nuPctFilter = OutDto.pctPreQualificacao,
                 });
-
-                Console.WriteLine("SrvPrequalSolicitacaoMaster OK");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                
             }
 
             return true;

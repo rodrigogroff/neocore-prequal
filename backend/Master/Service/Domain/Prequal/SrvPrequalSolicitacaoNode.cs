@@ -54,8 +54,6 @@ namespace Master.Service.Domain.Prequal
 
         public async Task<bool> Exec(IMemoryCache memCache, DtoRequestPrequalSolicitacoesNode request)
         {
-            Console.WriteLine("SrvPrequalSolicitacaoNode");
-
             try
             {
 
@@ -99,10 +97,8 @@ namespace Master.Service.Domain.Prequal
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                
             }
-
-            Console.WriteLine("SrvPrequalSolicitacaoNode OK");
 
             return true;
         }

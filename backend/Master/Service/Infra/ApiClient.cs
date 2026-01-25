@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 namespace Master.Service.Infra
 {
     public class ApiClient : IDisposable
@@ -28,17 +29,13 @@ namespace Master.Service.Infra
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
             }
         }
-        /// <summary>
-        /// Set Bearer token for authorization
-        /// </summary>
+
         public void SetBearerToken(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
         }
-        /// <summary>
-        /// GET request
-        /// </summary>
+        
         public async Task<ApiResponse<T>> GetAsync<T>(string endpoint)
         {
             var response = await _httpClient.GetAsync(endpoint);
@@ -66,13 +63,9 @@ namespace Master.Service.Infra
             }
             return apiResponse;
         }
-        /// <summary>
-        /// POST request with body
-        /// </summary>
+        
         public async Task<ApiResponse<T>> PostAsync<T>(string endpoint, object? body = null)
         {
-            Console.WriteLine("PostAsync");
-
             var request = new HttpRequestMessage(HttpMethod.Post, endpoint);
             if (body != null)
             {
@@ -89,16 +82,12 @@ namespace Master.Service.Infra
             };
             if (response.IsSuccessStatusCode && !string.IsNullOrWhiteSpace(content))
             {
-                Console.WriteLine("PostAsync Success " + content);
-
                 try
                 {
                     apiResponse.Data = JsonSerializer.Deserialize<T>(content, _jsonOptions);
                 }
                 catch (JsonException ex)
                 {
-                    Console.WriteLine("PostAsync FAIL " + ex.ToString());
-
                     apiResponse.ErrorMessage = $"Failed to deserialize response: {ex.Message}";
                 }
 
@@ -107,12 +96,7 @@ namespace Master.Service.Infra
             else if (!response.IsSuccessStatusCode)
             {
                 apiResponse.ErrorMessage = $"Request failed with status {response.StatusCode}: {content}";
-
-                Console.WriteLine(apiResponse.ErrorMessage);
-
             }
-
-            Console.WriteLine("PostAsync OK!");
 
             return apiResponse;
         }
@@ -121,9 +105,7 @@ namespace Master.Service.Infra
             _httpClient?.Dispose();
         }
     }
-    /// <summary>
-    /// API response wrapper
-    /// </summary>
+
     public class ApiResponse<T>
     {
         public HttpStatusCode StatusCode { get; set; }
@@ -133,24 +115,3 @@ namespace Master.Service.Infra
         public string? ErrorMessage { get; set; }
     }
 }
-/*
- * 
-var client = new ApiClient("https://api.example.com");
-client.SetBearerToken("your-token-here");
-
-// GET example
-var getResponse = await client.GetAsync<User>("/users/123");
-if (getResponse.IsSuccess)
-{
-    Console.WriteLine($"User: {getResponse.Data?.Name}");
-}
-
-// POST example
-var data = new { Name = "John", Email = "john@example.com" };
-var response = await client.PostAsync<User>("/users", data);
-if (response.IsSuccess)
-{
-    Console.WriteLine($"Created user: {response.Data?.Name}");
-}
- * 
- * */
