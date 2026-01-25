@@ -1,4 +1,5 @@
-﻿using Master.Entity.Database.Domain.Prequal;
+﻿using Master.Entity;
+using Master.Entity.Database.Domain.Prequal;
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.Prequal;
 using Master.Entity.Dto.Response.Domain.Prequal;
@@ -51,7 +52,7 @@ namespace Master.Service.Domain.Prequal
                         fkCompany = fkCompany,
                         propostas = batch
                     };
-                    tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoesNode>("/api/propostas-leilao-cpts-node", batchData));
+                    tasks.Add(client.PostAsync<DtoResponsePrequalSolicitacoesNode>(LocalGateway.endpoint_propostas_leilao_cpts_node, batchData));
                 }
 
                 var responses = await Task.WhenAll(tasks);
