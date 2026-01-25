@@ -50,7 +50,9 @@ namespace Master.Controller.Domain.Prequal
         }
 
         [HttpPost]
-        //[ApiExplorerSettings(IgnoreApi = true)]
+        #if RELEASE
+        [ApiExplorerSettings(IgnoreApi = true)]
+        #endif
         [Route("api/propostas-leilao-cpts-node")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoesNode), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]

@@ -34,7 +34,7 @@ namespace Master.Test.Service.Domain.Auth
             string password = "123456";
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -49,7 +49,7 @@ namespace Master.Test.Service.Domain.Auth
             string password = "123456";
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -66,7 +66,7 @@ namespace Master.Test.Service.Domain.Auth
             _mockUserRepo.Setup(r => r.GetUser(email)).Returns((Tb_User)null);
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -91,7 +91,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -118,7 +118,7 @@ namespace Master.Test.Service.Domain.Auth
             _mockCompanyRepo.Setup(r => r.GetCompany(10)).Returns((Tb_Company)null);
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -149,7 +149,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -180,7 +180,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -213,7 +213,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsTrue(result);
@@ -250,7 +250,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsTrue(result);
@@ -283,7 +283,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsFalse(result);
@@ -314,7 +314,7 @@ namespace Master.Test.Service.Domain.Auth
             });
 
             // Act
-            bool result = _srv.Exec(email, password);
+            bool result = _srv.ExecLoginUser(email, password);
 
             // Assert
             Assert.IsTrue(result);

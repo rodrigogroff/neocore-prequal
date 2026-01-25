@@ -16,6 +16,7 @@ namespace Master.Controller.Helper
         public string ComposeTokenForSession(DtoAuthenticatedUser user)
         {
             const string sUser = "user";
+
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(LocalNetwork.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor

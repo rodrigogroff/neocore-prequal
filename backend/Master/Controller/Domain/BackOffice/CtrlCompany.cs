@@ -3,13 +3,17 @@ using Master.Entity;
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.BackOffice.Company;
 using Master.Service.Domain.BackOffice.Company;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.BackOffice
 {
+    [Tags("_company (private)")]
+#if RELEASE
     [ApiExplorerSettings(IgnoreApi = true)]
+#endif
     public class CtrlCompany : MasterController
     {
         public CtrlCompany(IOptions<LocalNetwork> network) : base(network) { }

@@ -19,19 +19,21 @@ namespace Master.Controller.Domain.Auth
 
         [AllowAnonymous]
         [HttpPost]
-        [Route("api/authenticate")]
+        [Route("api/authenticate-user")]
         [ProducesResponseType(typeof(DtoResponseToken), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Authenticate([FromBody] DtoRequestLoginInformation request)
+        public async Task<ActionResult> AuthenticateUser([FromBody] DtoRequestLoginInformation request)
         {
             var srv = RegisterService<SrvAuthenticate>();
 
-            if (!srv.Exec(request.email, request.password))
+            if (!srv.ExecLoginUser(request.email, request.password))
+            {
                 return BadRequest(new DtoServiceError
                 {
                     codigo = srv.errorCode,
                     mensagem = srv.errorMessage
                 });
+            }
 
             return Ok(new DtoResponseToken
             {
@@ -41,6 +43,30 @@ namespace Master.Controller.Domain.Auth
                     stEmail = srv.OutDto.stEmail,
                     stName = srv.OutDto.stName,
                 }
+            });
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/authenticate-server")]
+        [ProducesResponseType(typeof(DtoResponseToken), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> AuthenticateServer([FromBody] DtoRequestLoginServerInformation request)
+        {
+            var srv = RegisterService<SrvAuthenticate>();
+
+            if (!srv.ExecLoginMachine(request.client_id, request.secret))
+            {
+                return BadRequest(new DtoServiceError
+                {
+                    codigo = srv.errorCode,
+                    mensagem = srv.errorMessage
+                });
+            }
+
+            return Ok(new DtoResponseServerToken
+            {
+                token = this.JwtComposer.ComposeTokenForSession(srv.OutDto),                
             });
         }
     }

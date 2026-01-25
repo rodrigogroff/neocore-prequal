@@ -55,13 +55,5 @@ namespace Master.Controller.Domain.Prequal
 
             return Ok(srv.OutDto);
         }
-
-        [HttpGet]
-        [Route("api/fatura-servicos-detalhada")]
-        //[ProducesResponseType(typeof(DtoResponsePrequalConfigLeilao), StatusCodes.Status200OK)]
-        public async Task<ActionResult> GetFaturaDetalhada()
-        {
-            return Ok();
-        }
     }
 }

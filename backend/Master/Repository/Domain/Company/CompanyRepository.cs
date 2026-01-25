@@ -2,6 +2,7 @@
 using Master.Entity.Database.Domain.Company;
 using Npgsql;
 using NpgsqlTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,7 @@ namespace Master.Repository.Domain.Company
     public interface ICompanyRepository 
     {
         Tb_Company GetCompany(long id);
+        Tb_Company GetCompany(Guid client_id);
         List<Tb_Company> GetCompanies();
         long InsertCompany(Tb_Company mdl, bool retId = false);
         void UpdateCompany(Tb_Company mdl);
@@ -17,6 +19,10 @@ namespace Master.Repository.Domain.Company
         Tb_CompanyFinanceiro GetCompanyFinanceiro(int fkCompany);
         long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl, bool retId = false);
         void UpdateCompanyFinanceiro(Tb_CompanyFinanceiro mdl);
+
+        Tb_CompanyFatura GetCompanyFatura(int fkCompany, int year, int month);
+        long InsertCompanyFatura(Tb_CompanyFatura mdl, bool retId = false);
+        void UpdateCompanyFatura(Tb_CompanyFatura mdl);
     }
         
     public class CompanyRepository : BaseRepository, ICompanyRepository
@@ -26,6 +32,13 @@ namespace Master.Repository.Domain.Company
             const string query = "select * from \"Company\" where \"id\"=@id";
 
             return db.QueryFirstOrDefault<Tb_Company>(query, new { id });
+        }
+
+        public Tb_Company GetCompany(Guid client_id)
+        {
+            const string query = "select * from \"Company\" where \"client_id\"=@client_id";
+
+            return db.QueryFirstOrDefault<Tb_Company>(query, new { client_id });
         }
 
         public List<Tb_Company> GetCompanies()
@@ -96,10 +109,10 @@ namespace Master.Repository.Domain.Company
             const
                string
                    id = "id",
-                   fkCompany = "stName",
-                   vrSubscriptionL1 = "client_id",
-                   vrL1Transaction = "stSecret",
-                   vrL1TransactionItem = "bActive";
+                   fkCompany = "fkCompany",
+                   vrSubscriptionL1 = "vrSubscriptionL1",
+                   vrL1Transaction = "vrL1Transaction",
+                   vrL1TransactionItem = "vrL1TransactionItem";
 
             cmd.Parameters.AddRange(new NpgsqlParameter[]
             {
@@ -139,5 +152,87 @@ namespace Master.Repository.Domain.Company
             SetParamsCompanyFinanceiro(cmd, mdl);
             cmd.ExecuteNonQuery();
         }
+
+        public Tb_CompanyFatura GetCompanyFatura(int fkCompany, int year, int month)
+        {
+            const string query = "select * from \"CompanyFatura\" where \"fkCompany\"=@fkCompany and \"nuYear\"=@year and \"nuMonth\"=@month";
+
+            return db.QueryFirstOrDefault<Tb_CompanyFatura>(query, new { fkCompany, year, month });
+        }
+        
+        public void SetParamsCompanyFatura(NpgsqlCommand cmd, Tb_CompanyFatura mdl)
+        {
+            const
+               string
+                   id = "id",
+                   fkCompany = "fkCompany",
+                   nuYear = "nuYear",
+                   nuMonth = "nuMonth",
+                   nuQtdL1Trans = "nuQtdL1Trans",
+                   nuQtdL1TransItem = "nuQtdL1TransItem",
+                   vrSubscriptionL1 = "vrSubscriptionL1",
+                   vrL1Transaction = "vrL1Transaction",
+                   vrL1TransactionItem = "vrL1TransactionItem",
+                   vrL1TransactionTotal = "vrL1TransactionTotal",
+                   vrL1TransactionItemTotal = "vrL1TransactionItemTotal",
+                   vrTotal = "vrTotal";
+
+            cmd.Parameters.AddRange(new NpgsqlParameter[]
+            {
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = id, Value = mdl.id },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = fkCompany, Value = mdl.fkCompany },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuYear, Value = GetNull(mdl.nuYear) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMonth, Value = GetNull(mdl.nuMonth) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuQtdL1Trans, Value = GetNull(mdl.nuQtdL1Trans) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuQtdL1TransItem, Value = GetNull(mdl.nuQtdL1TransItem) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrSubscriptionL1, Value = GetNull(mdl.vrSubscriptionL1) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1Transaction, Value = GetNull(mdl.vrL1Transaction) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionItem, Value = GetNull(mdl.vrL1TransactionItem) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionTotal, Value = GetNull(mdl.vrL1TransactionTotal) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionItemTotal, Value = GetNull(mdl.vrL1TransactionItemTotal) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrTotal, Value = GetNull(mdl.vrTotal) },
+            });
+        }
+
+
+        public long InsertCompanyFatura(Tb_CompanyFatura mdl, bool retId = false)
+        {
+            const string query =
+                "INSERT INTO \"CompanyFatura\" (\"fkCompany\",\"nuYear\",\"nuMonth\",\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\"" +
+                ",\"nuQtdL1Trans\",\"nuQtdL1TransItem\",\"vrL1TransactionTotal\",\"vrL1TransactionItemTotal\",\"vrTotal\") " +
+                "VALUES " +
+                "(@fkCompany,@nuYear,@nuMonth,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem,@vrL1TransactionItem,@nuQtdL1Trans,@nuQtdL1TransItem" +
+                "@vrL1TransactionTotal, @vrL1TransactionItemTotal, @vrTotal);";
+
+            const string currval = "select currval('public.\"CompanyFinanceiro_id_seq\"');";
+
+            using var cmd = new NpgsqlCommand(retId ? query + currval : query, db);
+            SetParamsCompanyFatura(cmd, mdl);
+            if (retId) return (long)cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
+            return 0;
+        }
+
+        public void UpdateCompanyFatura(Tb_CompanyFatura mdl)
+        {
+            const string query = "update \"CompanyFatura\" set " +
+                "\"nuYear\"=@nuYear," +
+                "\"nuMonth\"=@nuMonth," +
+                "\"vrSubscriptionL1\"=@vrSubscriptionL1," +
+                "\"vrL1Transaction\"=@vrL1Transaction," +
+                "\"vrL1TransactionItem\"=@vrL1TransactionItem," +
+                "\"nuQtdL1Trans\"=@nuQtdL1Trans," +
+                "\"nuQtdL1TransItem\"=@nuQtdL1TransItem," +
+                "\"vrL1TransactionTotal\"=@vrL1TransactionTotal," +
+                "\"vrL1TransactionItemTotal\"=@vrL1TransactionItemTotal," +
+                "\"vrTotal\"=@vrTotal " +
+                " where id=@id";
+
+            using var cmd = new NpgsqlCommand(query, db);
+            SetParamsCompanyFatura(cmd, mdl);
+            cmd.ExecuteNonQuery();
+        }
+
+        
     }
 }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
 	<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <Configurations>Debug;Release;Testing;Service</Configurations>
+    <Configurations>Debug;Release;Testing</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Debug'">
@@ -50,10 +50,6 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>CODE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Service|AnyCPU'">
     <DefineConstants>CODE</DefineConstants>
   </PropertyGroup>
 
