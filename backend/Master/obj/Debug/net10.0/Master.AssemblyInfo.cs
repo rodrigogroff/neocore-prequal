@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("8de6c011-1c2d-4a47-ab1c-d6c32644f89a")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Master")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8a77fcad979cfb870176e05659f7befc4e529be")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.12")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+904eeead61d9faa0196041cb59d0f786058e755a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Master")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Master")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.12")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

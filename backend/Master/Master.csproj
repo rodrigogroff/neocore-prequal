@@ -37,6 +37,7 @@
     <UserSecretsId>8de6c011-1c2d-4a47-ab1c-d6c32644f89a</UserSecretsId>
     <OutputType>Exe</OutputType>
     <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+    <AssemblyVersion>1.0.12</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -52,13 +53,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>CODE</DefineConstants>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="wwwroot\**" />
-    <Content Remove="wwwroot\**" />
-    <EmbeddedResource Remove="wwwroot\**" />
-    <None Remove="wwwroot\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Remove="buffon_setttings.json" />
@@ -85,6 +79,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  
+   <ItemGroup>
+     <Folder Include="wwwroot\" />
+   </ItemGroup>
+  
+   <ItemGroup>
+     <Content Update="wwwroot\favicon.ico">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Content>
+     <Content Update="wwwroot\logoWhiteSmall.png">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Content>
+   </ItemGroup>
  
 
 </Project>
