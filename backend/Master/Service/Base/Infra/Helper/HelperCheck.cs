@@ -1,4 +1,4 @@
-﻿namespace Master.Service.Helper
+﻿namespace Master.Service.Base.Infra.Helper
 {
     public class HelperCheck
     {

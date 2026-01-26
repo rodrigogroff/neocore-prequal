@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.BackOffice
 {
-    [Tags("_company (private)")]
+    [Tags("_company (local gateway)")]
 #if RELEASE
     [ApiExplorerSettings(IgnoreApi = true)]
 #endif

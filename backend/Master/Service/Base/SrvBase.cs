@@ -1,5 +1,4 @@
 ﻿using Master.Entity;
-using Master.Service.Helper;
 using Npgsql;
 using System.Runtime;
 using System;
@@ -9,17 +8,30 @@ using Master.Repository.Domain.Company;
 using Master.Repository.Domain.User;
 using Master.Repository.Domain.Prequal;
 using Master.Repository.Domain.Bureau;
+using Master.Service.Base.Infra.Helper;
 
 namespace Master.Service.Base
 {
     public class SrvBase
     {
         public List<BaseRepository> currentAllocRepos = null;
+        public List<SrvBase> currentAllocServices = null;
 
         public ICompanyRepository iRepoCompany = null;
         public IUserRepository iRepoUser = null;
         public IBureauRepository iRepoBureau = null;
         public IPrequalRepository iRepoPrequal = null;
+
+        public NpgsqlConnection MainDb = null;
+        public LocalNetwork Network = null;
+
+        private HelperCheck? _helperCheck;
+        private HelperMisc? _helperMisc;
+        private HelperFileManager? _helperFileManager;
+
+        public HelperCheck HelperCheck() => _helperCheck ??= new();
+        public HelperMisc HelperMisc() => _helperMisc ??= new();
+        public HelperFileManager HelperFileManager() => _helperFileManager ??= new();
 
         public string errorCode = string.Empty;
         public string errorMessage = string.Empty;
@@ -61,38 +73,21 @@ namespace Master.Service.Base
             return CreateAndTrackRepo<BureauRepository>(enableCache: bCache);
         }
 
-        public NpgsqlConnection MainDb = null;
-        public List<SrvBase> Environments = null;
-        public LocalNetwork Network = null;
-
-        private HelperCheck? _helperCheck;
-        private HelperMisc? _helperMisc;
-        private HelperFileManager? _helperFileManager;
-
-        public HelperCheck HelperCheck() => _helperCheck ??= new();
-        public HelperMisc HelperMisc() => _helperMisc ??= new();
-        public HelperFileManager HelperFileManager() => _helperFileManager ??= new();
-
-        public void AddService(SrvBase service)
+        public SrvBase RegisterService(SrvBase service)
         {
-            if (Environments == null)   
-                Environments = [];
+            if (currentAllocServices == null)   
+                currentAllocServices = [];
 
             service.Network = Network;
 
-            Environments.Add(service);            
+            currentAllocServices.Add(service);
+
+            return GetService(currentAllocServices.Count - 1);
         }
 
-        public void AddEnvironment(int amount)
+        SrvBase GetService(int index)
         {
-            Environments = new List<SrvBase>();
-            while (amount-- > 0)
-                Environments.Add(new SrvBase());
-        }
-
-        public SrvBase GetEnvironment(int index)
-        {
-            return Environments[index];
+            return currentAllocServices[index];
         }
 
         public NpgsqlConnection StartDatabase(LocalNetwork network)
@@ -136,12 +131,12 @@ namespace Master.Service.Base
             // envs
             // --------------------------
 
-            if (Environments is not null)
+            if (currentAllocServices is not null)
             {
-                foreach (var item in Environments)
+                foreach (var item in currentAllocServices)
                     item.DisposeService();
-                Environments.Clear();
-                Environments = null;
+                currentAllocServices.Clear();
+                currentAllocServices = null;
             }
 
             // --------------------------

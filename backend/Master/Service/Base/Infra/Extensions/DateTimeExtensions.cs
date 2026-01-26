@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Master.Service.Extensions
+namespace Master.Service.Base.Infra.Extensions
 {
     public static class DateTimeExtensions
     {

@@ -8,9 +8,9 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Master.Service.Infra
+namespace Master.Service.Base.Infra.Helper
 {
-    public class ApiClient : IDisposable
+    public class HelperApiClient : IDisposable
     {
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _jsonOptions;
@@ -18,19 +18,19 @@ namespace Master.Service.Infra
         private bool _disposed;
 
         // Parameterless constructor for flexible usage
-        public ApiClient()
+        public HelperApiClient()
             : this(new HttpClient(), token: null, disposeHttpClient: true)
         {
         }
 
         // Constructor for manual instantiation with base URL
-        public ApiClient(string baseUrl, string token = null, TimeSpan? timeout = null)
+        public HelperApiClient(string baseUrl, string token = null, TimeSpan? timeout = null)
             : this(CreateHttpClient(baseUrl, timeout), token, disposeHttpClient: true)
         {
         }
 
         // Constructor for dependency injection (preferred)
-        public ApiClient(HttpClient httpClient, string token = null, bool disposeHttpClient = false)
+        public HelperApiClient(HttpClient httpClient, string token = null, bool disposeHttpClient = false)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _disposeHttpClient = disposeHttpClient;
@@ -197,7 +197,7 @@ namespace Master.Service.Infra
         private void ThrowIfDisposed()
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(ApiClient));
+                throw new ObjectDisposedException(nameof(HelperApiClient));
         }
 
         protected virtual void Dispose(bool disposing)

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.IO;
 
-namespace Master.Service.Helper
+namespace Master.Service.Base.Infra.Helper
 {
     public class HelperFileManager
     {

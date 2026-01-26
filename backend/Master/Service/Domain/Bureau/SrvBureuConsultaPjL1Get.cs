@@ -3,8 +3,8 @@ using Master.Entity.Dto.External;
 using Master.Entity.Dto.Response.Domain.Bureau;
 using Master.Entity.Gateway;
 using Master.Service.Base;
-using Master.Service.Extensions;
-using Master.Service.Infra;
+using Master.Service.Base.Infra.Extensions;
+using Master.Service.Base.Infra.Helper;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Threading.Tasks;
@@ -51,7 +51,7 @@ namespace Master.Service.Domain.Bureau
 
             if (itemDb == null || (itemDb!= null && itemDb.dtExpire < DateTime.Now))
             {
-                var client = new ApiClient();
+                var client = new HelperApiClient();
 
                 var taskBrasilAPI = await client.GetAsync<BrasilAPI_CnpjResponse>(ExternalGateway.endpoint_brasil_api_cpnj + documento);
 

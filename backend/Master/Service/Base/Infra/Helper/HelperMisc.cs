@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Master.Service.Helper
+namespace Master.Service.Base.Infra.Helper
 {
     public class HelperMisc
     {

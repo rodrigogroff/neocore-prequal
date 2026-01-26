@@ -4,7 +4,7 @@ using Master.Entity.Dto.Request.Domain.Prequal;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Entity.Gateway;
 using Master.Service.Base;
-using Master.Service.Infra;
+using Master.Service.Base.Infra.Helper;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -45,7 +45,7 @@ namespace Master.Service.Domain.Prequal
 
                 foreach (var batch in batches)
                 {
-                    var client = new ApiClient(localGateway, token);
+                    var client = new HelperApiClient(localGateway, token);
 
                     var batchData = new DtoRequestPrequalSolicitacoesNode
                     {

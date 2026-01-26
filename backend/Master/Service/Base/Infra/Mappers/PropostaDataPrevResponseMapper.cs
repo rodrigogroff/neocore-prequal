@@ -2,7 +2,7 @@
 using Master.Entity.Dto.Response.Domain.Prequal;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Master.Service.Mappers
+namespace Master.Service.Base.Infra.Mappers
 {
     [ExcludeFromCodeCoverage]
     public static class PropostaDataPrevResponseMapper
