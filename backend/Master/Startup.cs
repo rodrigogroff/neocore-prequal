@@ -160,7 +160,7 @@ namespace Master
             background: #2b2b2b !important;
             border: 2px solid #ff8c00 !important;
             color: #e6e6e6 !important;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.5) !important;
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.05) !important;
         }
         
         .swagger-ui .dialog-ux .modal-ux-header {
@@ -245,9 +245,9 @@ namespace Master
         
         /* Hover effect - Orange */
         .swagger-ui .opblock:hover {
-            background: rgba(255, 140, 0, 0.3) !important;
+            background: rgba(255, 140, 0, 0.05) !important;
             transform: translateX(5px) !important;
-            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3) !important;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.05) !important;
         }
         
         .swagger-ui .opblock.opblock-post {
@@ -255,7 +255,7 @@ namespace Master
         }
         
         .swagger-ui .opblock.opblock-post:hover {
-            background: rgba(255, 140, 0, 0.3) !important;
+            background: rgba(255, 140, 0, 0.05) !important;
             border-color: #ff8c00 !important;
         }
         
@@ -269,7 +269,7 @@ namespace Master
         }
         
         .swagger-ui .opblock.opblock-get:hover {
-            background: rgba(255, 140, 0, 0.3) !important;
+            background: rgba(255, 140, 0, 0.05) !important;
             border-color: #ff8c00 !important;
         }
         
