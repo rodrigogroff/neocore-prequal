@@ -19,7 +19,7 @@ namespace Master.Service.Domain.Prequal
         public async Task<bool> Exec(
             string token,
             DtoAuthenticatedUser user,
-            string apiRouter,
+            string localGateway,
             int maxCores,
             DtoRequestPrequalSolicitacoes request)
         {
@@ -45,7 +45,7 @@ namespace Master.Service.Domain.Prequal
 
                 foreach (var batch in batches)
                 {
-                    var client = new ApiClient(apiRouter, token);
+                    var client = new ApiClient(localGateway, token);
 
                     var batchData = new DtoRequestPrequalSolicitacoesNode
                     {

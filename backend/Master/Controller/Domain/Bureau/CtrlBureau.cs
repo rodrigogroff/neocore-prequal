@@ -2,7 +2,7 @@
 using Master.Entity;
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Response.Domain.Prequal;
-using Master.Service.Domain.Prequal;
+using Master.Service.Domain.Bureau;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +21,11 @@ namespace Master.Controller.Domain.Prequal
         [HttpGet]
         [Route("api/consulta-pj-l1")]
         [ProducesResponseType(typeof(DtoResponsePrequalConfigLeilao), StatusCodes.Status200OK)]
-        public async Task<ActionResult> Get([FromQuery] string? documento)
+        public async Task<ActionResult> Get([FromQuery] string documento)
         {
-            var srv = RegisterService<SrvPrequalSolicitacaoLeilaoConfigGet>();
+            var srv = RegisterService<SrvBureuConsultaPjL1Get>();
 
-            if (!await srv.Exec(GetAuthenticatedUser()))
+            if (!await srv.Exec(this.MemoryCache, documento))
             {
                 return BadRequest(new DtoServiceError
                 {

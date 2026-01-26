@@ -1,7 +1,9 @@
 ﻿using Master.Entity.Database.Domain.Prequal;
 using Master.Entity.Dto.Request.Domain.Prequal;
+using Master.Entity.Dto.Response.Domain.Bureau;
 using Master.Entity.Dto.Response.Domain.Prequal;
 using Master.Service.Base;
+using Master.Service.Domain.Bureau;
 using Master.Service.Mappers;
 using Microsoft.Extensions.Caching.Memory;
 using System;
@@ -19,6 +21,8 @@ namespace Master.Service.Domain.Prequal
             DESCARTE_EmpregadorCnpj = "!EmpregadorCnpj",
             DESCARTE_EmpregadorCpf = "!EmpregadorCpf",
             DESCARTE_Pep = "!Pep",
+            DESCARTE_Simples = "!Simples",
+            DESCARTE_Mei = "!Mei",
             DESCARTE_AlertaAvisoPrevio = "!AlertaAvisoPrevio",
             DESCARTE_AlertaSaude = "!AlertaSaude",
             DESCARTE_ValorLiberadoMin = "!ValorLiberado < Min",
@@ -161,6 +165,26 @@ namespace Master.Service.Domain.Prequal
                 rejectMsgDetalhe = REJECT_MSG_Pep;
                 return true;
             }
+
+            // ----------------------------------
+            // campos específicos de empresa
+            // ----------------------------------
+
+            /*
+            if (config.bSimples == true)
+            {
+                rejectMsg = DESCARTE_Pep;
+                rejectMsgDetalhe = REJECT_MSG_Pep;
+                return true;
+            }
+
+            if (config.bMei == true)
+            {
+                rejectMsg = DESCARTE_Pep;
+                rejectMsgDetalhe = REJECT_MSG_Pep;
+                return true;
+            }
+            */
 
             if (config.bAlertaAvisoPrevio == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 1)
             {

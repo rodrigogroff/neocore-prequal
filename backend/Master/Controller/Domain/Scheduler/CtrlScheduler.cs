@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Scheduler
 {
-    [Tags("[0] _scheduler (private)")]
+    [Tags("_scheduler (private)")]
     public class CtrlScheduler : MasterController
     {
         public CtrlScheduler(IOptions<LocalNetwork> network) : base(network) { }

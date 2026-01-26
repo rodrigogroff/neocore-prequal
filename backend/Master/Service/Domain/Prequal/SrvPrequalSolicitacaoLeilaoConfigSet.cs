@@ -18,6 +18,8 @@ namespace Master.Service.Domain.Prequal
             itemDb.bAlertaAvisoPrevio = request.DescarteAvisoPrevio;
             itemDb.bAlertaSaude = request.DescarteAvisoSaude;
             itemDb.bPep = request.DescartePep;
+            itemDb.bSimples = request.DescartePep;
+            itemDb.bMei = request.DescartePep;
             itemDb.bEmpregadorCnpj = request.DescarteEmpregadorCnpj;
             itemDb.bEmpregadorCpf = request.DescarteEmpregadorCpf;
             itemDb.vrLibMin = request.RangeValorLiberadoMin;

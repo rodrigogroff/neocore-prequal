@@ -8,6 +8,7 @@ using Master.Repository;
 using Master.Repository.Domain.Company;
 using Master.Repository.Domain.User;
 using Master.Repository.Domain.Prequal;
+using Master.Repository.Domain.Bureau;
 
 namespace Master.Service.Base
 {
@@ -15,9 +16,10 @@ namespace Master.Service.Base
     {
         public List<BaseRepository> currentAllocRepos = null;
 
-        public IPrequalRepository iRepoPrequal = null;
         public ICompanyRepository iRepoCompany = null;
         public IUserRepository iRepoUser = null;
+        public IBureauRepository iRepoBureau = null;
+        public IPrequalRepository iRepoPrequal = null;
 
         public string errorCode = string.Empty;
         public string errorMessage = string.Empty;
@@ -50,6 +52,13 @@ namespace Master.Service.Base
             if (iRepoCompany != null)
                 return iRepoCompany;
             return CreateAndTrackRepo<CompanyRepository>(enableCache: bCache);
+        }
+
+        public IBureauRepository RepoBureau(bool bCache = false)
+        {
+            if (iRepoBureau != null)
+                return iRepoBureau;
+            return CreateAndTrackRepo<BureauRepository>(enableCache: bCache);
         }
 
         public NpgsqlConnection MainDb = null;
@@ -113,6 +122,7 @@ namespace Master.Service.Base
             iRepoPrequal = null;
             iRepoCompany = null;
             iRepoUser = null;
+            iRepoBureau = null;
 
             // --------------------------
             // helpers

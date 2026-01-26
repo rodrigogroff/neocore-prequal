@@ -2,6 +2,7 @@
 
 namespace Master.Entity.Dto.Response.Domain.Prequal
 {
+
     [ExcludeFromCodeCoverage]
     public class DtoResponsePrequalConfigLeilao
     {
@@ -10,6 +11,8 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
         public bool? DescartePep { get; set; }
         public bool? DescarteAvisoPrevio { get; set; }
         public bool? DescarteAvisoSaude { get; set; }
+        public bool? DescarteSimples { get; set; }
+        public bool? DescarteMei { get; set; }
         public int? RangeValorLiberadoMin { get; set; }
         public int? RangeValorLiberadoMax { get; set; }
         public int? RangeParcelasMin { get; set; }
