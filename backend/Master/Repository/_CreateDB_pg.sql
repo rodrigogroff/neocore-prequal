@@ -80,8 +80,8 @@ ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stPorteL1" character
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stMunicipioL1" character varying(500);
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stUfL1" character varying(10);
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCepL1" character varying(20);
-ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCnaeL1" character varying(20);
+ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCnaeL1" character varying(100);
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCnaeDescL1" character varying(500);
-ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCdNatJurL1" character varying(20);
+ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCdNatJurL1" character varying(500);
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "bSimples" boolean;
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "bMei" boolean;

@@ -26,6 +26,8 @@ namespace Master.Service.Domain.Bureau
                 return false;
             }
 
+            documento = documento.Trim().Replace("-", "").Replace(".","");
+
             if (documento.Length != 14)
             {
                 errorCode = "E2";

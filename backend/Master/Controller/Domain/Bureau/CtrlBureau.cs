@@ -1,7 +1,7 @@
 ﻿using Master.Controller.Infra;
 using Master.Entity;
 using Master.Entity.Dto.Infra;
-using Master.Entity.Dto.Response.Domain.Prequal;
+using Master.Entity.Dto.Response.Domain.Bureau;
 using Master.Service.Domain.Bureau;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +20,7 @@ namespace Master.Controller.Domain.Prequal
 
         [HttpGet]
         [Route("api/consulta-pj-l1")]
-        [ProducesResponseType(typeof(DtoResponsePrequalConfigLeilao), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DtoResponseBureauConsultaPJL1), StatusCodes.Status200OK)]
         public async Task<ActionResult> Get([FromQuery] string documento)
         {
             var srv = RegisterService<SrvBureuConsultaPjL1Get>();

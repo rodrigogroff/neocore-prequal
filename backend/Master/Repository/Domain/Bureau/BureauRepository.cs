@@ -16,7 +16,7 @@ namespace Master.Repository.Domain.Bureau
     {
         public Tb_DadosEmpresa GetDadosEmpresa(string cnpj)
         {
-            const string query = "select * from \"DadosEmpresa\" where \"stCnpj\"=@cnpj";
+            const string query = "select * from \"DadosEmpresa\" where \"stCNPJ\"=@cnpj";
 
             return db.QueryFirstOrDefault<Tb_DadosEmpresa>(query, new { cnpj });
         }
