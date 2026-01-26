@@ -2,8 +2,8 @@
 using Master.Entity.Dto.Request.Domain.BackOffice.Company;
 using Master.Entity.Dto.Response.Domain.BackOffice.Company;
 using Master.Service.Base;
+using Master.Service.Base.Infra.Functions;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Master.Service.Domain.BackOffice.Company
@@ -25,9 +25,9 @@ namespace Master.Service.Domain.BackOffice.Company
                 var year = (int)request.nuYear;
                 var month = (int)request.nuMonth;
 
-                var repoFinanc = RepoCompany();
+                var repoC = RepoCompany();
                 
-                var itemDbFatura = repoFinanc.GetCompanyFatura(fkCompany, year, month);
+                var itemDbFatura = repoC.GetCompanyFatura(fkCompany, year, month);
 
                 if (itemDbFatura != null)
                 {
@@ -48,29 +48,24 @@ namespace Master.Service.Domain.BackOffice.Company
                     return true;
                 }
 
-                var itemDbFinanceiro = repoFinanc.GetCompanyFinanceiro(fkCompany);
-
                 var repoPrequal = RepoPrequal();
 
-                var logs = repoPrequal.GetLogs(fkCompany, year, month);
-                var qtdTransL1 = logs.Count;
-                var qtdTransItensL1 = (int)logs.Sum(y => y.nuTotProcs);
+                var funcFatura = new FunctionFaturaMensal();
 
-                var vrCalcTrans = qtdTransL1 * itemDbFinanceiro.vrL1Transaction;
-                var vrCalcTransItem = qtdTransItensL1 * itemDbFinanceiro.vrL1TransactionItem;
+                var fatura = funcFatura.ObterFatura(repoC, repoPrequal, fkCompany, year, month);
 
                 OutDto = new DtoResponseCompanyFinanceiroFaturaGet
                 {
                     ano = year.ToString(),
                     mes = month.ToString(),
-                    valorAssinaturaL1 = Math.Round(itemDbFinanceiro.vrSubscriptionL1, 2),
-                    valorPrecoTransacaoItemL1 = Math.Round(itemDbFinanceiro.vrL1TransactionItem, 2),
-                    valorPrecoTransacaoL1 = Math.Round(itemDbFinanceiro.vrL1Transaction, 2),
-                    qtdTransacaoL1 = qtdTransL1,
-                    qtdTransacaoItemL1 = qtdTransItensL1,
-                    valorCalcTransacaoL1 = vrCalcTrans,
-                    valorCalcTransacaoItemL1 = vrCalcTransItem,
-                    valorTotal = Math.Round(vrCalcTrans + vrCalcTransItem + itemDbFinanceiro.vrSubscriptionL1, 2),
+                    valorAssinaturaL1 = Math.Round(fatura.vrSubscriptionL1, 2),
+                    valorPrecoTransacaoItemL1 = Math.Round(fatura.vrL1TransactionItem, 2),
+                    valorPrecoTransacaoL1 = Math.Round(fatura.vrL1Transaction, 2),
+                    qtdTransacaoL1 = (int) fatura.nuQtdL1Trans,
+                    qtdTransacaoItemL1 = (int) fatura.nuQtdL1TransItem,
+                    valorCalcTransacaoL1 = fatura.vrL1TransactionTotal,
+                    valorCalcTransacaoItemL1 = fatura.vrL1TransactionItemTotal,
+                    valorTotal = fatura.vrTotal,
                     situacao = "em aberto"
                 };
 

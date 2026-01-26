@@ -194,18 +194,15 @@ namespace Master.Repository.Domain.Company
             });
         }
 
-
         public long InsertCompanyFatura(Tb_CompanyFatura mdl, bool retId = false)
         {
             const string query =
                 "INSERT INTO \"CompanyFatura\" (\"fkCompany\",\"nuYear\",\"nuMonth\",\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\"" +
                 ",\"nuQtdL1Trans\",\"nuQtdL1TransItem\",\"vrL1TransactionTotal\",\"vrL1TransactionItemTotal\",\"vrTotal\") " +
                 "VALUES " +
-                "(@fkCompany,@nuYear,@nuMonth,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem,@vrL1TransactionItem,@nuQtdL1Trans,@nuQtdL1TransItem" +
-                "@vrL1TransactionTotal, @vrL1TransactionItemTotal, @vrTotal);";
-
-            const string currval = "select currval('public.\"CompanyFinanceiro_id_seq\"');";
-
+                "(@fkCompany,@nuYear,@nuMonth,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem,@nuQtdL1Trans,@nuQtdL1TransItem," +
+                "@vrL1TransactionTotal,@vrL1TransactionItemTotal,@vrTotal);";
+            const string currval = "select currval('public.\"CompanyFatura_id_seq\"');";
             using var cmd = new NpgsqlCommand(retId ? query + currval : query, db);
             SetParamsCompanyFatura(cmd, mdl);
             if (retId) return (long)cmd.ExecuteScalar();
@@ -232,7 +229,5 @@ namespace Master.Repository.Domain.Company
             SetParamsCompanyFatura(cmd, mdl);
             cmd.ExecuteNonQuery();
         }
-
-        
     }
 }
