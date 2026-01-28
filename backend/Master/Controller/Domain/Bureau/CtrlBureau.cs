@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.Prequal
         public CtrlBureauL1(IMemoryCache memCache, IOptions<LocalNetwork> network) : base(memCache, network) { }
 
         [HttpGet]
-        [Route("api/consulta-pj-l1")]
+        [Route("api/consulta-pj-basic")]
         [ProducesResponseType(typeof(DtoResponseBureauConsultaPJL1), StatusCodes.Status200OK)]
         public async Task<ActionResult> Get([FromQuery] string documento)
         {

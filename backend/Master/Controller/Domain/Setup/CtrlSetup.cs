@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.Prequal
         
         public async Task<ActionResult> GetCnaeListing()
         {
-            return Ok();
+            return Ok("Not implemented yet!");
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetNatJur()
         {
-            return Ok();
+            return Ok("Not implemented yet!");
         }
     }
 }

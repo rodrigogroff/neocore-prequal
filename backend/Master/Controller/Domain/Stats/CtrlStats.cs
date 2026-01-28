@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("[7] Estatísticas (gráficos / uso do bureau)")]
+    [Tags("[7] Estatísticas (uso do bureau)")]
     [Authorize]
     public class CtrlStats : MasterController
     {
@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetDashboard()
         {
-            return Ok();
+            return Ok("Not implemented yet!");
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetDashboardTraffic()
         {
-            return Ok();
+            return Ok("Not implemented yet!");
         }
 
         [HttpGet]
@@ -35,7 +35,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetDashboardPrequalInfo()
         {
-            return Ok();
+            return Ok("Not implemented yet!");
         }
     }
 }
