@@ -1,6 +1,7 @@
 ﻿using Master.Entity.Dto.Infra;
+using Master.Service.Base;
 
-namespace Master.Service.Base
+namespace Master.Service.Domain.BackOffice.Company.Base
 {
     public class SrvCompanyAdminBase : SrvBase
     {

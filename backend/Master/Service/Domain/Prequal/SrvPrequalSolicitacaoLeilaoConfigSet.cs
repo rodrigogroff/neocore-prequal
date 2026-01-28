@@ -15,13 +15,11 @@ namespace Master.Service.Domain.Prequal
 
             var itemDb = repo.GetPrequalLeilaoConfig(user.fkCompany);
 
-            itemDb.bAlertaAvisoPrevio = request.DescarteAvisoPrevio;
-            itemDb.bAlertaSaude = request.DescarteAvisoSaude;
-            itemDb.bPep = request.DescartePep;
-            itemDb.bSimples = request.DescartePep;
-            itemDb.bMei = request.DescartePep;
-            itemDb.bEmpregadorCnpj = request.DescarteEmpregadorCnpj;
-            itemDb.bEmpregadorCpf = request.DescarteEmpregadorCpf;
+            itemDb.bAlertaAvisoPrevio = request.AvisoPrevio;
+            itemDb.bAlertaSaude = request.AvisoSaude;
+            itemDb.bPep = request.Pep;
+            itemDb.bEmpregadorCnpj = request.EmpregadorCnpj;
+            itemDb.bEmpregadorCpf = request.EmpregadorCpf;
             itemDb.vrLibMin = request.RangeValorLiberadoMin;
             itemDb.vrLibMax = request.RangeValorLiberadoMax;
             itemDb.vrMargemMax = request.RangeValorMargemMax;

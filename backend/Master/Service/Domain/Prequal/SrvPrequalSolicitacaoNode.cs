@@ -1,13 +1,20 @@
-﻿using Master.Entity.Database.Domain.Prequal;
+﻿using Master.Entity.Database.Domain.Bureau;
+using Master.Entity.Database.Domain.Company;
+using Master.Entity.Database.Domain.Prequal;
+using Master.Entity.Dto.External;
 using Master.Entity.Dto.Request.Domain.Prequal;
-using Master.Entity.Dto.Response.Domain.Bureau;
 using Master.Entity.Dto.Response.Domain.Prequal;
+using Master.Entity.Dto.Temp;
+using Master.Entity.Gateway;
+using Master.Repository.Domain.Bureau;
+using Master.Repository.Domain.Company;
+using Master.Repository.Domain.Prequal;
 using Master.Service.Base;
+using Master.Service.Base.Infra.Helper;
 using Master.Service.Base.Infra.Mappers;
-using Master.Service.Domain.Bureau;
 using Microsoft.Extensions.Caching.Memory;
 using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Threading.Tasks;
 
@@ -17,6 +24,8 @@ namespace Master.Service.Domain.Prequal
     {
         public const string
             TOKEN_CACHE_LEILAO_CONFIG = "PrequalLeilaoConfig",
+            TOKEN_CACHE_LEILAO_FINANC = "PrequalLeilaoFinanceiro",
+            TOKEN_CACHE_LEILAO_EMP = "PrequalLeilaoEmp",
             DESCARTE_ElegivelEmprestimo = "!ElegivelEmprestimo",
             DESCARTE_EmpregadorCnpj = "!EmpregadorCnpj",
             DESCARTE_EmpregadorCpf = "!EmpregadorCpf",
@@ -50,6 +59,10 @@ namespace Master.Service.Domain.Prequal
             REJECT_MSG_MESES = " meses) ",
             REJECT_MSG_MINUS = " < ",
             REJECT_MSG_PLUS = " > ",
+            REJECT_MSG_L2_DADOS_NF = "Dados da empresa não encontrados",
+            REJECT_MSG_L2_DADOS_NF1 = "Não encontramos o documento ",
+            REJECT_MSG_L2_DADOS_NF2 = " na base de dados",
+
             DATE_FORMAT = "ddMMyyyy";
 
         private static readonly CultureInfo InvariantCulture = CultureInfo.InvariantCulture;
@@ -60,34 +73,44 @@ namespace Master.Service.Domain.Prequal
         {
             try
             {
-
                 var propostas = request.propostas;
                 var count = propostas.Count;
 
                 OutDto = new DtoResponsePrequalSolicitacoes
                 {
-                    qualificadas = new List<PropostaDataPrevResponse>(count),
-                    rejeitadas = new List<PropostaDataPrevResponse>(count)
+                    qualificadas = [],
+                    rejeitadas = []
                 };
 
                 if (count == 0)
-                {
                     return true;
-                }
 
                 var fkCompany = (int)request.fkCompany;
-                var configPrequal = await GetPrequalConfig(memCache, fkCompany);
-                var currentDate = DateTime.Now;
 
+                StartDatabase(Network);
+
+                var repoPrequal = RepoPrequal();
+                var repoCompany = RepoCompany();
+                var repoBureau = RepoBureau();
+
+                // pegar configurações 
+                var configPrequal = await GetCachePrequalConfig(repoPrequal, memCache, fkCompany);
+
+                // pegar subscrições
+                var configFinanc = await GetCacheCompanyFinanc(repoCompany, memCache, fkCompany);
+
+                // processar listas
                 for (int i = 0; i < count; i++)
                 {
                     var prop = propostas[i];
 
-                    if (TryRejectProposal(prop, configPrequal, currentDate, out var rejectMsg, out var rejectMsgDetalhe))
+                    var tmpRP = await TryRejectProposal(prop, configPrequal, configFinanc, repoBureau, memCache, DateTime.Now);
+
+                    if (tmpRP != null)
                     {
                         var rejected = PropostaDataPrevResponseMapper.Copy(prop);
-                        rejected._motivoRejeitado = rejectMsg;
-                        rejected._detalheRejeitado = rejectMsgDetalhe;
+                        rejected._motivoRejeitado = tmpRP.rejectMsg;
+                        rejected._detalheRejeitado = tmpRP.rejectMsgDetalhe;
                         OutDto.rejeitadas.Add(rejected);
                     }
                     else
@@ -101,13 +124,13 @@ namespace Master.Service.Domain.Prequal
             }
             catch (Exception ex)
             {
-                
+                int YUO = 0;
             }
 
             return true;
         }
 
-        private async Task<Tb_PrequalLeilaoConfig> GetPrequalConfig(IMemoryCache memCache, int fkCompany)
+        async Task<Tb_PrequalLeilaoConfig> GetCachePrequalConfig(IPrequalRepository repo, IMemoryCache memCache, int fkCompany)
         {
             var cacheKey = TOKEN_CACHE_LEILAO_CONFIG + fkCompany;
 
@@ -115,9 +138,7 @@ namespace Master.Service.Domain.Prequal
             {
                 return cached;
             }
-                        
-            StartDatabase(Network);
-            var repo = RepoPrequal();
+
             var config = repo.GetPrequalLeilaoConfig(fkCompany);
 
             memCache.Set(cacheKey, config, new MemoryCacheEntryOptions
@@ -128,156 +149,266 @@ namespace Master.Service.Domain.Prequal
             return config;
         }
 
-        private bool TryRejectProposal(
-            PropostaDataPrevRequest prop,
-            Tb_PrequalLeilaoConfig config,
-            DateTime currentDate,
-            out string rejectMsg,
-            out string rejectMsgDetalhe)
+        async Task<Tb_CompanyFinanceiro> GetCacheCompanyFinanc(ICompanyRepository repo, IMemoryCache memCache, int fkCompany)
         {
-            rejectMsg = null;
-            rejectMsgDetalhe = null;
+            var cacheKey = TOKEN_CACHE_LEILAO_FINANC + fkCompany;
 
+            if (memCache.TryGetValue(cacheKey, out Tb_CompanyFinanceiro cached))
+            {
+                return cached;
+            }
+
+            var itemDb = repo.GetCompanyFinanceiro(fkCompany);
+
+            memCache.Set(cacheKey, itemDb, new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30)
+            });
+
+            return itemDb;
+        }
+        
+        async Task<Tb_DadosEmpresa> GetCacheDadosEmpresa(IBureauRepository repo, IMemoryCache memCache, string documento)
+        {
+            var cacheKey = TOKEN_CACHE_LEILAO_EMP + documento;
+
+            if (memCache.TryGetValue(cacheKey, out Tb_DadosEmpresa cached))
+            {
+                return cached;
+            }
+
+            var itemDb = repo.GetDadosEmpresa(documento);
+
+            if (itemDb == null)
+            {
+                HelperApiClient clientHttp = new(emulateBrowser: true);
+
+                Stopwatch sw = Stopwatch.StartNew();
+
+                sw.Start();
+
+                try
+                {
+                    var taskBrasilAPI = await clientHttp.GetAsync<BrasilAPI_CnpjResponse>(ExternalGateway.endpoint_brasil_api_cpnj + documento);
+
+                    if (taskBrasilAPI.IsSuccess)
+                    {
+                        itemDb = DadosEmpresa_BrasilAPIMapper.Copy(taskBrasilAPI.Data);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Doc "+ documento);
+                    }
+                }
+                catch
+                {
+                    
+                }
+
+                sw.Stop();
+
+                if (itemDb != null)
+                {
+                    repo.InsertDadosEmpresa(itemDb);
+                }
+            }
+
+            if (itemDb != null)
+            {
+                memCache.Set(cacheKey, itemDb, new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30)
+                });
+            }
+
+            return itemDb;
+        }
+
+        private async Task<RejectProposal> TryRejectProposal(
+            PropostaDataPrevRequest prop,
+            Tb_PrequalLeilaoConfig configPrequal,
+            Tb_CompanyFinanceiro configFinanc,
+            IBureauRepository bureau,            
+            IMemoryCache memCache,
+            DateTime currentDate)
+        {
             if (prop.ElegivelEmprestimo == false)
             {
-                rejectMsg = DESCARTE_ElegivelEmprestimo;
-                rejectMsgDetalhe = REJECT_MSG_ElegivelEmprestimo;
-                return true;
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_ElegivelEmprestimo,
+                    rejectMsgDetalhe = REJECT_MSG_ElegivelEmprestimo
+                };
             }
 
-            if (config.bEmpregadorCnpj == true && prop.InscricaoEmpregador.Codigo == 1)
+            if (configPrequal.bEmpregadorCnpj == true && prop.InscricaoEmpregador.Codigo == 1)
             {
-                rejectMsg = DESCARTE_EmpregadorCnpj;
-                rejectMsgDetalhe = REJECT_MSG_InscricaoEmpregadorCNPJ;
-                return true;
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_EmpregadorCnpj,
+                    rejectMsgDetalhe = REJECT_MSG_InscricaoEmpregadorCNPJ
+                };
             }
 
-            if (config.bEmpregadorCpf == true && prop.InscricaoEmpregador.Codigo == 2)
+            if (configPrequal.bEmpregadorCpf == true && prop.InscricaoEmpregador.Codigo == 2)
             {
-                rejectMsg = DESCARTE_EmpregadorCpf;
-                rejectMsgDetalhe = REJECT_MSG_InscricaoEmpregadorCPF;
-                return true;
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_EmpregadorCpf,
+                    rejectMsgDetalhe = REJECT_MSG_InscricaoEmpregadorCPF
+                };
             }
 
-            if (config.bPep == true && prop.PessoaExpostaPoliticamente != null)
+            if (configPrequal.bPep == true && prop.PessoaExpostaPoliticamente != null)
             {
-                rejectMsg = DESCARTE_Pep;
-                rejectMsgDetalhe = REJECT_MSG_Pep;
-                return true;
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_Pep,
+                    rejectMsgDetalhe = REJECT_MSG_Pep
+                };
+            }
+
+            if (configPrequal.bAlertaAvisoPrevio == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 1)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_AlertaAvisoPrevio,
+                    rejectMsgDetalhe = REJECT_MSG_AlertaAvisoPrevio
+                };
+            }
+
+            if (configPrequal.bAlertaSaude == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 2)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_AlertaSaude,
+                    rejectMsgDetalhe = REJECT_MSG_AlertaSaude
+                };
+            }
+
+            if (prop.ValorLiberado < configPrequal.vrLibMin)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_ValorLiberadoMin,
+                    rejectMsgDetalhe = $"{REJECT_MSG_ValorLiberado}{prop.ValorLiberado}{REJECT_MSG_MINUS}{configPrequal.vrLibMin}"
+                };
+            }
+
+            if (prop.ValorLiberado > configPrequal.vrLibMax)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_ValorLiberadoMax,
+                    rejectMsgDetalhe = $"{REJECT_MSG_ValorLiberado}{prop.ValorLiberado}{REJECT_MSG_PLUS}{configPrequal.vrLibMax}"
+                };
+            }
+
+            if (configPrequal.vrMargemMin > 0 && prop.MargemDisponivel < configPrequal.vrMargemMin)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_MargemDisponivelMin,
+                    rejectMsgDetalhe = $"{REJECT_MSG_MargemDisponivel}{prop.MargemDisponivel}{REJECT_MSG_MINUS}{configPrequal.vrMargemMin}"
+                };
+            }
+
+            if (configPrequal.vrMargemMax > 0 && prop.MargemDisponivel > configPrequal.vrMargemMax)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_MargemDisponivelMax,
+                    rejectMsgDetalhe = $"{REJECT_MSG_MargemDisponivel}{prop.MargemDisponivel}{REJECT_MSG_PLUS}{configPrequal.vrMargemMax}"
+                };
+            }
+
+            if (configPrequal.nuParcMin > 0 && prop.NroParcelas < configPrequal.nuParcMin)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_NroParcelasMin,
+                    rejectMsgDetalhe = $"{REJECT_MSG_NroParcelas}{prop.NroParcelas}{REJECT_MSG_MINUS}{configPrequal.nuParcMin}"
+                };
+            }
+
+            if (configPrequal.nuParcMax > 0 && prop.NroParcelas > configPrequal.nuParcMax)
+            {
+                return new RejectProposal
+                {
+                    rejectMsg = DESCARTE_NroParcelasMax,
+                    rejectMsgDetalhe = $"{REJECT_MSG_NroParcelas}{prop.NroParcelas}{REJECT_MSG_PLUS}{configPrequal.nuParcMax}"
+                };
+            }
+
+            if (configPrequal.nuIdadeMin > 0 || configPrequal.nuIdadeMax > 0)
+            {
+                var dataNascimento = DateTime.ParseExact(prop.DataNascimento, DATE_FORMAT, InvariantCulture);
+                var idade = (int)currentDate.Subtract(dataNascimento).TotalDays / 365;
+
+                if (configPrequal.nuIdadeMin > 0 && idade < configPrequal.nuIdadeMin)
+                {
+                    return new RejectProposal
+                    {
+                        rejectMsg = DESCARTE_IdadeMin,
+                        rejectMsgDetalhe = $"{REJECT_MSG_DataNascimento}{idade}{REJECT_MSG_ANOS}{REJECT_MSG_MINUS}{configPrequal.nuIdadeMin}"
+                    };
+                }
+
+                if (configPrequal.nuIdadeMax > 0 && idade > configPrequal.nuIdadeMax)
+                {
+                    return new RejectProposal
+                    {
+                        rejectMsg = DESCARTE_IdadeMax,
+                        rejectMsgDetalhe = $"{REJECT_MSG_DataNascimento}{idade}{REJECT_MSG_ANOS}{REJECT_MSG_PLUS}{configPrequal.nuIdadeMax}"
+                    };
+                }
+            }
+
+            if (configPrequal.nuMesesAdmissaoMin > 0 || configPrequal.nuMesesAdmissaoMax > 0)
+            {
+                var dataAdmissao = DateTime.ParseExact(prop.DataAdmissao, DATE_FORMAT, InvariantCulture);
+                var mesesAdmissao = (int)currentDate.Subtract(dataAdmissao).TotalDays / 30;
+
+                if (configPrequal.nuMesesAdmissaoMin > 0 && mesesAdmissao < configPrequal.nuMesesAdmissaoMin)
+                {
+                    return new RejectProposal
+                    {
+                        rejectMsg = DESCARTE_MesesAdmissaoMin,
+                        rejectMsgDetalhe = $"{REJECT_MSG_DataAdmissao}{mesesAdmissao}{REJECT_MSG_MESES}{REJECT_MSG_MINUS}{configPrequal.nuMesesAdmissaoMin}"
+                    };
+                }
+
+                if (configPrequal.nuMesesAdmissaoMax > 0 && mesesAdmissao > configPrequal.nuMesesAdmissaoMax)
+                {
+                    return new RejectProposal
+                    {
+                        rejectMsg = DESCARTE_MesesAdmissaoMax,
+                        rejectMsgDetalhe = $"{REJECT_MSG_DataAdmissao}{mesesAdmissao}{REJECT_MSG_MESES}{REJECT_MSG_PLUS}{configPrequal.nuMesesAdmissaoMax}"
+                    };
+                }
             }
 
             // ----------------------------------
             // campos específicos de empresa
             // ----------------------------------
 
-            /*
-            if (config.bSimples == true)
+            if (configFinanc.bActiveSubL2 == true)
             {
-                rejectMsg = DESCARTE_Pep;
-                rejectMsgDetalhe = REJECT_MSG_Pep;
-                return true;
-            }
+                var doc = prop.NumeroInscricaoEmpregador.ToString().PadLeft(14, '0');
 
-            if (config.bMei == true)
-            {
-                rejectMsg = DESCARTE_Pep;
-                rejectMsgDetalhe = REJECT_MSG_Pep;
-                return true;
-            }
-            */
-
-            if (config.bAlertaAvisoPrevio == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 1)
-            {
-                rejectMsg = DESCARTE_AlertaAvisoPrevio;
-                rejectMsgDetalhe = REJECT_MSG_AlertaAvisoPrevio;
-                return true;
-            }
-
-            if (config.bAlertaSaude == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 2)
-            {
-                rejectMsg = DESCARTE_AlertaSaude;
-                rejectMsgDetalhe = REJECT_MSG_AlertaSaude;
-                return true;
-            }
-
-            if (prop.ValorLiberado < config.vrLibMin)
-            {
-                rejectMsg = DESCARTE_ValorLiberadoMin;
-                rejectMsgDetalhe = $"{REJECT_MSG_ValorLiberado}{prop.ValorLiberado}{REJECT_MSG_MINUS}{config.vrLibMin}";
-                return true;
-            }
-            if (prop.ValorLiberado > config.vrLibMax)
-            {
-                rejectMsg = DESCARTE_ValorLiberadoMax;
-                rejectMsgDetalhe = $"{REJECT_MSG_ValorLiberado}{prop.ValorLiberado}{REJECT_MSG_PLUS}{config.vrLibMax}";
-                return true;
-            }
-
-            if (config.vrMargemMin > 0 && prop.MargemDisponivel < config.vrMargemMin)
-            {
-                rejectMsg = DESCARTE_MargemDisponivelMin;
-                rejectMsgDetalhe = $"{REJECT_MSG_MargemDisponivel}{prop.MargemDisponivel}{REJECT_MSG_MINUS}{config.vrMargemMin}";
-                return true;
-            }
-            if (config.vrMargemMax > 0 && prop.MargemDisponivel > config.vrMargemMax)
-            {
-                rejectMsg = DESCARTE_MargemDisponivelMax;
-                rejectMsgDetalhe = $"{REJECT_MSG_MargemDisponivel}{prop.MargemDisponivel}{REJECT_MSG_PLUS}{config.vrMargemMax}";
-                return true;
-            }
-
-            if (config.nuParcMin > 0 && prop.NroParcelas < config.nuParcMin)
-            {
-                rejectMsg = DESCARTE_NroParcelasMin;
-                rejectMsgDetalhe = $"{REJECT_MSG_NroParcelas}{prop.NroParcelas}{REJECT_MSG_MINUS}{config.nuParcMin}";
-                return true;
-            }
-            if (config.nuParcMax > 0 && prop.NroParcelas > config.nuParcMax)
-            {
-                rejectMsg = DESCARTE_NroParcelasMax;
-                rejectMsgDetalhe = $"{REJECT_MSG_NroParcelas}{prop.NroParcelas}{REJECT_MSG_PLUS}{config.nuParcMax}";
-                return true;
-            }
-
-            if (config.nuIdadeMin > 0 || config.nuIdadeMax > 0)
-            {
-                var dataNascimento = DateTime.ParseExact(prop.DataNascimento, DATE_FORMAT, InvariantCulture);
-                var idade = (int)currentDate.Subtract(dataNascimento).TotalDays / 365;
-
-                if (config.nuIdadeMin > 0 && idade < config.nuIdadeMin)
+                var itemDbDadosEmpresa = await GetCacheDadosEmpresa(bureau, memCache, doc);
+                                
+                if (itemDbDadosEmpresa == null)
                 {
-                    rejectMsg = DESCARTE_IdadeMin;
-                    rejectMsgDetalhe = $"{REJECT_MSG_DataNascimento}{idade}{REJECT_MSG_ANOS}{REJECT_MSG_MINUS}{config.nuIdadeMin}";
-                    return true;
-                }
-                if (config.nuIdadeMax > 0 && idade > config.nuIdadeMax)
-                {
-                    rejectMsg = DESCARTE_IdadeMax;
-                    rejectMsgDetalhe = $"{REJECT_MSG_DataNascimento}{idade}{REJECT_MSG_ANOS}{REJECT_MSG_PLUS}{config.nuIdadeMax}";
-                    return true;
+                    return new RejectProposal
+                    {
+                        rejectMsg = REJECT_MSG_L2_DADOS_NF,
+                        rejectMsgDetalhe = REJECT_MSG_L2_DADOS_NF1 + doc + REJECT_MSG_L2_DADOS_NF2
+                    };
                 }
             }
 
-            if (config.nuMesesAdmissaoMin > 0 || config.nuMesesAdmissaoMax > 0)
-            {
-                var dataAdmissao = DateTime.ParseExact(prop.DataAdmissao, DATE_FORMAT, InvariantCulture);
-                var mesesAdmissao = (int)currentDate.Subtract(dataAdmissao).TotalDays / 30;
-
-                if (config.nuMesesAdmissaoMin > 0 && mesesAdmissao < config.nuMesesAdmissaoMin)
-                {
-                    rejectMsg = DESCARTE_MesesAdmissaoMin;
-                    rejectMsgDetalhe = $"{REJECT_MSG_DataAdmissao}{mesesAdmissao}{REJECT_MSG_MESES}{REJECT_MSG_MINUS}{config.nuMesesAdmissaoMin}";
-                    return true;
-                }
-                if (config.nuMesesAdmissaoMax > 0 && mesesAdmissao > config.nuMesesAdmissaoMax)
-                {
-                    rejectMsg = DESCARTE_MesesAdmissaoMax;
-                    rejectMsgDetalhe = $"{REJECT_MSG_DataAdmissao}{mesesAdmissao}{REJECT_MSG_MESES}{REJECT_MSG_PLUS}{config.nuMesesAdmissaoMax}";
-                    return true;
-                }
-            }
-
-            return false;
+            return null;
         }
     }
 }

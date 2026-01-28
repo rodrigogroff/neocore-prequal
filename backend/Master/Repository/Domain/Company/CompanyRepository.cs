@@ -110,25 +110,38 @@ namespace Master.Repository.Domain.Company
                string
                    id = "id",
                    fkCompany = "fkCompany",
+                   bActiveSubL1 = "bActiveSubL1",
+                   bActiveSubL2 = "bActiveSubL2",
                    vrSubscriptionL1 = "vrSubscriptionL1",
                    vrL1Transaction = "vrL1Transaction",
-                   vrL1TransactionItem = "vrL1TransactionItem";
+                   vrL1TransactionItem = "vrL1TransactionItem",
+                   vrSubscriptionL2 = "vrSubscriptionL2",
+                   vrL2Transaction = "vrL2Transaction",
+                   vrL2TransactionItem = "vrL2TransactionItem";
 
             cmd.Parameters.AddRange(new NpgsqlParameter[]
             {
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = id, Value = mdl.id },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = fkCompany, Value = mdl.fkCompany },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = bActiveSubL1, Value = GetNull(mdl.bActiveSubL1) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = bActiveSubL2, Value = GetNull(mdl.bActiveSubL2) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrSubscriptionL1, Value = GetNull(mdl.vrSubscriptionL1) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1Transaction, Value = GetNull(mdl.vrL1Transaction) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionItem, Value = GetNull(mdl.vrL1TransactionItem) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrSubscriptionL2, Value = GetNull(mdl.vrSubscriptionL2) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL2Transaction, Value = GetNull(mdl.vrL2Transaction) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL2TransactionItem, Value = GetNull(mdl.vrL2TransactionItem) },
             });
         }
 
         public long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl, bool retId = false)
         {
             const string query =
-                "INSERT INTO \"CompanyFinanceiro\" (\"fkCompany\",\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\") VALUES " +
-                "(@fkCompany,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem);";
+                "INSERT INTO \"CompanyFinanceiro\" (\"fkCompany\"," +
+                "\"bActiveSubL1\",\"bActiveSubL2\"," +
+                "\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\"," +
+                "\"vrSubscriptionL2\",\"vrL2Transaction\",\"vrL2TransactionItem\") VALUES " +
+                "(@fkCompany,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem,@vrSubscriptionL2,@vrL2Transaction,@vrL2TransactionItem);";
 
             const string currval = "select currval('public.\"CompanyFinanceiro_id_seq\"');";
 
@@ -142,10 +155,14 @@ namespace Master.Repository.Domain.Company
         public void UpdateCompanyFinanceiro(Tb_CompanyFinanceiro mdl)
         {
             const string query = "update \"CompanyFinanceiro\" set " +
-                "\"stName\"=@stName," +
-                "\"client_id\"=@client_id," +
-                "\"stSecret\"=@stSecret," +
-                "\"bActive\"=@bActive " +
+                "\"bActiveSubL1\"=@bActiveSubL1," +
+                "\"bActiveSubL2\"=@bActiveSubL2," +
+                "\"vrSubscriptionL1\"=@vrSubscriptionL1," +
+                "\"vrL1Transaction\"=@vrL1Transaction," +
+                "\"vrL1TransactionItem\"=@vrL1TransactionItem," +
+                "\"vrSubscriptionL2\"=@vrSubscriptionL2," +
+                "\"vrL2Transaction\"=@vrL2Transaction," +
+                "\"vrL2TransactionItem\"=@vrL2TransactionItem " +
                 "where id=@id";
 
             using var cmd = new NpgsqlCommand(query, db);
@@ -163,19 +180,30 @@ namespace Master.Repository.Domain.Company
         public void SetParamsCompanyFatura(NpgsqlCommand cmd, Tb_CompanyFatura mdl)
         {
             const
-               string
-                   id = "id",
-                   fkCompany = "fkCompany",
-                   nuYear = "nuYear",
-                   nuMonth = "nuMonth",
-                   nuQtdL1Trans = "nuQtdL1Trans",
-                   nuQtdL1TransItem = "nuQtdL1TransItem",
-                   vrSubscriptionL1 = "vrSubscriptionL1",
-                   vrL1Transaction = "vrL1Transaction",
-                   vrL1TransactionItem = "vrL1TransactionItem",
-                   vrL1TransactionTotal = "vrL1TransactionTotal",
-                   vrL1TransactionItemTotal = "vrL1TransactionItemTotal",
-                   vrTotal = "vrTotal";
+                string
+                    id = "id",
+                    fkCompany = "fkCompany",
+                    nuYear = "nuYear",
+                    nuMonth = "nuMonth",
+
+                    nuQtdL1Trans = "nuQtdL1Trans",
+                    nuQtdL1TransItem = "nuQtdL1TransItem",
+                    vrSubscriptionL1 = "vrSubscriptionL1",
+                    vrL1Transaction = "vrL1Transaction",
+                    vrL1TransactionItem = "vrL1TransactionItem",
+                    vrL1TransactionTotal = "vrL1TransactionTotal",
+                    vrL1TransactionItemTotal = "vrL1TransactionItemTotal",
+
+                    nuQtdL2Trans = "nuQtdL2Trans",
+                    nuQtdL2TransItem = "nuQtdL2TransItem",
+                    vrSubscriptionL2 = "vrSubscriptionL2",
+                    vrL2Transaction = "vrL2Transaction",
+                    vrL2TransactionItem = "vrL2TransactionItem",
+                    vrL2TransactionTotal = "vrL2TransactionTotal",
+                    vrL2TransactionItemTotal = "vrL2TransactionItemTotal",
+
+                    vrImpostos = "vrImpostos",
+                    vrTotal = "vrTotal";
 
             cmd.Parameters.AddRange(new NpgsqlParameter[]
             {
@@ -183,6 +211,7 @@ namespace Master.Repository.Domain.Company
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = fkCompany, Value = mdl.fkCompany },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuYear, Value = GetNull(mdl.nuYear) },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMonth, Value = GetNull(mdl.nuMonth) },
+
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuQtdL1Trans, Value = GetNull(mdl.nuQtdL1Trans) },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuQtdL1TransItem, Value = GetNull(mdl.nuQtdL1TransItem) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrSubscriptionL1, Value = GetNull(mdl.vrSubscriptionL1) },
@@ -190,6 +219,15 @@ namespace Master.Repository.Domain.Company
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionItem, Value = GetNull(mdl.vrL1TransactionItem) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionTotal, Value = GetNull(mdl.vrL1TransactionTotal) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL1TransactionItemTotal, Value = GetNull(mdl.vrL1TransactionItemTotal) },
+
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuQtdL2Trans, Value = GetNull(mdl.nuQtdL2Trans) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuQtdL2TransItem, Value = GetNull(mdl.nuQtdL2TransItem) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrSubscriptionL2, Value = GetNull(mdl.vrSubscriptionL2) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL2Transaction, Value = GetNull(mdl.vrL2Transaction) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL2TransactionItem, Value = GetNull(mdl.vrL2TransactionItem) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL2TransactionTotal, Value = GetNull(mdl.vrL2TransactionTotal) },
+                new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrL2TransactionItemTotal, Value = GetNull(mdl.vrL2TransactionItemTotal) },
+
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = vrTotal, Value = GetNull(mdl.vrTotal) },
             });
         }
@@ -197,11 +235,19 @@ namespace Master.Repository.Domain.Company
         public long InsertCompanyFatura(Tb_CompanyFatura mdl, bool retId = false)
         {
             const string query =
-                "INSERT INTO \"CompanyFatura\" (\"fkCompany\",\"nuYear\",\"nuMonth\",\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\"" +
-                ",\"nuQtdL1Trans\",\"nuQtdL1TransItem\",\"vrL1TransactionTotal\",\"vrL1TransactionItemTotal\",\"vrTotal\") " +
+                "INSERT INTO \"CompanyFatura\" (\"fkCompany\",\"nuYear\",\"nuMonth\"," +
+                "\"vrSubscriptionL1\",\"vrL1Transaction\",\"vrL1TransactionItem\"" +
+                ",\"nuQtdL1Trans\",\"nuQtdL1TransItem\",\"vrL1TransactionTotal\",\"vrL1TransactionItemTotal\"," +
+                "\"vrSubscriptionL2\",\"vrL2Transaction\",\"vrL2TransactionItem\"" +
+                ",\"nuQtdL2Trans\",\"nuQtdL2TransItem\",\"vrL2TransactionTotal\",\"vrL2TransactionItemTotal\"," +
+                "" +
+                "\"vrTotal\") " +
                 "VALUES " +
-                "(@fkCompany,@nuYear,@nuMonth,@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem,@nuQtdL1Trans,@nuQtdL1TransItem," +
-                "@vrL1TransactionTotal,@vrL1TransactionItemTotal,@vrTotal);";
+                "(@fkCompany,@nuYear,@nuMonth," +
+                "@vrSubscriptionL1,@vrL1Transaction,@vrL1TransactionItem,@nuQtdL1Trans,@nuQtdL1TransItem,@vrL1TransactionTotal,@vrL1TransactionItemTotal," +
+                "@vrSubscriptionL2,@vrL2Transaction,@vrL2TransactionItem,@nuQtdL2Trans,@nuQtdL2TransItem,@vrL2TransactionTotal,@vrL2TransactionItemTotal," +
+                "@vrImpostos, @vrTotal);";
+
             const string currval = "select currval('public.\"CompanyFatura_id_seq\"');";
             using var cmd = new NpgsqlCommand(retId ? query + currval : query, db);
             SetParamsCompanyFatura(cmd, mdl);
@@ -215,6 +261,7 @@ namespace Master.Repository.Domain.Company
             const string query = "update \"CompanyFatura\" set " +
                 "\"nuYear\"=@nuYear," +
                 "\"nuMonth\"=@nuMonth," +
+                
                 "\"vrSubscriptionL1\"=@vrSubscriptionL1," +
                 "\"vrL1Transaction\"=@vrL1Transaction," +
                 "\"vrL1TransactionItem\"=@vrL1TransactionItem," +
@@ -222,6 +269,16 @@ namespace Master.Repository.Domain.Company
                 "\"nuQtdL1TransItem\"=@nuQtdL1TransItem," +
                 "\"vrL1TransactionTotal\"=@vrL1TransactionTotal," +
                 "\"vrL1TransactionItemTotal\"=@vrL1TransactionItemTotal," +
+
+                "\"vrSubscriptionL2\"=@vrSubscriptionL2," +
+                "\"vrL2Transaction\"=@vrL2Transaction," +
+                "\"vrL2TransactionItem\"=@vrL2TransactionItem," +
+                "\"nuQtdL2Trans\"=@nuQtdL2Trans," +
+                "\"nuQtdL2TransItem\"=@nuQtdL2TransItem," +
+                "\"vrL2TransactionTotal\"=@vrL2TransactionTotal," +
+                "\"vrL2TransactionItemTotal\"=@vrL2TransactionItemTotal," +
+
+                "\"vrImpostos\"=@vrImpostos," +
                 "\"vrTotal\"=@vrTotal " +
                 " where id=@id";
 

@@ -8,9 +8,7 @@
         public bool? bEmpregadorCpf { get; set; }
         public bool? bAlertaSaude { get; set; }
         public bool? bAlertaAvisoPrevio { get; set; }
-        public bool? bPep { get; set; }
-        public bool? bSimples { get; set; }
-        public bool? bMei { get; set; }
+        public bool? bPep { get; set; }        
         public int? vrLibMin { get; set; }
         public int? vrLibMax { get; set; }
         public int? nuParcMin { get; set; }

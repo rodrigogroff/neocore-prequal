@@ -1,6 +1,6 @@
 ﻿using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Response.Domain.BackOffice.Company;
-using Master.Service.Base;
+using Master.Service.Domain.BackOffice.Company.Base;
 using System;
 
 namespace Master.Service.Domain.BackOffice.Company

@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Master.Entity.Database.Domain.Company;
 using Master.Entity.Database.Domain.Prequal;
 using Npgsql;
 using NpgsqlTypes;
@@ -37,8 +36,6 @@ namespace Master.Repository.Domain.Prequal
                    bEmpregadorCpf = "bEmpregadorCpf",
                    bPep = "bPep",
                    bAlertaSaude = "bAlertaSaude",
-                   bSimples = "bSimples",
-                   bMei = "bMei",
                    bAlertaAvisoPrevio = "bAlertaAvisoPrevio",
                    vrLibMin = "vrLibMin",
                    vrLibMax = "vrLibMax",
@@ -60,8 +57,6 @@ namespace Master.Repository.Domain.Prequal
                 new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bPep, Value = GetNull(mdl.bPep) },
                 new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bAlertaSaude, Value = GetNull(mdl.bAlertaSaude) },
                 new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bAlertaAvisoPrevio, Value = GetNull(mdl.bAlertaAvisoPrevio) },
-                new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bSimples, Value = GetNull(mdl.bSimples) },
-                new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bMei, Value = GetNull(mdl.bMei) },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = vrLibMin, Value = mdl.vrLibMin },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = vrLibMax, Value = mdl.vrLibMax },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuParcMin, Value = mdl.nuParcMin },
@@ -78,10 +73,10 @@ namespace Master.Repository.Domain.Prequal
         public long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl, bool retId = false)
         {
             const string query =
-                "INSERT INTO \"PrequalLeilaoConfig\" (\"fkCompany\",\"bEmpregadorCnpj\",\"bEmpregadorCpf\",\"bPep\",\"bAlertaSaude\",\"bAlertaAvisoPrevio\",\"bSimples\",\"bMei\",\"vrLibMin\"," +
+                "INSERT INTO \"PrequalLeilaoConfig\" (\"fkCompany\",\"bEmpregadorCnpj\",\"bEmpregadorCpf\",\"bPep\",\"bAlertaSaude\",\"bAlertaAvisoPrevio\",\"vrLibMin\"," +
                 "\"vrLibMax\",\"nuParcMin\",\"nuParcMax\",\"nuIdadeMin\",\"nuIdadeMax\",\"vrMargemMin\",\"vrMargemMax\",\"nuMesesAdmissaoMin\",\"nuMesesAdmissaoMax\"" +
                 ") VALUES " +
-                "(@fkCompany,@bEmpregadorCnpj,@bEmpregadorCpf,@bPep,@bAlertaSaude,@bAlertaAvisoPrevio,@bSimples,@bMei,@vrLibMin,@vrLibMax,@nuParcMin,@nuParcMax,@nuIdadeMin,@nuIdadeMax,@vrMargemMin,@vrMargemMax," +
+                "(@fkCompany,@bEmpregadorCnpj,@bEmpregadorCpf,@bPep,@bAlertaSaude,@bAlertaAvisoPrevio,@vrLibMin,@vrLibMax,@nuParcMin,@nuParcMax,@nuIdadeMin,@nuIdadeMax,@vrMargemMin,@vrMargemMax," +
                 "@nuMesesAdmissaoMin,@nuMesesAdmissaoMax);";
 
             const string currval = "select currval('public.\"PrequalLeilaoConfig_id_seq\"');";
@@ -101,8 +96,6 @@ namespace Master.Repository.Domain.Prequal
                 "\"bPep\"=@bPep," +
                 "\"bAlertaSaude\"=@bAlertaSaude," +
                 "\"bAlertaAvisoPrevio\"=@bAlertaAvisoPrevio," +
-                "\"bSimples\"=@bSimples," +
-                "\"bMei\"=@bMei," +
                 "\"vrLibMin\"=@vrLibMin," +
                 "\"vrLibMax\"=@vrLibMax," +
                 "\"nuParcMin\"=@nuParcMin," +

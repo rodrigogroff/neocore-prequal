@@ -77,8 +77,6 @@ namespace Master.Service.Domain.Bureau
                         stCnaeL1 = brasilApi.CnaeFiscal.ToString(),
                         stCnaeDescL1 = brasilApi.CnaeFiscalDescricao,
                         stCdNatJurL1 = brasilApi.NaturezaJuridica,
-
-                        // OpcaoPeloSimples
                     };
 
                     if (cad)

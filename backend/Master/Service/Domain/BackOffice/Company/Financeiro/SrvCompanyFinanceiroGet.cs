@@ -22,9 +22,16 @@ namespace Master.Service.Domain.BackOffice.Company
 
                 OutDto = new DtoResponseCompanyFinanceiroGet
                 {
-                    valorAssinaturaL1 = itemDb.vrSubscriptionL1,
-                    valorTransacaoL1 = itemDb.vrL1Transaction,
-                    valorTransacaoItemL1 = itemDb.vrL1TransactionItem,
+                    subL1 = itemDb.bActiveSubL1 == true,
+                    subL2 = itemDb.bActiveSubL2 == true,
+
+                    valorAssinaturaL1 = Math.Round((double)itemDb.vrSubscriptionL1,2),
+                    valorTransacaoL1 = Math.Round((double)itemDb.vrL1Transaction, 2),
+                    valorTransacaoItemL1 = Math.Round((double)itemDb.vrL1TransactionItem, 2),
+
+                    valorAssinaturaL2 = Math.Round((double)itemDb.vrSubscriptionL2, 2),
+                    valorTransacaoL2 = Math.Round((double)itemDb.vrL2Transaction, 2),
+                    valorTransacaoItemL2 = Math.Round((double)itemDb.vrL2TransactionItem, 2),
                 };
 
                 return true;

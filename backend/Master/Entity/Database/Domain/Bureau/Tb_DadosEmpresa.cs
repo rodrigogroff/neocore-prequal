@@ -19,7 +19,5 @@ namespace Master.Entity.Database.Domain.Bureau
         public string stCnaeL1 { get; set; }
         public string stCnaeDescL1 { get; set; }
         public string stCdNatJurL1 { get; set; }
-        public string bSimples { get; set; }
-        public string bMei { get; set; }
     }
 }

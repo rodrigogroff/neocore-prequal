@@ -8,30 +8,21 @@ using Master.Repository.Domain.Company;
 using Master.Repository.Domain.User;
 using Master.Repository.Domain.Prequal;
 using Master.Repository.Domain.Bureau;
-using Master.Service.Base.Infra.Helper;
 
 namespace Master.Service.Base
 {
     public class SrvBase
     {
-        public List<BaseRepository> currentAllocRepos = null;
-        public List<SrvBase> currentAllocServices = null;
+        public NpgsqlConnection MainDb;
+        public LocalNetwork Network;
+        
+        public ICompanyRepository iRepoCompany;
+        public IUserRepository iRepoUser;
+        public IBureauRepository iRepoBureau;
+        public IPrequalRepository iRepoPrequal;
 
-        public ICompanyRepository iRepoCompany = null;
-        public IUserRepository iRepoUser = null;
-        public IBureauRepository iRepoBureau = null;
-        public IPrequalRepository iRepoPrequal = null;
-
-        public NpgsqlConnection MainDb = null;
-        public LocalNetwork Network = null;
-
-        private HelperCheck? _helperCheck;
-        private HelperMisc? _helperMisc;
-        private HelperFileManager? _helperFileManager;
-
-        public HelperCheck HelperCheck() => _helperCheck ??= new();
-        public HelperMisc HelperMisc() => _helperMisc ??= new();
-        public HelperFileManager HelperFileManager() => _helperFileManager ??= new();
+        public List<BaseRepository> currentAllocRepos;
+        public List<SrvBase> currentAllocServices;
 
         public string errorCode = string.Empty;
         public string errorMessage = string.Empty;
@@ -114,24 +105,17 @@ namespace Master.Service.Base
                 currentAllocRepos.Clear();
                 currentAllocRepos = null;
             }
+
             iRepoPrequal = null;
             iRepoCompany = null;
             iRepoUser = null;
             iRepoBureau = null;
 
             // --------------------------
-            // helpers
-            // --------------------------
-
-            _helperCheck = null;
-            _helperMisc = null;
-            _helperFileManager = null;
-
-            // --------------------------
             // envs
             // --------------------------
 
-            if (currentAllocServices is not null)
+            if (currentAllocServices?.Count > 0)
             {
                 foreach (var item in currentAllocServices)
                     item.DisposeService();

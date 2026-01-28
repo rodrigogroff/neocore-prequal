@@ -39,9 +39,7 @@ namespace Master.Repository.Domain.Bureau
                    stCepL1 = "stCepL1",
                    stCnaeL1 = "stCnaeL1",
                    stCnaeDescL1 = "stCnaeDescL1",
-                   stCdNatJurL1 = "stCdNatJurL1",
-                   bSimples = "bSimples",
-                   bMei = "bMei";
+                   stCdNatJurL1 = "stCdNatJurL1";
 
             cmd.Parameters.AddRange(new NpgsqlParameter[]
             {
@@ -60,8 +58,6 @@ namespace Master.Repository.Domain.Bureau
                 new() { NpgsqlDbType = NpgsqlDbType.Text, ParameterName = stCnaeL1, Value = GetNull(mdl.stCnaeL1) },
                 new() { NpgsqlDbType = NpgsqlDbType.Text, ParameterName = stCnaeDescL1, Value = GetNull(mdl.stCnaeDescL1) },
                 new() { NpgsqlDbType = NpgsqlDbType.Text, ParameterName = stCdNatJurL1, Value = GetNull(mdl.stCdNatJurL1) },
-                new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bSimples, Value = GetNull(mdl.bSimples) },
-                new() { NpgsqlDbType = NpgsqlDbType.Boolean, ParameterName = bMei, Value = GetNull(mdl.bMei) },
             });
         }
 
@@ -69,9 +65,9 @@ namespace Master.Repository.Domain.Bureau
         {
             const string query =
                 "INSERT INTO \"DadosEmpresa\" (\"dtExpire\",\"dtAberturaL1\",\"stCNPJ\",\"stSituacaoCadL1\",\"stSituacaoCadMotivL1\"" +
-                ",\"stNomeL1\",\"stFantasiaL1\",\"stPorteL1\",\"stMunicipioL1\",\"stUfL1\",\"stCepL1\",\"stCnaeL1\",\"stCnaeDescL1\",\"stCdNatJurL1\",\"bSimples\",\"bMei\") VALUES " +
+                ",\"stNomeL1\",\"stFantasiaL1\",\"stPorteL1\",\"stMunicipioL1\",\"stUfL1\",\"stCepL1\",\"stCnaeL1\",\"stCnaeDescL1\",\"stCdNatJurL1\") VALUES " +
                 "(@dtExpire,@dtAberturaL1,@stCNPJ,@stSituacaoCadL1,@stSituacaoCadMotivL1,@stNomeL1,@stFantasiaL1,@stPorteL1,@stMunicipioL1,@stUfL1,@stCepL1,@stCnaeL1,@stCnaeDescL1" +
-                ",@stCdNatJurL1,@bSimples,@bMei);";
+                ",@stCdNatJurL1);";
 
             const string currval = "select currval('public.\"DadosEmpresa_id_seq\"');";
 
@@ -98,10 +94,9 @@ namespace Master.Repository.Domain.Bureau
                 "\"stCepL1\"=@stCepL1," +
                 "\"stCnaeL1\"=@stCnaeL1," +
                 "\"stCnaeDescL1\"=@stCnaeDescL1," +
-                "\"stCdNatJurL1\"=@stCdNatJurL1, " +
-                "\"bSimples\"=@bSimples, " +
-                "\"bMei\"=@bMei " +
-                "where id=@id";
+                "\"stCdNatJurL1\"=@stCdNatJurL1 " +
+                
+                " where id=@id";
 
             using var cmd = new NpgsqlCommand(query, db);
             SetParamsDadosEmpresa(cmd, mdl);

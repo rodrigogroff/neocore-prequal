@@ -7,9 +7,14 @@ ALTER TABLE public."Company" ADD COLUMN if not exists "bActive" boolean;
 
 CREATE TABLE IF NOT EXISTS public."CompanyFinanceiro" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "fkCompany" int;
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "bActiveSubL1" boolean;
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "bActiveSubL2" boolean;
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrSubscriptionL1" numeric(10,2);
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrL1Transaction" numeric(10,2);
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrL1TransactionItem" numeric(10,2);
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrSubscriptionL2" numeric(10,2);
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrL2Transaction" numeric(10,2);
+ALTER TABLE public."CompanyFinanceiro" ADD COLUMN IF not exists "vrL2TransactionItem" numeric(10,2);
 
 CREATE TABLE IF NOT EXISTS public."CompanyFatura" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "fkCompany" int;
@@ -18,10 +23,18 @@ ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuMonth" int;
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrSubscriptionL1" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL1Transaction" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL1TransactionItem" numeric(10,2);
-ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL1Trans" int;
-ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL1TransItem" int;
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL1TransactionTotal" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL1TransactionItemTotal" numeric(10,2);
+ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL1Trans" int;
+ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL1TransItem" int;
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrSubscriptionL2" numeric(10,2);
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL2Transaction" numeric(10,2);
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL2TransactionItem" numeric(10,2);
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL2TransactionTotal" numeric(10,2);
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL2TransactionItemTotal" numeric(10,2);
+ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL2Trans" int;
+ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL2TransItem" int;
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrImpostos" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrTotal" numeric(10,2);
 
 CREATE TABLE IF NOT EXISTS public."User" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
@@ -83,5 +96,3 @@ ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCepL1" character v
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCnaeL1" character varying(100);
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCnaeDescL1" character varying(500);
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCdNatJurL1" character varying(500);
-ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "bSimples" boolean;
-ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "bMei" boolean;

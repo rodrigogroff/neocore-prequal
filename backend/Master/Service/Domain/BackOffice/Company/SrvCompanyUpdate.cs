@@ -2,7 +2,7 @@
 using Master.Entity.Database.Domain.Company;
 using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.BackOffice.Company;
-using Master.Service.Base;
+using Master.Service.Domain.BackOffice.Company.Base;
 
 namespace Master.Service.Domain.BackOffice.Company
 {

@@ -35,7 +35,7 @@ namespace Master.Service.Domain.Scheduler
 
                 // senão processou mês passado, gerar fatura
 
-                var novaFatura = funcFatura.ObterFatura(repoC, repoPrequal, fkCompany, year, month);
+                var novaFatura = funcFatura.ObterFaturaMensal(repoC, repoPrequal, fkCompany, year, month);
 
                 repoC.InsertCompanyFatura(novaFatura);
             }

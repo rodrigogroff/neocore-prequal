@@ -1,5 +1,6 @@
 ﻿using Master.Entity.Dto.Infra;
 using Master.Service.Base;
+using Master.Service.Base.Infra.Helper;
 using System;
 
 namespace Master.Service.Domain.Auth
@@ -12,7 +13,7 @@ namespace Master.Service.Domain.Auth
         {
             try
             {
-                if (!HelperCheck().CheckEmail(email))
+                if (!new HelperCheck().CheckEmail(email))
                     return false;
 
                 StartDatabase(Network);
