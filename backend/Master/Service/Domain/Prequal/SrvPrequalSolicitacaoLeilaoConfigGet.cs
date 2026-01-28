@@ -38,6 +38,7 @@ namespace Master.Service.Domain.Prequal
                     vrLibMin = 5000,
                     vrMargemMin = 200,
                     vrMargemMax = 20000,
+                    nuMesesAberturaEmpresaMin = 0,
                 };
 
                 itemDb.id = repo.InsertPrequalLeilaoConfig(itemDb, retId: true);
@@ -60,6 +61,7 @@ namespace Master.Service.Domain.Prequal
                 RangeValorLiberadoMin = itemDb.vrLibMin,
                 RangeValorMargemMax = itemDb.vrMargemMax,
                 RangeValorMargemMin = itemDb.vrMargemMin,
+                MesesAberturaEmpresaMin = itemDb.nuMesesAberturaEmpresaMin
             };
 
             return true;

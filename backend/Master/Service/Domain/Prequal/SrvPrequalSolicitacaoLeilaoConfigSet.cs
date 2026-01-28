@@ -30,6 +30,7 @@ namespace Master.Service.Domain.Prequal
             itemDb.nuIdadeMin = request.RangeIdadeMin;
             itemDb.nuMesesAdmissaoMax = request.RangeMesesAdmissaoMax;
             itemDb.nuMesesAdmissaoMin = request.RangeMesesAdmissaoMin;
+            itemDb.nuMesesAberturaEmpresaMin = request.MesesAberturaEmpresaMin;
 
             repo.UpdatePrequalLeilaoConfig(itemDb);
 

@@ -20,5 +20,6 @@ namespace Master.Entity.Dto.Response.Domain.Prequal
         public int? RangeValorMargemMax { get; set; }
         public int? RangeMesesAdmissaoMin { get; set; }
         public int? RangeMesesAdmissaoMax { get; set; }
+        public int? MesesAberturaEmpresaMin { get; set; }
     }
 }
