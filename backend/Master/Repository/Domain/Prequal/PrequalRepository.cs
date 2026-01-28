@@ -134,6 +134,23 @@ namespace Master.Repository.Domain.Prequal
                     nuTotProcs = "nuTotProcs",
                     nuTotQualificadas = "nuTotQualificadas",
                     nuTotRejeitadas = "nuTotRejeitadas",
+                    nuFilter1 = "nuFilter1",
+                    nuFilter2 = "nuFilter2",
+                    nuFilter3 = "nuFilter3",
+                    nuFilter4 = "nuFilter4",
+                    nuFilter5 = "nuFilter5",
+                    nuFilter6 = "nuFilter6",
+                    nuFilter7 = "nuFilter7",
+                    nuFilter8 = "nuFilter8",
+                    nuFilter9 = "nuFilter9",
+                    nuFilter10 = "nuFilter10",
+                    nuFilter11 = "nuFilter11",
+                    nuFilter12 = "nuFilter12",
+                    nuFilter13 = "nuFilter13",
+                    nuFilter14 = "nuFilter14",
+                    nuFilter15 = "nuFilter15",
+                    nuFilter16 = "nuFilter16",
+                    nuFilter17 = "nuFilter17",
                     nuPctFilter = "nuPctFilter";
 
             cmd.Parameters.AddRange(new NpgsqlParameter[]
@@ -151,7 +168,23 @@ namespace Master.Repository.Domain.Prequal
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuTotQualificadas, Value = GetNull(mdl.nuTotQualificadas) },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuTotRejeitadas, Value = GetNull(mdl.nuTotRejeitadas) },
                 new() { NpgsqlDbType = NpgsqlDbType.Numeric, ParameterName = nuPctFilter, Value = GetNull(mdl.nuPctFilter) },
-
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter1, Value = GetNull(mdl.nuFilter1) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter2, Value = GetNull(mdl.nuFilter2) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter3, Value = GetNull(mdl.nuFilter3) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter4, Value = GetNull(mdl.nuFilter4) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter5, Value = GetNull(mdl.nuFilter5) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter6, Value = GetNull(mdl.nuFilter6) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter7, Value = GetNull(mdl.nuFilter7) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter8, Value = GetNull(mdl.nuFilter8) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter9, Value = GetNull(mdl.nuFilter9) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter10, Value = GetNull(mdl.nuFilter10) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter11, Value = GetNull(mdl.nuFilter11) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter12, Value = GetNull(mdl.nuFilter12) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter13, Value = GetNull(mdl.nuFilter13) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter14, Value = GetNull(mdl.nuFilter14) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter15, Value = GetNull(mdl.nuFilter15) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter16, Value = GetNull(mdl.nuFilter16) },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuFilter17, Value = GetNull(mdl.nuFilter17) },
             });
         }
 
@@ -160,8 +193,13 @@ namespace Master.Repository.Domain.Prequal
             const string query =
                 "INSERT INTO \"LogProcPrequalLeilao\" (\"fkCompany\",\"dtLog\",\"nuYear\",\"nuMonth\",\"nuDay\",\"nuHour\",\"nuMinute\"," +
                 "\"nuTotMS\",\"nuTotProcs\",\"nuTotQualificadas\",\"nuTotRejeitadas\",\"nuPctFilter\"" +
+                ",\"nuFilter1\",\"nuFilter2\",\"nuFilter3\",\"nuFilter4\",\"nuFilter5\",\"nuFilter6\",\"nuFilter7\",\"nuFilter8\",\"nuFilter9\",\"nuFilter10\"" +
+                ",\"nuFilter11\",\"nuFilter12\",\"nuFilter13\",\"nuFilter14\",\"nuFilter15\",\"nuFilter16\",\"nuFilter17\"" +
                 ") VALUES " +
-                "(@fkCompany,@dtLog,@nuYear,@nuMonth,@nuDay,@nuHour,@nuMinute,@nuTotMS,@nuTotProcs,@nuTotQualificadas,@nuTotRejeitadas,@nuPctFilter);";
+                "(@fkCompany,@dtLog,@nuYear,@nuMonth,@nuDay,@nuHour,@nuMinute,@nuTotMS,@nuTotProcs,@nuTotQualificadas,@nuTotRejeitadas,@nuPctFilter," +
+                "@nuFilter1,@nuFilter2,@nuFilter3,@nuFilter4,@nuFilter5,@nuFilter6,@nuFilter7,@nuFilter8,@nuFilter9,@nuFilter10," +
+                "@nuFilter11,@nuFilter12,@nuFilter13,@nuFilter14,@nuFilter15,@nuFilter16,@nuFilter17" + 
+                ");";
 
             const string currval = "select currval('public.\"LogProcPrequalLeilao_id_seq\"');";
 

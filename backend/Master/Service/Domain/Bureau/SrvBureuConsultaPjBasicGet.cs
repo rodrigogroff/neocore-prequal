@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Master.Service.Domain.Bureau
 {
-    public class SrvBureuConsultaPjL1Get : SrvBase
+    public class SrvBureuConsultaPjBasicGet : SrvBase
     {
         public const string TOKEN_CACHE_BureauConsultaPJL1 = "TOKEN_CACHE_BureauConsultaPJL1";
 
-        public DtoResponseBureauConsultaPJL1 OutDto = null;
+        public DtoResponseBureauConsultaPJBasic OutDto = null;
 
         public async Task<bool> Exec(IMemoryCache memCache, string documento)
         {
@@ -37,7 +37,7 @@ namespace Master.Service.Domain.Bureau
 
             var cacheKey = TOKEN_CACHE_BureauConsultaPJL1 + documento;
 
-            if (memCache.TryGetValue(cacheKey, out DtoResponseBureauConsultaPJL1 cached))
+            if (memCache.TryGetValue(cacheKey, out DtoResponseBureauConsultaPJBasic cached))
             {
                 OutDto = cached;
                 return true;
@@ -86,7 +86,7 @@ namespace Master.Service.Domain.Bureau
                 }
             }
 
-            OutDto = new DtoResponseBureauConsultaPJL1
+            OutDto = new DtoResponseBureauConsultaPJBasic
             {
                 DataAbertura = itemDb.dtAberturaL1,
                 CNPJ = itemDb.stCNPJ,

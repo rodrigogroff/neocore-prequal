@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Master.Entity.Dto.Response.Domain.Bureau
 {
     [ExcludeFromCodeCoverage]
-    public class DtoResponseBureauConsultaPJL1
+    public class DtoResponseBureauConsultaPJBasic
     {
         public DateTime? DataAbertura { get; set; }
         public string CNPJ { get; set; }

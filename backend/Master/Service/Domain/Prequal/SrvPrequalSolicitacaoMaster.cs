@@ -61,6 +61,19 @@ namespace Master.Service.Domain.Prequal
 
                 var responses = await Task.WhenAll(tasks);
 
+                var dtNow = DateTime.Now;
+
+                var logProc = new Tb_LogProcPrequalLeilao
+                {
+                    dtLog = dtNow,
+                    fkCompany = fkCompany,
+                    nuYear = dtNow.Year,
+                    nuMonth = dtNow.Month,
+                    nuDay = dtNow.Day,
+                    nuHour = dtNow.Hour,
+                    nuMinute = dtNow.Minute,
+                };
+
                 foreach (var response in responses)
                 {
                     if (response?.IsSuccess != true || response.Data == null)
@@ -73,13 +86,18 @@ namespace Master.Service.Domain.Prequal
 
                     if (_rData.rejeitadas?.Count > 0)
                         OutDto.rejeitadas.AddRange(_rData.rejeitadas);
+
+                    logProc.nuFilter1 += _rData.filter1; logProc.nuFilter2 += _rData.filter2; logProc.nuFilter3 += _rData.filter3;
+                    logProc.nuFilter4 += _rData.filter4; logProc.nuFilter5 += _rData.filter5; logProc.nuFilter6 += _rData.filter6;
+                    logProc.nuFilter7 += _rData.filter7; logProc.nuFilter8 += _rData.filter8; logProc.nuFilter9 += _rData.filter9;
+                    logProc.nuFilter10 += _rData.filter10; logProc.nuFilter11 += _rData.filter11; logProc.nuFilter12 += _rData.filter12;
+                    logProc.nuFilter13 += _rData.filter13; logProc.nuFilter14 += _rData.filter14; logProc.nuFilter15 += _rData.filter15;
+                    logProc.nuFilter16 += _rData.filter16; logProc.nuFilter17 += _rData.filter17; 
                 }
 
                 StartDatabase(Network);
 
                 var repo = RepoPrequal();
-
-                var dtNow = DateTime.Now;
 
                 OutDto.totalQualificadas = OutDto.qualificadas.Count;
                 OutDto.totalRejeitadas = OutDto.rejeitadas.Count;
@@ -97,23 +115,15 @@ namespace Master.Service.Domain.Prequal
                     ? Math.Round((double)OutDto.totalRejeitadas / OutDto.totalProcessamentos * 100, 2)
                     : 0;
 
-                repo.InsertLogProcPrequalLeilao(new Tb_LogProcPrequalLeilao
-                {
-                    dtLog = dtNow,
-                    fkCompany = fkCompany,
-                    nuYear = dtNow.Year,
-                    nuMonth = dtNow.Month,
-                    nuDay = dtNow.Day,
-                    nuHour = dtNow.Hour,
-                    nuMinute = dtNow.Minute,
-                    nuTotMS = OutDto.milis,
-                    nuTotProcs = OutDto.totalProcessamentos,
-                    nuTotQualificadas = OutDto.totalQualificadas,
-                    nuTotRejeitadas = OutDto.totalRejeitadas,
-                    nuPctFilter = OutDto.pctPreQualificacao,
-                });
+                logProc.nuTotMS = OutDto.milis;
+                logProc.nuTotProcs = OutDto.totalProcessamentos;
+                logProc.nuTotQualificadas = OutDto.totalQualificadas;
+                logProc.nuTotRejeitadas = OutDto.totalRejeitadas;
+                logProc.nuPctFilter = OutDto.pctPreQualificacao;
+
+                repo.InsertLogProcPrequalLeilao(logProc);
             }
-            catch (Exception ex)
+            catch
             {
                 
             }

@@ -90,6 +90,23 @@ ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotProcs" 
 ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotQualificadas" int;
 ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuTotRejeitadas" int;
 ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN IF NOT EXISTS "nuPctFilter" numeric(10,2);
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter1" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter2" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter3" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter4" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter5" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter6" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter7" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter8" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter9" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter10" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter11" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter12" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter13" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter14" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter15" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter16" int;
+ALTER TABLE public."LogProcPrequalLeilao" ADD COLUMN if not exists "nuFilter17" int;
 
 CREATE INDEX IF NOT EXISTS idx_logprocprequalleilao_company_year_month ON public."LogProcPrequalLeilao" ("fkCompany", "nuYear", "nuMonth");
 

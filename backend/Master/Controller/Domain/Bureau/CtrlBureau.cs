@@ -20,10 +20,10 @@ namespace Master.Controller.Domain.Prequal
 
         [HttpGet]
         [Route("api/consulta-pj-basic")]
-        [ProducesResponseType(typeof(DtoResponseBureauConsultaPJL1), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DtoResponseBureauConsultaPJBasic), StatusCodes.Status200OK)]
         public async Task<ActionResult> Get([FromQuery] string documento)
         {
-            var srv = RegisterService<SrvBureuConsultaPjL1Get>();
+            var srv = RegisterService<SrvBureuConsultaPjBasicGet>();
 
             if (!await srv.Exec(this.MemoryCache, documento))
             {

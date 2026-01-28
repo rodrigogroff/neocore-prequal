@@ -80,7 +80,24 @@ namespace Master.Service.Domain.Prequal
                 OutDto = new DtoResponsePrequalSolicitacoes
                 {
                     qualificadas = [],
-                    rejeitadas = []
+                    rejeitadas = [],
+                    filter1 = 0,
+                    filter2 = 0,
+                    filter3 = 0,
+                    filter4 = 0,
+                    filter5 = 0,
+                    filter6 = 0,
+                    filter7 = 0,
+                    filter8 = 0,
+                    filter9 = 0,
+                    filter10 = 0,
+                    filter11 = 0,
+                    filter12 = 0,
+                    filter13 = 0,
+                    filter14 = 0,
+                    filter15 = 0,
+                    filter16 = 0,
+                    filter17 = 0,
                 };
 
                 if (count == 0)
@@ -230,6 +247,7 @@ namespace Master.Service.Domain.Prequal
 
             if (prop.ElegivelEmprestimo == false)
             {
+                OutDto.filter1++;
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_ElegivelEmprestimo,
@@ -243,6 +261,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.bEmpregadorCnpj == true && prop.InscricaoEmpregador.Codigo == 1)
             {
+                OutDto.filter2++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_EmpregadorCnpj,
@@ -252,6 +272,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.bEmpregadorCpf == true && prop.InscricaoEmpregador.Codigo == 2)
             {
+                OutDto.filter3++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_EmpregadorCpf,
@@ -261,6 +283,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.bPep == true && prop.PessoaExpostaPoliticamente != null)
             {
+                OutDto.filter4++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_Pep,
@@ -270,6 +294,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.bAlertaAvisoPrevio == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 1)
             {
+                OutDto.filter5++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_AlertaAvisoPrevio,
@@ -279,6 +305,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.bAlertaSaude == true && prop.Alertas != null && prop.Alertas.Count > 0 && prop.Alertas[0].TipoAlerta.Codigo == 2)
             {
+                OutDto.filter6++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_AlertaSaude,
@@ -288,6 +316,8 @@ namespace Master.Service.Domain.Prequal
 
             if (prop.ValorLiberado < configPrequal.vrLibMin)
             {
+                OutDto.filter7++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_ValorLiberadoMin,
@@ -297,6 +327,8 @@ namespace Master.Service.Domain.Prequal
 
             if (prop.ValorLiberado > configPrequal.vrLibMax)
             {
+                OutDto.filter8++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_ValorLiberadoMax,
@@ -306,6 +338,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.vrMargemMin > 0 && prop.MargemDisponivel < configPrequal.vrMargemMin)
             {
+                OutDto.filter9++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_MargemDisponivelMin,
@@ -315,6 +349,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.vrMargemMax > 0 && prop.MargemDisponivel > configPrequal.vrMargemMax)
             {
+                OutDto.filter10++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_MargemDisponivelMax,
@@ -324,6 +360,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.nuParcMin > 0 && prop.NroParcelas < configPrequal.nuParcMin)
             {
+                OutDto.filter11++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_NroParcelasMin,
@@ -333,6 +371,8 @@ namespace Master.Service.Domain.Prequal
 
             if (configPrequal.nuParcMax > 0 && prop.NroParcelas > configPrequal.nuParcMax)
             {
+                OutDto.filter12++;
+
                 return new RejectProposal
                 {
                     rejectMsg = DESCARTE_NroParcelasMax,
@@ -347,6 +387,8 @@ namespace Master.Service.Domain.Prequal
 
                 if (configPrequal.nuIdadeMin > 0 && idade < configPrequal.nuIdadeMin)
                 {
+                    OutDto.filter13++;
+
                     return new RejectProposal
                     {
                         rejectMsg = DESCARTE_IdadeMin,
@@ -356,6 +398,8 @@ namespace Master.Service.Domain.Prequal
 
                 if (configPrequal.nuIdadeMax > 0 && idade > configPrequal.nuIdadeMax)
                 {
+                    OutDto.filter14++;
+
                     return new RejectProposal
                     {
                         rejectMsg = DESCARTE_IdadeMax,
@@ -371,6 +415,8 @@ namespace Master.Service.Domain.Prequal
 
                 if (configPrequal.nuMesesAdmissaoMin > 0 && mesesAdmissao < configPrequal.nuMesesAdmissaoMin)
                 {
+                    OutDto.filter15++;
+
                     return new RejectProposal
                     {
                         rejectMsg = DESCARTE_MesesAdmissaoMin,
@@ -380,6 +426,8 @@ namespace Master.Service.Domain.Prequal
 
                 if (configPrequal.nuMesesAdmissaoMax > 0 && mesesAdmissao > configPrequal.nuMesesAdmissaoMax)
                 {
+                    OutDto.filter16++;
+
                     return new RejectProposal
                     {
                         rejectMsg = DESCARTE_MesesAdmissaoMax,
@@ -415,6 +463,8 @@ namespace Master.Service.Domain.Prequal
 
                         if (meses < configPrequal.nuMesesAberturaEmpresaMin)
                         {
+                            OutDto.filter17++;
+
                             return new RejectProposal
                             {
                                 rejectMsg = REJECT_MSG_MesesAberturaEmpresaMin,
