@@ -4,6 +4,7 @@ using Master.Entity.Dto.Infra;
 using Master.Entity.Dto.Request.Domain.BackOffice.Company;
 using Master.Entity.Dto.Response.Domain.BackOffice.Company;
 using Master.Service.Domain.BackOffice.Company;
+using Master.Service.Domain.BackOffice.Company.Financeiro;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,25 @@ namespace Master.Controller.Domain.Prequal
         public async Task<ActionResult> GetFaturaServicos([FromQuery] DtoRequestCompanyFinanceiroFatura request)
         {
             var srv = RegisterService<SrvCompanyFinanceiroFaturaGet>();
+
+            if (!await srv.Exec(GetAuthenticatedUser(), request))
+            {
+                return BadRequest(new DtoServiceError
+                {
+                    codigo = srv.errorCode,
+                    mensagem = srv.errorMessage
+                });
+            }
+
+            return Ok(srv.OutDto);
+        }
+
+        [HttpGet]
+        [Route("api/fatura-servicos-detalhada")]
+        [ProducesResponseType(typeof(DtoResponseCompanyFinanceiroFaturaDetalhadaGet), StatusCodes.Status200OK)]
+        public async Task<ActionResult> GetFaturaServicosDetalhada([FromQuery] DtoRequestCompanyFinanceiroFaturaDetalhada request)
+        {
+            var srv = RegisterService<SrvCompanyFinanceiroFaturaDetalhadaGet>();
 
             if (!await srv.Exec(GetAuthenticatedUser(), request))
             {

@@ -45,11 +45,11 @@ namespace Master.Service.Domain.Prequal
 
             OutDto = new DtoResponsePrequalConfigLeilao
             {
-                EmpregadorCnpj = itemDb.bEmpregadorCnpj,
-                EmpregadorCpf = itemDb.bEmpregadorCpf,
-                Pep = itemDb.bPep,
-                AvisoPrevio = itemDb.bAlertaAvisoPrevio,
-                AvisoSaude = itemDb.bAlertaSaude,
+                DescarteEmpregadorCnpj = itemDb.bEmpregadorCnpj,
+                DescarteEmpregadorCpf = itemDb.bEmpregadorCpf,
+                DescartePep = itemDb.bPep,
+                DescarteAvisoPrevio = itemDb.bAlertaAvisoPrevio,
+                DescarteAvisoSaude = itemDb.bAlertaSaude,
                 RangeIdadeMax = itemDb.nuIdadeMax,
                 RangeIdadeMin = itemDb.nuIdadeMin,
                 RangeMesesAdmissaoMax = itemDb.nuMesesAdmissaoMax,

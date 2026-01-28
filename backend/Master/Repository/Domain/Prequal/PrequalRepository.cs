@@ -171,7 +171,7 @@ namespace Master.Repository.Domain.Prequal
 
         public List<Tb_LogProcPrequalLeilao> GetLogs(int fkCompany, int year, int month)
         {
-            const string query = "select * from \"LogProcPrequalLeilao\" where \"fkCompany\"=@fkCompany and \"nuYear\"=@year and \"nuMonth\"=@month";
+            const string query = "select * from \"LogProcPrequalLeilao\" where \"fkCompany\"=@fkCompany and \"nuYear\"=@year and \"nuMonth\"=@month order by \"dtLog\"";
 
             return db.Query<Tb_LogProcPrequalLeilao>(query, new { fkCompany, year, month } ).ToList();
         }

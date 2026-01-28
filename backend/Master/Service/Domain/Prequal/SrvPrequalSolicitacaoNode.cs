@@ -232,6 +232,11 @@ namespace Master.Service.Domain.Prequal
             IMemoryCache memCache,
             DateTime currentDate)
         {
+
+            // ----------------------------------------------------
+            // descarte imediato pela dataprev
+            // ----------------------------------------------------
+
             if (prop.ElegivelEmprestimo == false)
             {
                 return new RejectProposal
@@ -240,6 +245,10 @@ namespace Master.Service.Domain.Prequal
                     rejectMsgDetalhe = REJECT_MSG_ElegivelEmprestimo
                 };
             }
+
+            // ----------------------------------------------------
+            // campos específicos de pessoa física L1
+            // ----------------------------------------------------
 
             if (configPrequal.bEmpregadorCnpj == true && prop.InscricaoEmpregador.Codigo == 1)
             {
@@ -389,7 +398,7 @@ namespace Master.Service.Domain.Prequal
             }
 
             // ----------------------------------
-            // campos específicos de empresa
+            // campos específicos de empresa L2
             // ----------------------------------
 
             if (configFinanc.bActiveSubL2 == true)
@@ -406,6 +415,8 @@ namespace Master.Service.Domain.Prequal
                         rejectMsgDetalhe = REJECT_MSG_L2_DADOS_NF1 + doc + REJECT_MSG_L2_DADOS_NF2
                     };
                 }
+
+
             }
 
             return null;
