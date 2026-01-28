@@ -345,3 +345,4 @@ inventory
 target/**
 
 **/coverage.opencover.xml
+/backend/Master/Properties/PublishProfiles/FolderProfile3.pubxml.user
