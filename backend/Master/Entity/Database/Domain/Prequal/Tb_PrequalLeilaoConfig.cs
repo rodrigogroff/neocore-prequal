@@ -4,6 +4,9 @@
     {
         public long id { get; set; }
         public long? fkCompany { get; set; }
+        
+        // L1
+
         public bool? bEmpregadorCnpj { get; set; }
         public bool? bEmpregadorCpf { get; set; }
         public bool? bAlertaSaude { get; set; }
@@ -19,5 +22,9 @@
         public int? vrMargemMax { get; set; }
         public int? nuMesesAdmissaoMin { get; set; }
         public int? nuMesesAdmissaoMax { get; set; }
+
+        // L2
+
+        public int? nuMesesAberturaEmpresaMin { get; set; }
     }
 }

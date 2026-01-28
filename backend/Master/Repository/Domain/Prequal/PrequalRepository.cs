@@ -46,7 +46,8 @@ namespace Master.Repository.Domain.Prequal
                    vrMargemMin = "vrMargemMin",
                    vrMargemMax = "vrMargemMax",
                    nuMesesAdmissaoMin = "nuMesesAdmissaoMin",
-                   nuMesesAdmissaoMax = "nuMesesAdmissaoMax";
+                   nuMesesAdmissaoMax = "nuMesesAdmissaoMax",
+                   nuMesesAberturaEmpresaMin = "nuMesesAberturaEmpresaMin";
 
             cmd.Parameters.AddRange(new NpgsqlParameter[]
             {
@@ -67,6 +68,7 @@ namespace Master.Repository.Domain.Prequal
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = vrMargemMax, Value = mdl.vrMargemMax },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMesesAdmissaoMin, Value = mdl.nuMesesAdmissaoMin },
                 new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMesesAdmissaoMax, Value = mdl.nuMesesAdmissaoMax },
+                new() { NpgsqlDbType = NpgsqlDbType.Integer, ParameterName = nuMesesAberturaEmpresaMin, Value = mdl.nuMesesAberturaEmpresaMin },
             });
         }
 
@@ -74,10 +76,10 @@ namespace Master.Repository.Domain.Prequal
         {
             const string query =
                 "INSERT INTO \"PrequalLeilaoConfig\" (\"fkCompany\",\"bEmpregadorCnpj\",\"bEmpregadorCpf\",\"bPep\",\"bAlertaSaude\",\"bAlertaAvisoPrevio\",\"vrLibMin\"," +
-                "\"vrLibMax\",\"nuParcMin\",\"nuParcMax\",\"nuIdadeMin\",\"nuIdadeMax\",\"vrMargemMin\",\"vrMargemMax\",\"nuMesesAdmissaoMin\",\"nuMesesAdmissaoMax\"" +
+                "\"vrLibMax\",\"nuParcMin\",\"nuParcMax\",\"nuIdadeMin\",\"nuIdadeMax\",\"vrMargemMin\",\"vrMargemMax\",\"nuMesesAdmissaoMin\",\"nuMesesAdmissaoMax\",\"nuMesesAberturaEmpresaMin\"" +
                 ") VALUES " +
                 "(@fkCompany,@bEmpregadorCnpj,@bEmpregadorCpf,@bPep,@bAlertaSaude,@bAlertaAvisoPrevio,@vrLibMin,@vrLibMax,@nuParcMin,@nuParcMax,@nuIdadeMin,@nuIdadeMax,@vrMargemMin,@vrMargemMax," +
-                "@nuMesesAdmissaoMin,@nuMesesAdmissaoMax);";
+                "@nuMesesAdmissaoMin,@nuMesesAdmissaoMax,@nuMesesAberturaEmpresaMin);";
 
             const string currval = "select currval('public.\"PrequalLeilaoConfig_id_seq\"');";
 
@@ -105,7 +107,8 @@ namespace Master.Repository.Domain.Prequal
                 "\"vrMargemMin\"=@vrMargemMin," +
                 "\"vrMargemMax\"=@vrMargemMax," +
                 "\"nuMesesAdmissaoMin\"=@nuMesesAdmissaoMin," +
-                "\"nuMesesAdmissaoMax\"=@nuMesesAdmissaoMax " +
+                "\"nuMesesAdmissaoMax\"=@nuMesesAdmissaoMax, " +
+                "\"nuMesesAberturaEmpresaMin\"=@nuMesesAberturaEmpresaMin " +
                 " where id=@id";
 
             using var cmd = new NpgsqlCommand(query, db);

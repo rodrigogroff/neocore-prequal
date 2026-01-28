@@ -14,7 +14,6 @@ using Master.Service.Base.Infra.Helper;
 using Master.Service.Base.Infra.Mappers;
 using Microsoft.Extensions.Caching.Memory;
 using System;
-using System.Diagnostics;
 using System.Globalization;
 using System.Threading.Tasks;
 
@@ -44,6 +43,7 @@ namespace Master.Service.Domain.Prequal
             DESCARTE_IdadeMax = "!Idade > Max",
             DESCARTE_MesesAdmissaoMin = "!MesesAdmissao < Min",
             DESCARTE_MesesAdmissaoMax = "!MesesAdmissao > Max",
+            
             REJECT_MSG_ElegivelEmprestimo = "_prop.ElegivelEmprestimo == false",
             REJECT_MSG_InscricaoEmpregadorCNPJ = "_prop.InscricaoEmpregador.Codigo == 1",
             REJECT_MSG_InscricaoEmpregadorCPF = "_prop.InscricaoEmpregador.Codigo == 2",
@@ -62,7 +62,8 @@ namespace Master.Service.Domain.Prequal
             REJECT_MSG_L2_DADOS_NF = "Dados da empresa não encontrados",
             REJECT_MSG_L2_DADOS_NF1 = "Não encontramos o documento ",
             REJECT_MSG_L2_DADOS_NF2 = " na base de dados",
-
+            REJECT_MSG_MesesAberturaEmpresaMin = "!MesesAberturaEmpresaMin < Min",
+            REJECT_MSG_Det_MesesAberturaEmpresaMin = "itemDbDadosEmpresa.dtAberturaL1 = ",
             DATE_FORMAT = "ddMMyyyy";
 
         private static readonly CultureInfo InvariantCulture = CultureInfo.InvariantCulture;
@@ -122,15 +123,15 @@ namespace Master.Service.Domain.Prequal
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                int YUO = 0;
+                
             }
 
             return true;
         }
 
-        async Task<Tb_PrequalLeilaoConfig> GetCachePrequalConfig(IPrequalRepository repo, IMemoryCache memCache, int fkCompany)
+        internal async Task<Tb_PrequalLeilaoConfig> GetCachePrequalConfig(IPrequalRepository repo, IMemoryCache memCache, int fkCompany)
         {
             var cacheKey = TOKEN_CACHE_LEILAO_CONFIG + fkCompany;
 
@@ -149,7 +150,7 @@ namespace Master.Service.Domain.Prequal
             return config;
         }
 
-        async Task<Tb_CompanyFinanceiro> GetCacheCompanyFinanc(ICompanyRepository repo, IMemoryCache memCache, int fkCompany)
+        internal async Task<Tb_CompanyFinanceiro> GetCacheCompanyFinanc(ICompanyRepository repo, IMemoryCache memCache, int fkCompany)
         {
             var cacheKey = TOKEN_CACHE_LEILAO_FINANC + fkCompany;
 
@@ -167,8 +168,8 @@ namespace Master.Service.Domain.Prequal
 
             return itemDb;
         }
-        
-        async Task<Tb_DadosEmpresa> GetCacheDadosEmpresa(IBureauRepository repo, IMemoryCache memCache, string documento)
+
+        internal async Task<Tb_DadosEmpresa> GetCacheDadosEmpresa(IBureauRepository repo, IMemoryCache memCache, string documento)
         {
             var cacheKey = TOKEN_CACHE_LEILAO_EMP + documento;
 
@@ -183,10 +184,6 @@ namespace Master.Service.Domain.Prequal
             {
                 HelperApiClient clientHttp = new(emulateBrowser: true);
 
-                Stopwatch sw = Stopwatch.StartNew();
-
-                sw.Start();
-
                 try
                 {
                     var taskBrasilAPI = await clientHttp.GetAsync<BrasilAPI_CnpjResponse>(ExternalGateway.endpoint_brasil_api_cpnj + documento);
@@ -194,18 +191,12 @@ namespace Master.Service.Domain.Prequal
                     if (taskBrasilAPI.IsSuccess)
                     {
                         itemDb = DadosEmpresa_BrasilAPIMapper.Copy(taskBrasilAPI.Data);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Doc "+ documento);
-                    }
+                    }                    
                 }
                 catch
                 {
                     
                 }
-
-                sw.Stop();
 
                 if (itemDb != null)
                 {
@@ -416,7 +407,22 @@ namespace Master.Service.Domain.Prequal
                     };
                 }
 
+                if (configPrequal.nuMesesAberturaEmpresaMin > 0)
+                {
+                    if (itemDbDadosEmpresa.dtAberturaL1 != null)
+                    {
+                        var meses = DateTime.Now.Subtract(itemDbDadosEmpresa.dtAberturaL1.Value).TotalDays / 30;
 
+                        if (meses < configPrequal.nuMesesAberturaEmpresaMin)
+                        {
+                            return new RejectProposal
+                            {
+                                rejectMsg = REJECT_MSG_MesesAberturaEmpresaMin,
+                                rejectMsgDetalhe = REJECT_MSG_Det_MesesAberturaEmpresaMin,
+                            };
+                        }
+                    }
+                }
             }
 
             return null;

@@ -73,6 +73,7 @@ ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrMargemMin" 
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "vrMargemMax" int;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAdmissaoMin" int;
 ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAdmissaoMax" int;
+ALTER TABLE public."PrequalLeilaoConfig" ADD COLUMN if not exists "nuMesesAberturaEmpresaMin" int;
 
 CREATE INDEX IF NOT EXISTS idx_prequalleilaoconfig_fkcompany ON public."PrequalLeilaoConfig" ("fkCompany");
 
