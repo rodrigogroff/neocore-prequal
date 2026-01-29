@@ -141,6 +141,18 @@ namespace Master
             color: #e6e6e6 !important;
         }
         
+        /* Estilo para o link do guia operacional */
+        .swagger-ui .info .description a {
+            color: #4990e2 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            margin-left: 5px !important;
+        }
+        
+        .swagger-ui .info .description a:hover {
+            text-decoration: underline !important;
+        }
+        
         /* Fix section headers (Parameters, Request body, Responses) */
         .swagger-ui .opblock-section-header {
             background: transparent !important;
@@ -384,7 +396,7 @@ namespace Master
                 {
                     Title = $"NeoCore API -- Bureau Bancário -- {version}",
                     Version = "v1",
-                    Description = "Endpoints para serviços bancários de crédito"
+                    Description = "Endpoints para serviços bancários de crédito &nbsp;&nbsp;|&nbsp;&nbsp;<a href='/GuiaAPI_NeoCore-bureau_v1_r1.pdf' target='_blank'>Guia operacional para integração</a>"
                 });
 
                 // Adiciona o filtro para ordenar tags e métodos HTTP

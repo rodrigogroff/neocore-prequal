@@ -88,6 +88,9 @@
      <Content Update="wwwroot\favicon.ico">
        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
      </Content>
+     <Content Update="wwwroot\GuiaAPI_NeoCore-bureau_v1_r1.pdf">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Content>
      <Content Update="wwwroot\logoWhiteSmall.png">
        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
      </Content>
