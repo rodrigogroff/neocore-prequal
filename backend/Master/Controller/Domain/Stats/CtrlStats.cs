@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetDashboard()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetDashboardTraffic()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
 
         [HttpGet]
@@ -35,7 +35,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetDashboardPrequalInfo()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
     }
 }

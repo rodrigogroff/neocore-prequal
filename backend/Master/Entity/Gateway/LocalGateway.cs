@@ -2,6 +2,6 @@
 {
     public class LocalGateway
     {
-        public const string endpoint_propostas_leilao_cpts_node = "/api/propostas-leilao-cpts-node";
+        public const string endpoint_propostas_leilao_ctps_node = "/api/propostas-leilao-ctps-node";
     }
 }

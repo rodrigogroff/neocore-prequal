@@ -54,7 +54,7 @@ namespace Master.Service.Domain.Prequal
                     };
                     tasks.Add(
                         client.PostAsync<DtoResponsePrequalSolicitacoesNode>(
-                            LocalGateway.endpoint_propostas_leilao_cpts_node, 
+                            LocalGateway.endpoint_propostas_leilao_ctps_node, 
                             batchData
                             ));
                 }

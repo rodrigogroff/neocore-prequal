@@ -13,14 +13,14 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("[4] Pré-qualificação (descarte leilão ctps / dataprev)")]
+    [Tags("[4] Pré-qualificação (descartes dataprev)")]
     [Authorize]
-    public class CtrlPrequalLeilao : MasterController
+    public class CtrlPrequal : MasterController
     {
-        public CtrlPrequalLeilao(IMemoryCache memCache, IOptions<LocalNetwork> network) : base(memCache, network) { }
+        public CtrlPrequal(IMemoryCache memCache, IOptions<LocalNetwork> network) : base(memCache, network) { }
 
         [HttpPost]
-        [Route("api/propostas-leilao-cpts")]
+        [Route("api/propostas-leilao-ctps")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoes), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Filter([FromBody] DtoRequestPrequalSolicitacoes request)
@@ -53,7 +53,7 @@ namespace Master.Controller.Domain.Prequal
         #if RELEASE
         [ApiExplorerSettings(IgnoreApi = true)]
         #endif
-        [Route("api/propostas-leilao-cpts-node")]
+        [Route("api/propostas-leilao-ctps-node")]
         [ProducesResponseType(typeof(DtoResponsePrequalSolicitacoesNode), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> NodeFilter([FromBody] DtoRequestPrequalSolicitacoesNode request)
@@ -76,6 +76,13 @@ namespace Master.Controller.Domain.Prequal
             }
 
             return Ok(srv.OutDto);
+        }
+
+        [HttpPost]
+        [Route("api/consulta-margem-trabalhador")]
+        public async Task<ActionResult> FilterMargem()
+        {
+            return Ok("Não implementado!");
         }
     }
 }

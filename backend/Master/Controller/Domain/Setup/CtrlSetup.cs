@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetFilterListing()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetPorteListing()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
 
         [HttpGet]
@@ -35,7 +35,7 @@ namespace Master.Controller.Domain.Prequal
         
         public async Task<ActionResult> GetCnaeListing()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
 
         [HttpGet]
@@ -43,7 +43,7 @@ namespace Master.Controller.Domain.Prequal
 
         public async Task<ActionResult> GetNatJur()
         {
-            return Ok("Not implemented yet!");
+            return Ok("Não implementado!");
         }
     }
 }
