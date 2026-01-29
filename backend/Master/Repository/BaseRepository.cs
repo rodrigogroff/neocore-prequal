@@ -1,5 +1,4 @@
 ﻿using Npgsql;
-using System;
 using System.Collections;
 
 namespace Master.Repository
@@ -16,44 +15,9 @@ namespace Master.Repository
             return offset + ((pageNumber - 1) * pageSize) + limit + pageSize;
         }
 
-        public object? GetNull(long? fkValue)
-        {
-            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
-        }
-
-        public object? GetNull(double? fkValue)
-        {
-            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
-        }
-
-        public object? GetNull(DateOnly? fkValue)
-        {
-            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
-        }
-
-        public object? GetNull(Decimal? fkValue)
-        {
-            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
-        }
-
-        public object? GetNull(bool? fkValue)
-        {
-            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
-        }
-
-        public object? GetNull(DateTime? fkValue)
-        {
-            return fkValue.HasValue ? fkValue.Value : DBNull.Value;
-        }
-
-        public object? GetNull(string fkValue)
-        {
-            return fkValue != null ? fkValue : DBNull.Value;
-        }
-
         public void EnableCache()
         {
-            cache = new Hashtable();
+            cache = [];
         }
 
         public void DisposeRepository()

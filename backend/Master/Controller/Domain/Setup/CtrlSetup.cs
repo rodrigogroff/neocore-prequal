@@ -1,5 +1,6 @@
 ﻿using Master.Controller.Infra;
 using Master.Entity;
+using Master.Entity.Const;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,35 +16,45 @@ namespace Master.Controller.Domain.Prequal
         public CtrlSetup(IOptions<LocalNetwork> network) : base(network) { }
 
         [HttpGet]
-        [Route("api/setup-filter-listing")]
-
-        public async Task<ActionResult> GetFilterListing()
+        [Route("api/setup-cbo")]
+        public async Task<ActionResult> GetCboListing([FromQuery] string search)
         {
-            return Ok("Não implementado!");
+            return Ok(new { Conteudo = PrequalCbo.Busca(search) });
         }
 
         [HttpGet]
-        [Route("api/setup-porte-listing")]
+        [Route("api/setup-cnae")]
+        public async Task<ActionResult> GetCnaeListing([FromQuery] string search)
+        {
+            return Ok(new { Conteudo = PrequalCnae.Busca(search) });
+        }
 
+        [HttpGet]
+        [Route("api/setup-nat-jur")]
+        public async Task<ActionResult> GetnatJurListing([FromQuery] string search)
+        {
+            return Ok(new { Conteudo = PrequalNaturezaJurica.Busca(search) });
+        }
+
+        [HttpGet]
+        [Route("api/setup-porte")]
         public async Task<ActionResult> GetPorteListing()
         {
-            return Ok("Não implementado!");
+            return Ok(new { Conteudo = PrequalPorteEmpresa.Vector });
         }
 
         [HttpGet]
-        [Route("api/setup-cnae-listing")]
-        
-        public async Task<ActionResult> GetCnaeListing()
+        [Route("api/setup-tipo-pessoa")]
+        public async Task<ActionResult> GetTipoPessoaListing()
         {
-            return Ok("Não implementado!");
+            return Ok(new { Conteudo = PrequalTipoPessoa.Vector });
         }
 
         [HttpGet]
-        [Route("api/setup-nat-jur-listing")]
-
-        public async Task<ActionResult> GetNatJur()
+        [Route("api/setup-whitelist-situacao")]
+        public async Task<ActionResult> GetWhitelistSituacaoListing()
         {
-            return Ok("Não implementado!");
+            return Ok(new { Conteudo = PrequalWhiteListSituacao.Vector });
         }
     }
 }

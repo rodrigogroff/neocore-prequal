@@ -1,4 +1,4 @@
-﻿namespace Master.Data.Const
+﻿namespace Master.Entity.Const
 {
     public static class TypeDocumentMask
     {

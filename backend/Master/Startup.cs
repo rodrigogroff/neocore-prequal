@@ -141,6 +141,11 @@ namespace Master
             color: #e6e6e6 !important;
         }
         
+        /* H4 em verde claro */
+        .swagger-ui h4 {
+            color: #d2aa5d !important;
+        }
+        
         /* Estilo para o link do guia operacional */
         .swagger-ui .info .description a {
             color: #4990e2 !important;
@@ -405,7 +410,12 @@ namespace Master
                 // Configuração para autenticação JWT no Swagger
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
+#if DEBUG
+                    Description = "JWT Authorization header usando o esquema Bearer. Exemplo: \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiZmtVc2VyXCI6MSxcImZrQ29tcGFueVwiOjEsXCJzdE5hbWVcIjpcIlJvZHJpZ28gR3JvZmZcIixcInN0RW1haWxcIjpcIm9wQG5lb2NvcmUtYnVyZWF1LmNvbS5iclwifSIsIm5iZiI6MTc2OTcyODk1MSwiZXhwIjoyMDI5OTY1NzUxLCJpYXQiOjE3Njk3Mjg5NTEsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.r7A0Jr_VlnDNRUB9WIZ6cdzr3iFr4uBIjwK73DjQghA",
+#endif
+#if RELEASE
                     Description = "JWT Authorization header usando o esquema Bearer. Exemplo: \"Authorization: Bearer {token}\"",
+#endif
                     Name = "Authorization",
                     In = Microsoft.OpenApi.Models.ParameterLocation.Header,
                     Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,

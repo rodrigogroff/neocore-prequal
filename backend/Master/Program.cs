@@ -1,14 +1,6 @@
-﻿using Master.Entity;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.AspNetCore.Server.Kestrel.Https;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Net;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Master
 {
@@ -48,9 +40,6 @@ namespace Master
                 {
                     options.Listen(IPAddress.Parse(GetLocation(args)), GetPort(args), listenOptions => { });
                 });
-#if RELEASE
-                webBuilder.ConfigureLogging((context, logging) => { logging.ClearProviders(); });
-#endif
             });
     }
 }

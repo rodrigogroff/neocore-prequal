@@ -21,11 +21,17 @@ namespace Master.Controller.Helper
             var key = Encoding.ASCII.GetBytes(LocalNetwork.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
+                Subject = new ClaimsIdentity(
+                [
                     new Claim(sUser, JsonSerializer.Serialize(user)),
-                }),
-                Expires = DateTime.UtcNow.AddHours(24),
+                ]),
+#if DEBUG
+                Expires = DateTime.UtcNow.AddMonths(99),
+#endif
+
+#if RELEASE
+                Expires = DateTime.UtcNow.AddHours(6),
+#endif
                 Issuer = LocalNetwork.Issuer,
                 Audience = LocalNetwork.Audience,
                 SigningCredentials = new SigningCredentials(

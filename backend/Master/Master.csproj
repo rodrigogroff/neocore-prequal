@@ -54,6 +54,10 @@
     <DefineConstants>CODE</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);CS8632</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Remove="buffon_setttings.json" />
   </ItemGroup>
@@ -95,6 +99,8 @@
        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
      </Content>
    </ItemGroup>
- 
+
+  
+
 
 </Project>
