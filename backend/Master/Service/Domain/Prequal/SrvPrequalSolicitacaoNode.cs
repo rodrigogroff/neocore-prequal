@@ -77,7 +77,7 @@ namespace Master.Service.Domain.Prequal
                 var propostas = request.propostas;
                 var count = propostas.Count;
 
-                OutDto = new DtoResponsePrequalSolicitacoes
+                OutDto = new DtoResponsePrequalSolicitacoesNode
                 {
                     qualificadas = [],
                     rejeitadas = [],

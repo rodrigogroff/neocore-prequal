@@ -1,12 +1,16 @@
 ﻿using Master.Entity.Dto.Request.Domain.Prequal;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
 namespace Master.Entity.Dto.Response.Domain.Prequal
 {
     [ExcludeFromCodeCoverage]
-    public class DtoResponsePrequalSolicitacoes : DtoResponsePrequalSolicitacoesNode
+    public class DtoResponsePrequalSolicitacoes 
     {
+        public List<PropostaDataPrevResponse> qualificadas { get; set; }
+        public List<PropostaDataPrevResponse> rejeitadas { get; set; }
+
         public int milis { get; set; }
         public int totalProcessamentos { get; set; }
         public double msPerItem { get; set; }

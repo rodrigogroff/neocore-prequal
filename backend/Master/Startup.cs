@@ -344,6 +344,12 @@ namespace Master
             fill: currentColor !important;
         }
 
+        /* Limitar altura da área do comando curl */
+        .swagger-ui .curl-command {
+            max-height: 400px !important;
+            overflow-y: auto !important;
+        }
+
         /* CSS customizado original para espaço no final */
         .swagger-ui .info {
             margin: 35px 0 0 0 !important;
