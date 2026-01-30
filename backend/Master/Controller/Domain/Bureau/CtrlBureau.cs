@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("[5] Bureau consultas (avulsas)")]
+    [Tags("[7] Bureau consultas (avulsas)")]
     [Authorize]
     public class CtrlBureauL1 : MasterController
     {

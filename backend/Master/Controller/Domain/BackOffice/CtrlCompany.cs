@@ -18,7 +18,7 @@ namespace Master.Controller.Domain.BackOffice
     {
         public CtrlCompany(IOptions<LocalNetwork> network) : base(network) { }
 
-        [Route("api/company")]
+        [Route("api/company-get")]
         [HttpGet]
         public async Task<ActionResult> Get([FromQuery] int id)
         {
@@ -39,7 +39,7 @@ namespace Master.Controller.Domain.BackOffice
         }
 
         [HttpGet]
-        [Route("api/companyListing")]
+        [Route("api/company-listing")]
         public async Task<ActionResult> Listing([FromQuery] string search)
         {
             var currentUser = GetAuthenticatedUser();
@@ -59,7 +59,7 @@ namespace Master.Controller.Domain.BackOffice
         }
 
         [HttpPost]
-        [Route("api/company")]
+        [Route("api/company-update")]
         public async Task<ActionResult> CreateOrUpdate([FromBody] DtoRequestCompanyUpdate request)
         {
             var currentUser = GetAuthenticatedUser();

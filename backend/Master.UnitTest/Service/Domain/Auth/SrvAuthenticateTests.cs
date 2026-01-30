@@ -4,6 +4,7 @@ using Master.Repository.Domain.User;
 using Master.Repository.Domain.Company;
 using Master.Service.Domain.Auth;
 using Moq;
+using Master.Entity.Database.Domain.Infra;
 
 namespace Master.Test.Service.Domain.Auth
 {

@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.Prequal
         public CtrlPrequalConfig(IOptions<LocalNetwork> network) : base(network) { }
 
         [HttpPost]
-        [Route("api/config-prequal-leilao")]
+        [Route("api/config-prequal-leilao-update")]
         [ProducesResponseType(typeof(DtoServiceOk), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(DtoServiceError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Update([FromBody] DtoRequestPrequalConfigLeilao request)

@@ -8,14 +8,22 @@ using Master.Repository.Domain.Company;
 using Master.Repository.Domain.User;
 using Master.Repository.Domain.Prequal;
 using Master.Repository.Domain.Bureau;
+using Master.Repository.Domain.Infra;
 
 namespace Master.Service.Base
 {
     public class SrvBase
     {
+        public 
+            const 
+                string 
+                    TOKEN_SRV_NDISP = "Este endpoint não está disponível",
+                    TOKEN_SRV_NDISP_ALT = "Este endpoint não está disponível no momento.";
+
         public NpgsqlConnection MainDb;
         public LocalNetwork Network;
-        
+
+        public IFeatureRepository iRepoFeature;
         public ICompanyRepository iRepoCompany;
         public IUserRepository iRepoUser;
         public IBureauRepository iRepoBureau;
@@ -24,6 +32,7 @@ namespace Master.Service.Base
         public List<BaseRepository> currentAllocRepos;
         public List<SrvBase> currentAllocServices;
 
+        public string endpoint = string.Empty;
         public string errorCode = string.Empty;
         public string errorMessage = string.Empty;
 
@@ -41,6 +50,13 @@ namespace Master.Service.Base
             if (iRepoPrequal != null)
                 return iRepoPrequal;
             return CreateAndTrackRepo<PrequalRepository>(enableCache: bCache);
+        }
+
+        protected IFeatureRepository RepoFeature()
+        {
+            if (iRepoFeature != null)
+                return iRepoFeature;
+            return CreateAndTrackRepo<FeatureRepository>();
         }
 
         protected IUserRepository RepoUser(bool bCache = false)
@@ -86,8 +102,22 @@ namespace Master.Service.Base
             if (network == null)
                 return null;
 
-            MainDb = new NpgsqlConnection(network.database);
-            MainDb.Open();
+            this.MainDb = new NpgsqlConnection(network.database);
+            this.MainDb.Open();
+
+            if (!string.IsNullOrEmpty(this.endpoint))
+            {
+                var repo = RepoFeature();
+
+                var feature = repo.GetFeature(this.endpoint);
+
+                if (feature == null)
+                    throw new Exception(TOKEN_SRV_NDISP);
+
+                if (feature.bActive != true)
+                    throw new Exception(TOKEN_SRV_NDISP_ALT);
+            }
+
             return MainDb;
         }
 
@@ -106,6 +136,7 @@ namespace Master.Service.Base
                 currentAllocRepos = null;
             }
 
+            iRepoFeature = null;
             iRepoPrequal = null;
             iRepoCompany = null;
             iRepoUser = null;

@@ -138,13 +138,14 @@ nohup sudo node server_prod.js & disown
 cd ~/data/backend
 cp ~/data/certificados/certificate.pfx .
 
-
+                       
 curl -L -o publish.zip https://www.dropbox.com/scl/fi/msoy1nace6nru7nj1lfxw/publish.zip?rlkey=va2fhe4tvg8md3bm9m65xkl7t&dl=1
 killall -9 Master
 unzip -o publish.zip
 chmod +x Master
-nohup ./Master 59539 & disown
-nohup ./Master 59540 & disown
+./Master 59540 > out1_59540.txt &
+./Master 59541 > out1_59541.txt &
+
 
 # --------------------------------------------------------------
 # atualizar certificados

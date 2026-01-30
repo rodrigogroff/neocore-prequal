@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Master.Controller.Domain.Prequal
 {
-    [Tags("[7] Estatísticas (uso do bureau)")]
+    [Tags("[5] Estatísticas (uso do bureau)")]
     [Authorize]
     public class CtrlStats : MasterController
     {

@@ -19,7 +19,7 @@ namespace Master.Controller.Domain.BackOffice
         public CtrlUser(IOptions<LocalNetwork> network) : base(network) { }
 
         [HttpGet]
-        [Route("api/user")]
+        [Route("api/user-get")]
         public async Task<ActionResult> Get([FromQuery] int id)
         {
             var currentUser = GetAuthenticatedUser();
@@ -39,7 +39,7 @@ namespace Master.Controller.Domain.BackOffice
         }
 
         [HttpGet]
-        [Route("api/userListing")]
+        [Route("api/user-listing")]
         public async Task<ActionResult> Listing([FromQuery] string search)
         {
             var currentUser = GetAuthenticatedUser();
@@ -59,7 +59,7 @@ namespace Master.Controller.Domain.BackOffice
         }
 
         [HttpPost]
-        [Route("api/user")]
+        [Route("api/user-update")]
         public async Task<ActionResult> CreateOrUpdate([FromBody] DtoRequestUserUpdate request)
         {
             var currentUser = GetAuthenticatedUser();

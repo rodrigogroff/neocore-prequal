@@ -7,6 +7,12 @@ ALTER TABLE public."Company" ADD COLUMN if not exists "bActive" boolean;
 
 CREATE INDEX IF NOT EXISTS idx_company_client_id ON public."Company" ("client_id");
 
+CREATE TABLE IF NOT EXISTS public."Feature" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
+ALTER TABLE public."Feature" ADD COLUMN if not exists "stEndpoint" character varying(999);
+ALTER TABLE public."Feature" ADD COLUMN if not exists "bActive" boolean;
+
+CREATE INDEX IF NOT EXISTS idx_feature_endpoint ON public."Feature" ("stEndpoint");
+
 CREATE TABLE IF NOT EXISTS public."CompanyFinanceiro" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "fkCompany" int;
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "bActiveSubL1" boolean;
@@ -128,3 +134,45 @@ ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCnaeDescL1" charac
 ALTER TABLE public."DadosEmpresa" ADD COLUMN if not exists "stCdNatJurL1" character varying(500);
 
 CREATE INDEX IF NOT EXISTS idx_dadosempresa_stcnpj ON public."DadosEmpresa" ("stCNPJ");
+
+-- # ====================================================
+-- # Tabela de endpoints / feature toggle
+-- # ====================================================
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/scheduler','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/scheduler');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/authenticate-user','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/authenticate-user');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/authenticate-server','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/authenticate-server');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/company-get','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/company-get');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/company-listing','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/company-listing');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/company-update','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/company-update');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/user-get','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/user-get');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/user-listing','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/user-listing');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/user-update','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/user-update');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/consulta-pj-basic','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/consulta-pj-basic');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/precificacao','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/precificacao');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/fatura-servicos','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/fatura-servicos');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/fatura-servicos-detalhada','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/fatura-servicos-detalhada');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/propostas-leilao-ctps','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/propostas-leilao-ctps');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/propostas-leilao-ctps-node','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/propostas-leilao-ctps-node');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/config-prequal-leilao-update','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/config-prequal-leilao-update');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/config-prequal-leilao','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/config-prequal-leilao');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/setup-cbo','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/setup-cbo');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/setup-cnae','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/setup-cnae');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/setup-nat-jur','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/setup-nat-jur');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/setup-porte','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/setup-porte');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/setup-tipo-pessoa','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/setup-tipo-pessoa');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/setup-whitelist-situacao','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/setup-whitelist-situacao');
+
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/stats-dashboard','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/stats-dashboard');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/stats-dashboard-traffic','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/stats-dashboard-traffic');
+INSERT INTO public."Feature" ("stEndpoint","bActive") SELECT 'api/stats-dashboard-prequal-info','1' WHERE NOT EXISTS (SELECT 1 FROM public."Feature" WHERE "stEndpoint" = 'api/stats-dashboard-prequal-info');
+
+

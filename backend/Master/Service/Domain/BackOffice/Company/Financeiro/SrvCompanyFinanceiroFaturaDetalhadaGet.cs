@@ -20,8 +20,7 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
             await srvFatura.Exec(user, new DtoRequestCompanyFinanceiroFatura()
             {
                 ano = request.nuMonth,
-                mes = request.nuYear,
-                dataStr = new DateTime((int)request.nuYear, (int)request.nuMonth, 1).ToString("MMMM/yyyy", new System.Globalization.CultureInfo("pt-BR")),
+                mes = request.nuYear,                
             });
 
             OutDto = new DtoResponseCompanyFinanceiroFaturaDetalhadaGet

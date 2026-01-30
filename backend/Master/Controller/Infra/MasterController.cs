@@ -10,6 +10,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Reflection;
 
 namespace Master.Controller.Infra
 {
@@ -50,8 +51,21 @@ namespace Master.Controller.Infra
             var baseService = new T();
             this.BaseService = baseService as SrvBase;
             this.BaseService.Network = Network;
+            this.BaseService.endpoint = MyRoute();
             HttpContext.Response.RegisterForDispose(ServiceManager);
             return baseService;
+        }
+
+        [NonAction]
+        protected string MyRoute()
+        {
+            var controllerType = this.GetType();
+
+            // Pega a rota do controller --> [Route("api/authenticate-user")]
+            var controllerRoute = controllerType
+                .GetCustomAttribute<RouteAttribute>()?.Template ?? "";
+
+            return controllerRoute;
         }
 
         [NonAction]
