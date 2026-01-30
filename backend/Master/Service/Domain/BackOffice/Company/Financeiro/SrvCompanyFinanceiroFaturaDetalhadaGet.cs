@@ -27,22 +27,22 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
                 ano = srvFatura.OutDto.ano,
                 mes = srvFatura.OutDto.mes,
                 situacao = srvFatura.OutDto.situacao,
-                valorAssinaturaL1= srvFatura.OutDto.valorAssinaturaL1,
-                valorPrecoTransacaoL1 = srvFatura.OutDto.valorPrecoTransacaoL1,
-                valorPrecoTransacaoItemL1 = srvFatura.OutDto.valorPrecoTransacaoItemL1,
+                valorAssinaturaL1 = Math.Round((double)srvFatura.OutDto.valorAssinaturaL1, 2),
+                valorPrecoTransacaoL1 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoL1, 2),
+                valorPrecoTransacaoItemL1 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoItemL1, 2),
                 qtdTransacaoL1 = srvFatura.OutDto.qtdTransacaoL1,
                 qtdTransacaoItemL1 = srvFatura.OutDto.qtdTransacaoItemL1,
-                valorCalcTransacaoL1 = srvFatura.OutDto.valorCalcTransacaoL1,
-                valorCalcTransacaoItemL1 = srvFatura.OutDto.valorCalcTransacaoItemL1,
-                valorAssinaturaL2 = srvFatura.OutDto.valorAssinaturaL2,
-                valorPrecoTransacaoL2 = srvFatura.OutDto.valorPrecoTransacaoL2,
-                valorPrecoTransacaoItemL2 = srvFatura.OutDto.valorPrecoTransacaoItemL2,
+                valorCalcTransacaoL1 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL1, 2),
+                valorCalcTransacaoItemL1 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL1, 2),
+                valorAssinaturaL2 = Math.Round((double)srvFatura.OutDto.valorAssinaturaL2, 2),
+                valorPrecoTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoL2, 2),
+                valorPrecoTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoItemL2, 2),
                 qtdTransacaoL2 = srvFatura.OutDto.qtdTransacaoL2,
                 qtdTransacaoItemL2 = srvFatura.OutDto.qtdTransacaoItemL2,
-                valorCalcTransacaoL2 = srvFatura.OutDto.valorCalcTransacaoL2,
-                valorCalcTransacaoItemL2 = srvFatura.OutDto.valorCalcTransacaoItemL2,
-                valorImpostos = srvFatura.OutDto.valorImpostos,
-                valorTotal = srvFatura.OutDto.valorTotal,
+                valorCalcTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL2, 2),
+                valorCalcTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL2, 2),
+                valorImpostos = Math.Round((double)srvFatura.OutDto.valorImpostos, 2),
+                valorTotal = Math.Round((double)srvFatura.OutDto.valorTotal, 2),
                 Conteudo = [],
             };
 
@@ -111,10 +111,10 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
                                     log_item.rejeitadas += (int)minute.nuTotRejeitadas;
                                 }
 
-                                log_item.valorCalcTransacaoL1 = log_item.qtdTransacao * srvFatura.OutDto.valorPrecoTransacaoL1;
-                                log_item.valorCalcTransacaoL2 = log_item.qtdTransacao * srvFatura.OutDto.valorPrecoTransacaoL2;
-                                log_item.valorCalcTransacaoItemL1 = log_item.qtdTransacaoItem * srvFatura.OutDto.valorPrecoTransacaoItemL1;
-                                log_item.valorCalcTransacaoItemL2 = log_item.qtdTransacaoItem * srvFatura.OutDto.valorPrecoTransacaoItemL2;
+                                log_item.valorCalcTransacaoL1 = Math.Round((double)log_item.qtdTransacao * srvFatura.OutDto.valorPrecoTransacaoL1, 2);
+                                log_item.valorCalcTransacaoL2 = Math.Round((double)log_item.qtdTransacao * srvFatura.OutDto.valorPrecoTransacaoL2, 2);
+                                log_item.valorCalcTransacaoItemL1 = Math.Round((double)log_item.qtdTransacaoItem * srvFatura.OutDto.valorPrecoTransacaoItemL1, 2);
+                                log_item.valorCalcTransacaoItemL2 = Math.Round((double)log_item.qtdTransacaoItem * srvFatura.OutDto.valorPrecoTransacaoItemL2, 2);
 
                                 resFatHour.Conteudo.Add(log_item);
                             }

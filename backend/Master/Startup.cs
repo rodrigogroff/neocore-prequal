@@ -148,17 +148,11 @@ namespace Master
         
         /* Estilo para o link do guia operacional */
         .swagger-ui .info .description a {
+            color: #4990e2 !important;
             text-decoration: none !important;
             font-weight: bold !important;
             margin-left: 5px !important;
         }
-
-/* Cor do texto de descrição */
-.swagger-ui .info .description,
-.swagger-ui .info .description p,
-.swagger-ui .info .description span {
-    color: #cacaca !important;
-}
         
         .swagger-ui .info .description a:hover {
             text-decoration: underline !important;
@@ -237,10 +231,14 @@ namespace Master
             text-align: center !important;
         }
 
-        .swagger-ui .info .description {
+        /* Cor do texto de descrição */
+        .swagger-ui .info .description,
+        .swagger-ui .info .description p,
+        .swagger-ui .info .description span {
             text-align: center !important;
             margin-top: 20px !important;
             display: block !important;
+            color: #cacaca !important;
         }
 
         /* Logo next to title - ajustado */
@@ -266,6 +264,11 @@ namespace Master
         .swagger-ui .renderedMarkdown,
         .swagger-ui .renderedMarkdown p,
         .swagger-ui .renderedMarkdown code {
+            color: #00ffff !important;
+        }
+        
+        /* Cor cyan para response-control-media-type__title */
+        .swagger-ui .response-control-media-type__title {
             color: #00ffff !important;
         }
         
@@ -432,6 +435,12 @@ namespace Master
                 clear: both !important;
             }
             
+            /* Remover padding do wrapper dentro da modal de autenticação */
+            .swagger-ui .auth-container .wrapper {
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            
             /* Criar um wrapper flex apenas para os opblock-tag-section */
             .swagger-ui .opblock-tag-section {
                 display: inline-block !important;
@@ -444,11 +453,6 @@ namespace Master
             
             .swagger-ui .opblock-tag-section:nth-child(2n) {
                 margin-right: 0 !important;
-            }
-
-            .swagger-ui .auth-container .wrapper {
-                padding: 0 !important;
-                max-width: 100% !important;
             }
         }
     </style>
@@ -478,7 +482,7 @@ namespace Master
                 {
                     Title = $"NeoCore API -- Bureau Bancário -- {version}",
                     Version = "v1",
-                    Description = "<span style=\"color:#cacaca;\"> Endpoints para serviços bancários de crédito </span> &nbsp;&nbsp;|&nbsp;&nbsp;<a href='/GuiaAPI_NeoCore-bureau_v1_r1.pdf' target='_blank'>Guia operacional para integração</a>"
+                    Description = "Endpoints para serviços bancários de crédito &nbsp;&nbsp;|&nbsp;&nbsp;<a href='/GuiaAPI_NeoCore-bureau_v1_r1.pdf' target='_blank'>Guia operacional para integração</a>"
                 });
 
                 // Adiciona o filtro para ordenar tags e métodos HTTP

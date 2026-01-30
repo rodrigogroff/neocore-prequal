@@ -23,7 +23,9 @@ namespace Master.Service.Domain.BackOffice.Company
                 OutDto = new DtoResponseCompanyFinanceiroGet
                 {
                     subL1 = itemDb.bActiveSubL1 == true,
+                    subL1str = "Pre-eligibilidade de propostas iniciais de leilão CTPS",
                     subL2 = itemDb.bActiveSubL2 == true,
+                    subL2str = "Pre-eligibilidade avançada de leilão CTPS (validar empresa)",
 
                     valorAssinaturaL1 = Math.Round((double)itemDb.vrSubscriptionL1,2),
                     valorTransacaoL1 = Math.Round((double)itemDb.vrL1Transaction, 2),

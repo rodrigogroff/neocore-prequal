@@ -3,7 +3,9 @@
     public class DtoResponseCompanyFinanceiroGet
     {
         public bool subL1 { get; set; }
+        public string subL1str { get; set; }
         public bool subL2 { get; set; }
+        public string subL2str { get; set; }
 
         public double valorAssinaturaL1 { get; set; }
         public double valorTransacaoL1 { get; set; }
