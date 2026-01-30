@@ -22,6 +22,7 @@
         public double valorCalcTransacaoL2 { get; set; }
         public double valorCalcTransacaoItemL2 { get; set; }
 
+        public double valorSubTotal { get; set; }
         public double valorImpostos { get; set; }
         public double valorTotal { get; set; }
     }

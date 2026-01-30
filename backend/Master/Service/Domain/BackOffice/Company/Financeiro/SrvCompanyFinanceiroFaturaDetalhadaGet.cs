@@ -18,8 +18,8 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
 
             await srvFatura.Exec(user, new DtoRequestCompanyFinanceiroFatura()
             {
-                nuMonth = request.nuMonth,
-                nuYear = request.nuYear,
+                ano = request.nuMonth,
+                mes = request.nuYear,
             });
 
             OutDto = new DtoResponseCompanyFinanceiroFaturaDetalhadaGet
@@ -42,6 +42,7 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
                 valorCalcTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL2, 2),
                 valorCalcTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL2, 2),
                 valorImpostos = Math.Round((double)srvFatura.OutDto.valorImpostos, 2),
+                valorSubTotal = Math.Round((double)srvFatura.OutDto.valorSubTotal, 2),
                 valorTotal = Math.Round((double)srvFatura.OutDto.valorTotal, 2),
                 Conteudo = [],
             };

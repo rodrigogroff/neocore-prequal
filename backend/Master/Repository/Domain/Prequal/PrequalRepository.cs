@@ -8,10 +8,10 @@ namespace Master.Repository.Domain.Prequal
     public interface IPrequalRepository
     {
         Tb_PrequalLeilaoConfig? GetPrequalLeilaoConfig(int fkCompany);
-        long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl, bool retId = false);
+        long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl);
         void UpdatePrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl);
 
-        long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl, bool retId = false);
+        long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl);
         List<Tb_LogProcPrequalLeilao> GetLogs(int fkCompany, int year, int month);
     }
 
@@ -25,7 +25,7 @@ namespace Master.Repository.Domain.Prequal
             return db.QueryFirstOrDefault<Tb_PrequalLeilaoConfig>(query, new { fkCompany });
         }
 
-        public long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl, bool retId = false)
+        public long InsertPrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl)
         {
             const string query =
                 "INSERT INTO \"PrequalLeilaoConfig\" (" +
@@ -65,14 +65,8 @@ namespace Master.Repository.Domain.Prequal
                 "@nuMesesAdmissaoMax," +
                 "@nuMesesAberturaEmpresaMin" +
                 ") RETURNING \"id\";";
-
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+            
+            return db.ExecuteScalar<long>(query, mdl);
         }
 
         public void UpdatePrequalLeilaoConfig(Tb_PrequalLeilaoConfig mdl)
@@ -102,7 +96,7 @@ namespace Master.Repository.Domain.Prequal
 
         // ==================== LOG PROC PREQUAL LEILAO ====================
 
-        public long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl, bool retId = false)
+        public long InsertLogProcPrequalLeilao(Tb_LogProcPrequalLeilao mdl)
         {
             const string query =
                 "INSERT INTO \"LogProcPrequalLeilao\" (" +
@@ -167,13 +161,7 @@ namespace Master.Repository.Domain.Prequal
                 "@nuFilter17" +
                 ") RETURNING \"id\";";
 
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+           return db.ExecuteScalar<long>(query, mdl);
         }
 
         public List<Tb_LogProcPrequalLeilao> GetLogs(int fkCompany, int year, int month)

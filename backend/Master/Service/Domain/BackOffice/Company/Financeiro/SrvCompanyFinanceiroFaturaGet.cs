@@ -14,16 +14,16 @@ namespace Master.Service.Domain.BackOffice.Company
 
         public async Task<bool> Exec(DtoAuthenticatedUser user, DtoRequestCompanyFinanceiroFatura request)
         {
-            request.nuYear ??= DateTime.Now.Year;
-            request.nuMonth ??= DateTime.Now.Month;
+            request.ano ??= DateTime.Now.Year;
+            request.mes ??= DateTime.Now.Month;
 
             try
             {
                 StartDatabase(Network);
 
                 var fkCompany = user.fkCompany;
-                var year = (int)request.nuYear;
-                var month = (int)request.nuMonth;
+                var year = (int)request.ano;
+                var month = (int)request.mes;
 
                 var repoC = RepoCompany();
                 
@@ -52,6 +52,7 @@ namespace Master.Service.Domain.BackOffice.Company
                         valorCalcTransacaoL2 = Math.Round((double)itemDbFatura.vrL2TransactionTotal, 2),
                         valorCalcTransacaoItemL2 = Math.Round((double)itemDbFatura.vrL2TransactionItemTotal, 2),
 
+                        valorSubTotal = Math.Round((double)itemDbFatura.vrSubTotal, 2),
                         valorImpostos = Math.Round((double)itemDbFatura.vrImpostos, 2),
                         valorTotal = Math.Round((double)itemDbFatura.vrTotal, 2),
                         situacao = "fechada"
@@ -86,6 +87,7 @@ namespace Master.Service.Domain.BackOffice.Company
                     valorCalcTransacaoL2 = Math.Round((double)fatura.vrL2TransactionTotal, 2),
                     valorCalcTransacaoItemL2 = Math.Round((double)fatura.vrL2TransactionItemTotal, 2),
 
+                    valorSubTotal = Math.Round((double)fatura.vrSubTotal, 2),
                     valorImpostos = Math.Round((double)fatura.vrImpostos, 2),
                     valorTotal = Math.Round((double)fatura.vrTotal,2),
                     situacao = "em aberto"

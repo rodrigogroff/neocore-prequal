@@ -2,7 +2,7 @@
 {
     public class DtoRequestCompanyFinanceiroFatura
     {
-        public int? nuYear { get; set; }
-        public int? nuMonth { get; set; }
+        public int? ano { get; set; }
+        public int? mes { get; set; }
     }
 }

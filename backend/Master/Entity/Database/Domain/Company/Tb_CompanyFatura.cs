@@ -29,6 +29,7 @@
 
         // totais
 
+        public double? vrSubTotal { get; set; }
         public double? vrImpostos { get; set; }
         public double? vrTotal { get; set; }
     }

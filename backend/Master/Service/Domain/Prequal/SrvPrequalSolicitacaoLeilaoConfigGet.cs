@@ -41,7 +41,7 @@ namespace Master.Service.Domain.Prequal
                     nuMesesAberturaEmpresaMin = 0,
                 };
 
-                itemDb.id = repo.InsertPrequalLeilaoConfig(itemDb, retId: true);
+                itemDb.id = repo.InsertPrequalLeilaoConfig(itemDb);
             }
 
             OutDto = new DtoResponsePrequalConfigLeilao

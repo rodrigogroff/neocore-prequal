@@ -38,6 +38,7 @@ ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL2TransactionTota
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrL2TransactionItemTotal" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL2Trans" int;
 ALTER TABLE public."CompanyFatura" ADD COLUMN if not exists "nuQtdL2TransItem" int;
+ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrSubTotal" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrImpostos" numeric(10,2);
 ALTER TABLE public."CompanyFatura" ADD COLUMN IF not exists "vrTotal" numeric(10,2);
 

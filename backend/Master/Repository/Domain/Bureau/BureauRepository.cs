@@ -6,7 +6,7 @@ namespace Master.Repository.Domain.Bureau
     public interface IBureauRepository
     {
         Tb_DadosEmpresa GetDadosEmpresa(string cnpj);
-        long InsertDadosEmpresa(Tb_DadosEmpresa mdl, bool retId = false);
+        long InsertDadosEmpresa(Tb_DadosEmpresa mdl);
         void UpdateDadosEmpresa(Tb_DadosEmpresa mdl);
     }
 
@@ -18,7 +18,7 @@ namespace Master.Repository.Domain.Bureau
             return db.QueryFirstOrDefault<Tb_DadosEmpresa>(query, new { cnpj });
         }
 
-        public long InsertDadosEmpresa(Tb_DadosEmpresa mdl, bool retId = false)
+        public long InsertDadosEmpresa(Tb_DadosEmpresa mdl)
         {
             const string query =
                 "INSERT INTO \"DadosEmpresa\" (" +
@@ -53,13 +53,7 @@ namespace Master.Repository.Domain.Bureau
                 "@stCdNatJurL1" +
                 ") RETURNING \"id\";";
 
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+            return db.ExecuteScalar<long>(query, mdl);
         }
 
         public void UpdateDadosEmpresa(Tb_DadosEmpresa mdl)

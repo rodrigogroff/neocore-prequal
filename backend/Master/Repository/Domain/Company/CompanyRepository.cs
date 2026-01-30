@@ -11,15 +11,15 @@ namespace Master.Repository.Domain.Company
         Tb_Company GetCompany(long id);
         Tb_Company GetCompany(Guid client_id);
         List<Tb_Company> GetCompanies();
-        long InsertCompany(Tb_Company mdl, bool retId = false);
+        long InsertCompany(Tb_Company mdl);
         void UpdateCompany(Tb_Company mdl);
 
         Tb_CompanyFinanceiro GetCompanyFinanceiro(int fkCompany);
-        long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl, bool retId = false);
+        long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl);
         void UpdateCompanyFinanceiro(Tb_CompanyFinanceiro mdl);
 
         Tb_CompanyFatura GetCompanyFatura(int fkCompany, int year, int month);
-        long InsertCompanyFatura(Tb_CompanyFatura mdl, bool retId = false);
+        long InsertCompanyFatura(Tb_CompanyFatura mdl);
         void UpdateCompanyFatura(Tb_CompanyFatura mdl);
     }
 
@@ -45,20 +45,14 @@ namespace Master.Repository.Domain.Company
             return db.Query<Tb_Company>(query).ToList();
         }
 
-        public long InsertCompany(Tb_Company mdl, bool retId = false)
+        public long InsertCompany(Tb_Company mdl)
         {
             const string query =
                 "INSERT INTO \"Company\" (\"stName\",\"client_id\",\"stSecret\",\"bActive\") " +
                 "VALUES (@stName,@client_id,@stSecret,@bActive)" +
                 "RETURNING \"id\";";
-
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+            
+            return db.ExecuteScalar<long>(query, mdl);
         }
 
         public void UpdateCompany(Tb_Company mdl)
@@ -82,7 +76,7 @@ namespace Master.Repository.Domain.Company
             return db.QueryFirstOrDefault<Tb_CompanyFinanceiro>(query, new { fkCompany });
         }
 
-        public long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl, bool retId = false)
+        public long InsertCompanyFinanceiro(Tb_CompanyFinanceiro mdl)
         {
             const string query =
                 "INSERT INTO \"CompanyFinanceiro\" (" +
@@ -106,14 +100,8 @@ namespace Master.Repository.Domain.Company
                 "@vrL2Transaction," +
                 "@vrL2TransactionItem" +
                 ") RETURNING \"id\";";
-
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+            
+            return db.ExecuteScalar<long>(query, mdl);
         }
 
         public void UpdateCompanyFinanceiro(Tb_CompanyFinanceiro mdl)
@@ -144,7 +132,7 @@ namespace Master.Repository.Domain.Company
             return db.QueryFirstOrDefault<Tb_CompanyFatura>(query, new { fkCompany, year, month });
         }
 
-        public long InsertCompanyFatura(Tb_CompanyFatura mdl, bool retId = false)
+        public long InsertCompanyFatura(Tb_CompanyFatura mdl)
         {
             const string query =
                 "INSERT INTO \"CompanyFatura\" (" +
@@ -166,6 +154,7 @@ namespace Master.Repository.Domain.Company
                 "\"vrL2TransactionTotal\"," +
                 "\"vrL2TransactionItemTotal\"," +
                 "\"vrImpostos\"," +
+                "\"vrSubTotal\"," +
                 "\"vrTotal\"" +
                 ") VALUES (" +
                 "@fkCompany," +
@@ -186,16 +175,11 @@ namespace Master.Repository.Domain.Company
                 "@vrL2TransactionTotal," +
                 "@vrL2TransactionItemTotal," +
                 "@vrImpostos," +
+                "@vrSubTotal," +
                 "@vrTotal" +
                 ") RETURNING \"id\";";
 
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+            return db.ExecuteScalar<long>(query, mdl);
         }
 
         public void UpdateCompanyFatura(Tb_CompanyFatura mdl)

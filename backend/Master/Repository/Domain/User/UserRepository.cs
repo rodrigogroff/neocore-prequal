@@ -10,7 +10,7 @@ namespace Master.Repository.Domain.User
         Tb_User GetUser(int fkCompany, long id);
         Tb_User GetUser(string email);
         List<Tb_User> GetUsers(int fkCompany);
-        long InsertUser(Tb_User mdl, bool retId = false);
+        long InsertUser(Tb_User mdl);
         void UpdateUser(Tb_User mdl);
     }
 
@@ -34,7 +34,7 @@ namespace Master.Repository.Domain.User
             return db.Query<Tb_User>(query, new { fkCompany }).ToList();
         }
 
-        public long InsertUser(Tb_User mdl, bool retId = false)
+        public long InsertUser(Tb_User mdl)
         {
             const string query =
                 "INSERT INTO \"User\" (" +
@@ -56,14 +56,8 @@ namespace Master.Repository.Domain.User
                 "@bActive," +
                 "@bAdmin" +
                 ") RETURNING \"id\";";
-
-            if (retId)
-            {
-                return db.ExecuteScalar<long>(query, mdl);
-            }
-
-            db.Execute(query, mdl);
-            return 0;
+            
+            return db.ExecuteScalar<long>(query, mdl);
         }
 
         public void UpdateUser(Tb_User mdl)

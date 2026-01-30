@@ -79,6 +79,7 @@ namespace Master.Service.Base.Infra.Functions
                 vrL2Transaction = itemDbFinanceiro.vrL2Transaction,
                 vrL2TransactionItem = itemDbFinanceiro.vrL2TransactionItem,
 
+                vrSubTotal = vrSubTotal,
                 vrImpostos = vrImpostos,
                 vrTotal = vrTotal,
             };
