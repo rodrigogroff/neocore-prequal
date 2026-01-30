@@ -5,6 +5,7 @@ using Master.Service.Base;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Master.Service.Domain.BackOffice.Company.Financeiro
 {
@@ -20,6 +21,7 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
             {
                 ano = request.nuMonth,
                 mes = request.nuYear,
+                dataStr = new DateTime((int)request.nuYear, (int)request.nuMonth, 1).ToString("MMMM/yyyy", new System.Globalization.CultureInfo("pt-BR")),
             });
 
             OutDto = new DtoResponseCompanyFinanceiroFaturaDetalhadaGet

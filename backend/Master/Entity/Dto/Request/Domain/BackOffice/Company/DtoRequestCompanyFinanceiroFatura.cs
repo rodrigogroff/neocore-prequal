@@ -4,5 +4,6 @@
     {
         public int? ano { get; set; }
         public int? mes { get; set; }
+        public string dataStr { get; set; }
     }
 }
