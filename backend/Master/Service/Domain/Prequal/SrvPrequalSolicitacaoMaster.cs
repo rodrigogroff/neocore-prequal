@@ -122,13 +122,13 @@ namespace Master.Service.Domain.Prequal
                 logProc.nuPctFilter = OutDto.pctPreQualificacao;
 
                 repo.InsertLogProcPrequalLeilao(logProc);
-            }
-            catch
-            {
-                
-            }
 
-            return true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return this.LogException(ex, user);
+            }
         }
 
         private List<List<PropostaDataPrevRequest>> DivideBatches(List<PropostaDataPrevRequest> items, int batchCount)

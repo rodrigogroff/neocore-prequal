@@ -12,59 +12,66 @@ namespace Master.Service.Domain.Prequal
 
         public async Task<bool> Exec(DtoAuthenticatedUser user)
         {
-            StartDatabase(Network);
-
-            var repo = RepoPrequal();
-
-            var itemDb = repo.GetPrequalLeilaoConfig(user.fkCompany);
-
-            if (itemDb == null)
+            try
             {
-                itemDb = new Tb_PrequalLeilaoConfig
+                StartDatabase(Network);
+
+                var repo = RepoPrequal();
+
+                var itemDb = repo.GetPrequalLeilaoConfig(user.fkCompany);
+
+                if (itemDb == null)
                 {
-                    fkCompany = user.fkCompany,
-                    bEmpregadorCnpj = true,
-                    bEmpregadorCpf = true,
-                    bPep = false,
-                    bAlertaAvisoPrevio = true,
-                    bAlertaSaude = true,
-                    nuIdadeMax = 99,
-                    nuIdadeMin = 21,
-                    nuMesesAdmissaoMax = 200,
-                    nuMesesAdmissaoMin = 9,
-                    nuParcMax = 50,
-                    nuParcMin = 6,
-                    vrLibMax = 200000,
-                    vrLibMin = 5000,
-                    vrMargemMin = 200,
-                    vrMargemMax = 20000,
-                    nuMesesAberturaEmpresaMin = 0,
+                    itemDb = new Tb_PrequalLeilaoConfig
+                    {
+                        fkCompany = user.fkCompany,
+                        bEmpregadorCnpj = true,
+                        bEmpregadorCpf = true,
+                        bPep = false,
+                        bAlertaAvisoPrevio = true,
+                        bAlertaSaude = true,
+                        nuIdadeMax = 99,
+                        nuIdadeMin = 21,
+                        nuMesesAdmissaoMax = 200,
+                        nuMesesAdmissaoMin = 9,
+                        nuParcMax = 50,
+                        nuParcMin = 6,
+                        vrLibMax = 200000,
+                        vrLibMin = 5000,
+                        vrMargemMin = 200,
+                        vrMargemMax = 20000,
+                        nuMesesAberturaEmpresaMin = 0,
+                    };
+
+                    itemDb.id = repo.InsertPrequalLeilaoConfig(itemDb);
+                }
+
+                OutDto = new DtoResponsePrequalConfigLeilao
+                {
+                    DescarteEmpregadorCnpj = itemDb.bEmpregadorCnpj,
+                    DescarteEmpregadorCpf = itemDb.bEmpregadorCpf,
+                    DescartePep = itemDb.bPep,
+                    DescarteAvisoPrevio = itemDb.bAlertaAvisoPrevio,
+                    DescarteAvisoSaude = itemDb.bAlertaSaude,
+                    RangeIdadeMax = itemDb.nuIdadeMax,
+                    RangeIdadeMin = itemDb.nuIdadeMin,
+                    RangeMesesAdmissaoMax = itemDb.nuMesesAdmissaoMax,
+                    RangeMesesAdmissaoMin = itemDb.nuMesesAdmissaoMin,
+                    RangeParcelasMax = itemDb.nuParcMax,
+                    RangeParcelasMin = itemDb.nuParcMin,
+                    RangeValorLiberadoMax = itemDb.vrLibMax,
+                    RangeValorLiberadoMin = itemDb.vrLibMin,
+                    RangeValorMargemMax = itemDb.vrMargemMax,
+                    RangeValorMargemMin = itemDb.vrMargemMin,
+                    MesesAberturaEmpresaMin = itemDb.nuMesesAberturaEmpresaMin
                 };
 
-                itemDb.id = repo.InsertPrequalLeilaoConfig(itemDb);
+                return true;
             }
-
-            OutDto = new DtoResponsePrequalConfigLeilao
+            catch (System.Exception ex)
             {
-                DescarteEmpregadorCnpj = itemDb.bEmpregadorCnpj,
-                DescarteEmpregadorCpf = itemDb.bEmpregadorCpf,
-                DescartePep = itemDb.bPep,
-                DescarteAvisoPrevio = itemDb.bAlertaAvisoPrevio,
-                DescarteAvisoSaude = itemDb.bAlertaSaude,
-                RangeIdadeMax = itemDb.nuIdadeMax,
-                RangeIdadeMin = itemDb.nuIdadeMin,
-                RangeMesesAdmissaoMax = itemDb.nuMesesAdmissaoMax,
-                RangeMesesAdmissaoMin = itemDb.nuMesesAdmissaoMin,
-                RangeParcelasMax = itemDb.nuParcMax,
-                RangeParcelasMin = itemDb.nuParcMin,
-                RangeValorLiberadoMax = itemDb.vrLibMax,
-                RangeValorLiberadoMin = itemDb.vrLibMin,
-                RangeValorMargemMax = itemDb.vrMargemMax,
-                RangeValorMargemMin = itemDb.vrMargemMin,
-                MesesAberturaEmpresaMin = itemDb.nuMesesAberturaEmpresaMin
-            };
-
-            return true;
+                return this.LogException(ex, user);
+            }
         }
     }
 }

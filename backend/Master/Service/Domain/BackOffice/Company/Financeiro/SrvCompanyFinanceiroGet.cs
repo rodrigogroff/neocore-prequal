@@ -40,10 +40,7 @@ namespace Master.Service.Domain.BackOffice.Company
             }
             catch (Exception ex) 
             {
-                this.errorCode = "FAIL";
-                this.errorMessage = ex.ToString();
-
-                return false;
+                return this.LogException(ex, user);
             }
         }
     }

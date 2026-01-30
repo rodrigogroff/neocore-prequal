@@ -85,10 +85,7 @@ namespace Master.Service.Domain.Auth
             }
             catch (Exception ex)
             {
-                this.errorCode = "FAIL";
-                this.errorMessage = ex.ToString();
-
-                return false;
+                return this.LogException(ex);
             }
         }
 
@@ -135,10 +132,7 @@ namespace Master.Service.Domain.Auth
             }
             catch (Exception ex)
             {
-                this.errorCode = "FAIL";
-                this.errorMessage = ex.ToString();
-
-                return false;
+                return this.LogException(ex);
             }
         }
     }

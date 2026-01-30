@@ -9,6 +9,7 @@ using Master.Repository.Domain.User;
 using Master.Repository.Domain.Prequal;
 using Master.Repository.Domain.Bureau;
 using Master.Repository.Domain.Infra;
+using Master.Entity.Dto.Infra;
 
 namespace Master.Service.Base
 {
@@ -24,6 +25,8 @@ namespace Master.Service.Base
         public LocalNetwork Network;
 
         public IFeatureRepository iRepoFeature;
+        public ILogRepository iRepoLog;
+
         public ICompanyRepository iRepoCompany;
         public IUserRepository iRepoUser;
         public IBureauRepository iRepoBureau;
@@ -45,18 +48,25 @@ namespace Master.Service.Base
             return repo;
         }
 
-        protected IPrequalRepository RepoPrequal(bool bCache = false)
-        {
-            if (iRepoPrequal != null)
-                return iRepoPrequal;
-            return CreateAndTrackRepo<PrequalRepository>(enableCache: bCache);
-        }
-
         protected IFeatureRepository RepoFeature()
         {
             if (iRepoFeature != null)
                 return iRepoFeature;
             return CreateAndTrackRepo<FeatureRepository>();
+        }
+
+        protected ILogRepository RepoLog()
+        {
+            if (iRepoLog != null)
+                return iRepoLog;
+            return CreateAndTrackRepo<LogRepository>();
+        }
+        
+        public ICompanyRepository RepoCompany(bool bCache = false)
+        {
+            if (iRepoCompany != null)
+                return iRepoCompany;
+            return CreateAndTrackRepo<CompanyRepository>(enableCache: bCache);
         }
 
         protected IUserRepository RepoUser(bool bCache = false)
@@ -66,12 +76,13 @@ namespace Master.Service.Base
             return CreateAndTrackRepo<UserRepository>(enableCache: bCache);
         }
 
-        public ICompanyRepository RepoCompany(bool bCache = false)
+        protected IPrequalRepository RepoPrequal(bool bCache = false)
         {
-            if (iRepoCompany != null)
-                return iRepoCompany;
-            return CreateAndTrackRepo<CompanyRepository>(enableCache: bCache);
+            if (iRepoPrequal != null)
+                return iRepoPrequal;
+            return CreateAndTrackRepo<PrequalRepository>(enableCache: bCache);
         }
+
 
         public IBureauRepository RepoBureau(bool bCache = false)
         {
@@ -121,6 +132,25 @@ namespace Master.Service.Base
             return MainDb;
         }
 
+        public bool LogException(Exception ex, DtoAuthenticatedUser user = null, int? fkCompany = null)
+        {
+            this.errorCode = "FAIL";
+            this.errorMessage = ex.ToString();
+
+            var repoLog = this.RepoLog();
+
+            repoLog.InsertLogApplication(new Entity.Database.Domain.Infra.Tb_LogApplication
+            {
+                dtLog = DateTime.Now,
+                fkCompany = user != null ? (int)user.fkCompany : fkCompany != null ? (int)fkCompany : 0,
+                fkUser = user != null ? (int)user.fkUser : 0,
+                stEndpoint = this.endpoint,
+                stExceptionData = ex.Message,
+            });
+
+            return false;
+        }
+
         public void DisposeService()
         {
             // --------------------------
@@ -137,6 +167,7 @@ namespace Master.Service.Base
             }
 
             iRepoFeature = null;
+            iRepoLog = null;
             iRepoPrequal = null;
             iRepoCompany = null;
             iRepoUser = null;

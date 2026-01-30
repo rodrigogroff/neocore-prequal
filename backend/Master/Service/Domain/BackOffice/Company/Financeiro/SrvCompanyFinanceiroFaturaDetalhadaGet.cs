@@ -5,7 +5,6 @@ using Master.Service.Base;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Master.Service.Domain.BackOffice.Company.Financeiro
 {
@@ -15,44 +14,44 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
 
         public async Task<bool> Exec(DtoAuthenticatedUser user, DtoRequestCompanyFinanceiroFaturaDetalhada request)
         {
-            var srvFatura = this.RegisterService(new SrvCompanyFinanceiroFaturaGet()) as SrvCompanyFinanceiroFaturaGet;
-
-            await srvFatura.Exec(user, new DtoRequestCompanyFinanceiroFatura()
-            {
-                ano = request.nuMonth,
-                mes = request.nuYear,                
-            });
-
-            OutDto = new DtoResponseCompanyFinanceiroFaturaDetalhadaGet
-            {
-                ano = srvFatura.OutDto.ano,
-                mes = srvFatura.OutDto.mes,
-                situacao = srvFatura.OutDto.situacao,
-                valorAssinaturaL1 = Math.Round((double)srvFatura.OutDto.valorAssinaturaL1, 2),
-                valorPrecoTransacaoL1 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoL1, 2),
-                valorPrecoTransacaoItemL1 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoItemL1, 2),
-                qtdTransacaoL1 = srvFatura.OutDto.qtdTransacaoL1,
-                qtdTransacaoItemL1 = srvFatura.OutDto.qtdTransacaoItemL1,
-                valorCalcTransacaoL1 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL1, 2),
-                valorCalcTransacaoItemL1 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL1, 2),
-                valorAssinaturaL2 = Math.Round((double)srvFatura.OutDto.valorAssinaturaL2, 2),
-                valorPrecoTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoL2, 2),
-                valorPrecoTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoItemL2, 2),
-                qtdTransacaoL2 = srvFatura.OutDto.qtdTransacaoL2,
-                qtdTransacaoItemL2 = srvFatura.OutDto.qtdTransacaoItemL2,
-                valorCalcTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL2, 2),
-                valorCalcTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL2, 2),
-                valorImpostos = Math.Round((double)srvFatura.OutDto.valorImpostos, 2),
-                valorSubTotal = Math.Round((double)srvFatura.OutDto.valorSubTotal, 2),
-                valorTotal = Math.Round((double)srvFatura.OutDto.valorTotal, 2),
-                Conteudo = [],
-            };
-
-            request.nuYear ??= DateTime.Now.Year;
-            request.nuMonth ??= DateTime.Now.Month;
-
             try
             {
+                var srvFatura = this.RegisterService(new SrvCompanyFinanceiroFaturaGet()) as SrvCompanyFinanceiroFaturaGet;
+
+                await srvFatura.Exec(user, new DtoRequestCompanyFinanceiroFatura()
+                {
+                    ano = request.nuMonth,
+                    mes = request.nuYear,                
+                });
+
+                OutDto = new DtoResponseCompanyFinanceiroFaturaDetalhadaGet
+                {
+                    ano = srvFatura.OutDto.ano,
+                    mes = srvFatura.OutDto.mes,
+                    situacao = srvFatura.OutDto.situacao,
+                    valorAssinaturaL1 = Math.Round((double)srvFatura.OutDto.valorAssinaturaL1, 2),
+                    valorPrecoTransacaoL1 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoL1, 2),
+                    valorPrecoTransacaoItemL1 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoItemL1, 2),
+                    qtdTransacaoL1 = srvFatura.OutDto.qtdTransacaoL1,
+                    qtdTransacaoItemL1 = srvFatura.OutDto.qtdTransacaoItemL1,
+                    valorCalcTransacaoL1 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL1, 2),
+                    valorCalcTransacaoItemL1 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL1, 2),
+                    valorAssinaturaL2 = Math.Round((double)srvFatura.OutDto.valorAssinaturaL2, 2),
+                    valorPrecoTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoL2, 2),
+                    valorPrecoTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorPrecoTransacaoItemL2, 2),
+                    qtdTransacaoL2 = srvFatura.OutDto.qtdTransacaoL2,
+                    qtdTransacaoItemL2 = srvFatura.OutDto.qtdTransacaoItemL2,
+                    valorCalcTransacaoL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoL2, 2),
+                    valorCalcTransacaoItemL2 = Math.Round((double)srvFatura.OutDto.valorCalcTransacaoItemL2, 2),
+                    valorImpostos = Math.Round((double)srvFatura.OutDto.valorImpostos, 2),
+                    valorSubTotal = Math.Round((double)srvFatura.OutDto.valorSubTotal, 2),
+                    valorTotal = Math.Round((double)srvFatura.OutDto.valorTotal, 2),
+                    Conteudo = [],
+                };
+
+                request.nuYear ??= DateTime.Now.Year;
+                request.nuMonth ??= DateTime.Now.Month;
+
                 StartDatabase(Network);
 
                 var fkCompany = user.fkCompany;
@@ -128,10 +127,7 @@ namespace Master.Service.Domain.BackOffice.Company.Financeiro
             }
             catch (Exception ex)
             {
-                this.errorCode = "FAIL";
-                this.errorMessage = ex.ToString();
-
-                return false;
+                return this.LogException(ex, user);
             }
         }
     }

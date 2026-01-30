@@ -9,32 +9,39 @@ namespace Master.Service.Domain.Prequal
     {
         public async Task<bool> Exec(DtoAuthenticatedUser user, DtoRequestPrequalConfigLeilao request)
         {
-            StartDatabase(Network);
+            try
+            {
+                StartDatabase(Network);
 
-            var repo = RepoPrequal();
+                var repo = RepoPrequal();
 
-            var itemDb = repo.GetPrequalLeilaoConfig(user.fkCompany);
+                var itemDb = repo.GetPrequalLeilaoConfig(user.fkCompany);
 
-            itemDb.bAlertaAvisoPrevio = request.DescarteAvisoPrevio;
-            itemDb.bAlertaSaude = request.DescarteAvisoSaude;
-            itemDb.bPep = request.DescartePep;
-            itemDb.bEmpregadorCnpj = request.DescarteEmpregadorCnpj;
-            itemDb.bEmpregadorCpf = request.DescarteEmpregadorCpf;
-            itemDb.vrLibMin = request.RangeValorLiberadoMin;
-            itemDb.vrLibMax = request.RangeValorLiberadoMax;
-            itemDb.vrMargemMax = request.RangeValorMargemMax;
-            itemDb.vrMargemMin = request.RangeValorMargemMin;
-            itemDb.nuParcMin = request.RangeParcelasMin;
-            itemDb.nuParcMax = request.RangeParcelasMax;
-            itemDb.nuIdadeMax = request.RangeIdadeMax;
-            itemDb.nuIdadeMin = request.RangeIdadeMin;
-            itemDb.nuMesesAdmissaoMax = request.RangeMesesAdmissaoMax;
-            itemDb.nuMesesAdmissaoMin = request.RangeMesesAdmissaoMin;
-            itemDb.nuMesesAberturaEmpresaMin = request.MesesAberturaEmpresaMin;
+                itemDb.bAlertaAvisoPrevio = request.DescarteAvisoPrevio;
+                itemDb.bAlertaSaude = request.DescarteAvisoSaude;
+                itemDb.bPep = request.DescartePep;
+                itemDb.bEmpregadorCnpj = request.DescarteEmpregadorCnpj;
+                itemDb.bEmpregadorCpf = request.DescarteEmpregadorCpf;
+                itemDb.vrLibMin = request.RangeValorLiberadoMin;
+                itemDb.vrLibMax = request.RangeValorLiberadoMax;
+                itemDb.vrMargemMax = request.RangeValorMargemMax;
+                itemDb.vrMargemMin = request.RangeValorMargemMin;
+                itemDb.nuParcMin = request.RangeParcelasMin;
+                itemDb.nuParcMax = request.RangeParcelasMax;
+                itemDb.nuIdadeMax = request.RangeIdadeMax;
+                itemDb.nuIdadeMin = request.RangeIdadeMin;
+                itemDb.nuMesesAdmissaoMax = request.RangeMesesAdmissaoMax;
+                itemDb.nuMesesAdmissaoMin = request.RangeMesesAdmissaoMin;
+                itemDb.nuMesesAberturaEmpresaMin = request.MesesAberturaEmpresaMin;
 
-            repo.UpdatePrequalLeilaoConfig(itemDb);
+                repo.UpdatePrequalLeilaoConfig(itemDb);
 
-            return true;
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                return this.LogException(ex, user);
+            }
         }
     }
 }

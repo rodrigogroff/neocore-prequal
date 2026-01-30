@@ -139,13 +139,13 @@ namespace Master.Service.Domain.Prequal
                         OutDto.qualificadas.Add(qualified);
                     }
                 }
-            }
-            catch
-            {
-                
-            }
 
-            return true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return this.LogException(ex, fkCompany: (int)request.fkCompany);
+            }
         }
 
         internal async Task<Tb_PrequalLeilaoConfig> GetCachePrequalConfig(IPrequalRepository repo, IMemoryCache memCache, int fkCompany)

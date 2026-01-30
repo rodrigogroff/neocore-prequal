@@ -9,38 +9,45 @@ namespace Master.Service.Domain.Scheduler
     {
         public async Task<bool> GeraFaturaMensal()
         {
-            var dtMesPassado = DateTime.Now.AddMonths(-1);
-
-            int 
-                year = dtMesPassado.Year,
-                month = dtMesPassado.Month;
-
-            StartDatabase(Network);
-
-            var repoC = RepoCompany();
-            var repoPrequal = RepoPrequal();
-
-            var funcFatura = new FunctionFaturaMensal();
-
-            foreach (var itemCompanyC in repoC.GetCompanies())
+            try
             {
-                var fkCompany = itemCompanyC.id;
+                var dtMesPassado = DateTime.Now.AddMonths(-1);
 
-                var itemDbFatura = repoC.GetCompanyFatura(fkCompany, year, month);
+                int
+                    year = dtMesPassado.Year,
+                    month = dtMesPassado.Month;
 
-                // se já gerou fatura, passa adiante
+                StartDatabase(Network);
 
-                if (itemDbFatura != null)
-                    continue;
+                var repoC = RepoCompany();
+                var repoPrequal = RepoPrequal();
 
-                // senão processou mês passado, gerar fatura
+                var funcFatura = new FunctionFaturaMensal();
 
-                var novaFatura = funcFatura.ObterFaturaMensal(repoC, repoPrequal, fkCompany, year, month);
+                foreach (var itemCompanyC in repoC.GetCompanies())
+                {
+                    var fkCompany = itemCompanyC.id;
 
-                repoC.InsertCompanyFatura(novaFatura);
+                    var itemDbFatura = repoC.GetCompanyFatura(fkCompany, year, month);
+
+                    // se já gerou fatura, passa adiante
+
+                    if (itemDbFatura != null)
+                        continue;
+
+                    // senão processou mês passado, gerar fatura
+
+                    var novaFatura = funcFatura.ObterFaturaMensal(repoC, repoPrequal, fkCompany, year, month);
+
+                    repoC.InsertCompanyFatura(novaFatura);
+                }
+
+                return true;
             }
-
-            return true;
+            catch (System.Exception ex)
+            {
+                return this.LogException(ex);
+            }
         }
     }
 }

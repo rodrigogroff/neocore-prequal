@@ -25,7 +25,7 @@ namespace Master.Controller.Domain.Prequal
         {
             var srv = RegisterService<SrvBureuConsultaPjBasicGet>();
 
-            if (!await srv.Exec(this.MemoryCache, documento))
+            if (!await srv.Exec(GetAuthenticatedUser(), this.MemoryCache, documento))
             {
                 return BadRequest(new DtoServiceError
                 {

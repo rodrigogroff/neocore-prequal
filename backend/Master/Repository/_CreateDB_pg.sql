@@ -13,6 +13,15 @@ ALTER TABLE public."Feature" ADD COLUMN if not exists "bActive" boolean;
 
 CREATE INDEX IF NOT EXISTS idx_feature_endpoint ON public."Feature" ("stEndpoint");
 
+CREATE TABLE IF NOT EXISTS public."LogApplication" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
+ALTER TABLE public."LogApplication" ADD COLUMN if not exists "fkCompany" int;
+ALTER TABLE public."LogApplication" ADD COLUMN if not exists "fkUser" int;
+ALTER TABLE public."LogApplication" ADD COLUMN if not exists "stEndpoint" character varying(999);
+ALTER TABLE public."LogApplication" ADD COLUMN if not exists "dtLog" timestamp without time zone;
+ALTER TABLE public."LogApplication" ADD COLUMN if not exists "stExceptionData" character varying(7000);
+
+CREATE INDEX IF NOT EXISTS idx_logapplication_endpoint ON public."LogApplication" ("stEndpoint");
+
 CREATE TABLE IF NOT EXISTS public."CompanyFinanceiro" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "fkCompany" int;
 ALTER TABLE public."CompanyFinanceiro" ADD COLUMN if not exists "bActiveSubL1" boolean;

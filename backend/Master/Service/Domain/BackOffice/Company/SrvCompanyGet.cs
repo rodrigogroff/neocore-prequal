@@ -13,10 +13,7 @@ namespace Master.Service.Domain.BackOffice.Company
         {
             if (!CheckCredential(user))
             {
-                this.errorCode = "Admin";
-                this.errorMessage = "Suas credenciais não possuem acesso à este serviço.";
-
-                return false;
+                return this.LogException(new Exception("Suas credenciais não possuem acesso à este serviço."), user);
             }
 
             try
