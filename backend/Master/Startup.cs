@@ -218,7 +218,26 @@ namespace Master
             border: none !important;
         }
         
-        /* Logo next to title */
+        /* Centralizar título e organizar descrição */
+        .swagger-ui .info {
+            margin: 35px 0 0 0 !important;
+            text-align: center !important;
+        }
+
+        .swagger-ui .info .title {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        .swagger-ui .info .description {
+            text-align: center !important;
+            margin-top: 20px !important;
+            display: block !important;
+        }
+
+        /* Logo next to title - ajustado */
         .swagger-ui .info .title::before {
             content: '';
             display: inline-block;
@@ -229,6 +248,12 @@ namespace Master
             background-repeat: no-repeat;
             vertical-align: middle;
             margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .swagger-ui .info .title small {
+            display: inline-block !important;
+            margin-left: 10px !important;
         }
         
         .swagger-ui .opblock {
@@ -368,12 +393,44 @@ namespace Master
         }
 
         /* CSS customizado original para espaço no final */
-        .swagger-ui .info {
-            margin: 35px 0 0 0 !important;
-        }
         .swagger-ui .block.col-12.block-desktop.col-12-desktop {
             padding-bottom: 100px !important;
         }
+/* Layout de duas colunas para telas grandes */
+@media (min-width: 1600px) {
+    .swagger-ui .wrapper {
+        max-width: 100% !important;
+        padding: 0 40px !important;
+    }
+    
+    /* Forçar info e scheme em bloco, fora das colunas */
+    .swagger-ui .information-container {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+    }
+    
+    .swagger-ui .scheme-container {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+    }
+    
+    /* Criar um wrapper flex apenas para os opblock-tag-section */
+    .swagger-ui .opblock-tag-section {
+        display: inline-block !important;
+        width: 48% !important;
+        vertical-align: top !important;
+        margin-right: 2% !important;
+        margin-bottom: 40px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .swagger-ui .opblock-tag-section:nth-child(2n) {
+        margin-right: 0 !important;
+    }
+}
     </style>
 ";
 
