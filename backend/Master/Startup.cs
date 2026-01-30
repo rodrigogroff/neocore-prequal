@@ -148,11 +148,17 @@ namespace Master
         
         /* Estilo para o link do guia operacional */
         .swagger-ui .info .description a {
-            color: #4990e2 !important;
             text-decoration: none !important;
             font-weight: bold !important;
             margin-left: 5px !important;
         }
+
+/* Cor do texto de descrição */
+.swagger-ui .info .description,
+.swagger-ui .info .description p,
+.swagger-ui .info .description span {
+    color: #cacaca !important;
+}
         
         .swagger-ui .info .description a:hover {
             text-decoration: underline !important;
@@ -254,6 +260,13 @@ namespace Master
         .swagger-ui .info .title small {
             display: inline-block !important;
             margin-left: 10px !important;
+        }
+        
+        /* Cor cyan para renderedMarkdown */
+        .swagger-ui .renderedMarkdown,
+        .swagger-ui .renderedMarkdown p,
+        .swagger-ui .renderedMarkdown code {
+            color: #00ffff !important;
         }
         
         .swagger-ui .opblock {
@@ -396,41 +409,48 @@ namespace Master
         .swagger-ui .block.col-12.block-desktop.col-12-desktop {
             padding-bottom: 100px !important;
         }
-/* Layout de duas colunas para telas grandes */
-@media (min-width: 1600px) {
-    .swagger-ui .wrapper {
-        max-width: 100% !important;
-        padding: 0 40px !important;
-    }
-    
-    /* Forçar info e scheme em bloco, fora das colunas */
-    .swagger-ui .information-container {
-        display: block !important;
-        width: 100% !important;
-        float: none !important;
-    }
-    
-    .swagger-ui .scheme-container {
-        display: block !important;
-        width: 100% !important;
-        float: none !important;
-        clear: both !important;
-    }
-    
-    /* Criar um wrapper flex apenas para os opblock-tag-section */
-    .swagger-ui .opblock-tag-section {
-        display: inline-block !important;
-        width: 48% !important;
-        vertical-align: top !important;
-        margin-right: 2% !important;
-        margin-bottom: 40px !important;
-        box-sizing: border-box !important;
-    }
-    
-    .swagger-ui .opblock-tag-section:nth-child(2n) {
-        margin-right: 0 !important;
-    }
-}
+        
+        /* Layout de duas colunas para telas grandes */
+        @media (min-width: 1600px) {
+            .swagger-ui .wrapper {
+                max-width: 100% !important;
+                padding: 0 40px !important;
+            }
+            
+            /* Forçar info e scheme em bloco, fora das colunas */
+            .swagger-ui .information-container {
+                display: block !important;
+                width: 100% !important;
+                float: none !important;
+                margin-bottom: 32px !important;
+            }
+            
+            .swagger-ui .scheme-container {
+                display: block !important;
+                width: 100% !important;
+                float: none !important;
+                clear: both !important;
+            }
+            
+            /* Criar um wrapper flex apenas para os opblock-tag-section */
+            .swagger-ui .opblock-tag-section {
+                display: inline-block !important;
+                width: 48% !important;
+                vertical-align: top !important;
+                margin-right: 2% !important;
+                margin-bottom: 40px !important;
+                box-sizing: border-box !important;
+            }
+            
+            .swagger-ui .opblock-tag-section:nth-child(2n) {
+                margin-right: 0 !important;
+            }
+
+            .swagger-ui .auth-container .wrapper {
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+        }
     </style>
 ";
 
@@ -458,7 +478,7 @@ namespace Master
                 {
                     Title = $"NeoCore API -- Bureau Bancário -- {version}",
                     Version = "v1",
-                    Description = "Endpoints para serviços bancários de crédito &nbsp;&nbsp;|&nbsp;&nbsp;<a href='/GuiaAPI_NeoCore-bureau_v1_r1.pdf' target='_blank'>Guia operacional para integração</a>"
+                    Description = "<span style=\"color:#cacaca;\"> Endpoints para serviços bancários de crédito </span> &nbsp;&nbsp;|&nbsp;&nbsp;<a href='/GuiaAPI_NeoCore-bureau_v1_r1.pdf' target='_blank'>Guia operacional para integração</a>"
                 });
 
                 // Adiciona o filtro para ordenar tags e métodos HTTP
